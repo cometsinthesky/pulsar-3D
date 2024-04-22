@@ -1,0 +1,296 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #f0f0f0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+/* Adiciona gradiente de preto a branco */
+background: linear-gradient(to bottom, #000000, #1A1A1A);
+}
+
+/* New Title Hover */
+.text {
+  font-family: "Roboto";
+  color: #f0f0f0;
+  font-size: 32px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  position: relative;
+  bottom: 10px;
+  text-align: center;
+  user-select: none;
+  transform: scale(1.1);
+
+  .wrapper {
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-top: 30px;
+
+      .letter {
+          transition: ease-out 0.3s;
+          /* Distância entre os títulos */
+          transform: translateY(40%);
+      }
+
+      .shadow {
+          transform: scale(1.1, -1.1);
+          color: #414141cc;
+          transition: ease-in 0.1s, ease-out 0.1s;
+      }
+
+      &:hover {
+          .letter {
+              transform: translateY(-30%);
+          }
+
+          .shadow {
+              opacity: 0;
+              transform: translateY(30%);
+          }
+      }
+  }
+}
+
+
+#canvas {
+  margin-top: 20px;
+  border: 2px solid #b8b8b8;
+  cursor: pointer;
+}
+
+
+
+/* Botão pausa */
+.pause-button{
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  position: absolute;
+  top: 270px; /* Ajuste conforme necessário */
+  left: 120px; /* Ajuste conforme necessário */
+  padding: 8px 26px;
+  background-color: #4CAF50; /* Cor de fundo do botão */
+  color: white; /* Cor do texto do botão */
+  border: none; /* Remove a borda */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Mostra o cursor como ponteiro ao passar sobre o botão */
+  font-size: 14px; /* Tamanho da fonte */
+  width: 95px; /* Largura fixa do botão */
+  text-align: center; /* Centralizar o texto */
+}
+
+/* Botão reinicia */
+.restart-button {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  position: absolute;
+  top: 330px; /* Ajuste conforme necessário */
+  left: 112px; /* Ajuste conforme necessário */
+  padding: 8px 26px;
+  background-color: #4CAF50; /* Cor de fundo do botão */
+  color: white; /* Cor do texto do botão */
+  border: none; /* Remove a borda */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Mostra o cursor como ponteiro ao passar sobre o botão */
+  font-size: 14px; /* Tamanho da fonte */
+}
+
+.pause-button:hover,
+.restart-button:hover {
+  background-color: #45a049; /* Altera a cor de fundo quando o botão é passado com o mouse */
+}
+
+/* Estilo quando pressionado */
+.pause-button:active,
+.restart-button:active {
+  background-color: #50bb56; /* Cor de fundo mais escura */
+}
+
+
+#instructionText {
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 0px;
+  color: #f0f0f0;
+}
+
+
+a:visited {
+  color: #eeeeee;
+}
+
+footer {
+  margin-top: 20px;
+  margin-bottom: -10px;
+  padding-left: 32px;
+  padding-right: 32px;
+  color: #f0f0f0;
+}
+
+
+.slider {
+  width: 150px;
+  margin-top: 35px;
+  /* Ajuste para posicionar o slider a 100 pixels da borda superior */
+  position: absolute;
+  top: 0;
+  right: 50px;
+  /* Posiciona o slider no canto superior direito */
+  cursor: pointer;
+  border-radius: 30px;
+  /* Define o arredondamento das bordas do thumb */
+}
+
+/* Image speed icon slider */
+.img-speed {
+  position: absolute;
+  top: 50px;
+  right: 95px;
+  width: 65px; /* Ajuste conforme necessário */
+  height: auto; /* Para manter a proporção da imagem */
+}
+
+/* Altera a cor do track */
+.slider::-webkit-slider-runnable-track {
+  background: #6d6d6d;
+  /* Cor de fundo do track */
+  border-radius: 10px;
+}
+
+/* Estilos para navegadores WebKit (Chrome, Safari, etc.) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Remove a aparência padrão do thumb */
+  width: 30px;
+  /* Largura do thumb para WebKit */
+  height: 30px;
+  /* Altura do thumb para WebKit */
+  background-color: #ffffff;
+  /* Cor do thumb para WebKit */
+  border-radius: 50%;
+  /* Torna o thumb redondo para WebKit */
+  cursor: pointer;
+}
+
+
+.exchange-rate-label {
+  color: #f0f0f0;
+  position: absolute;
+  top: 12px;
+  /* Ajuste para posicionar o texto abaixo do slider */
+  right: 55px;
+  /* Alinha com o canto superior direito */
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.slider-label-fast {
+  color: #f0f0f0;
+  position: absolute;
+  top: 54px;
+  right: 15px;
+  font-size: 13px;
+  font-weight: bold;
+  /* Ajuste para posicionar o texto "Rápido" ao lado direito do slider */
+}
+
+.slider-label-slow {
+  color: #f0f0f0;
+  position: absolute;
+  top: 54px;
+  right: 195px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+
+/* Layout timer */
+
+.timer-container{
+  font-family: Roboto, sans-serif;
+  color: #f0f0f0;
+  position: absolute;
+  top: 260px; /* A partir da borda superior */
+  right: 5px; /* A partir da borda direita */
+  align-items: center;
+
+
+  h2 {
+      font-size: 17px; /* Altere este valor para o tamanho desejado */
+      color: #f0f0f0;
+  }
+
+#timer {
+  font-size: 18px;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+  font-weight: bold;
+  width: 170px;
+
+}
+
+.buttons {
+  display: flex;
+  font-family: Roboto, sans-serif;
+  position: absolute;
+  align-items: center;
+  right: 10px;
+  gap: 2px;
+}
+
+.buttons button {
+  display: flex;
+  font-family: Roboto, sans-serif;
+  color: #f0f0f0;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 5px 9px;
+  background-color: #408acf; /* Cor de fundo do botão */
+  border-radius: 5px; /* Borda arredondada */
+  border: none;
+  cursor: pointer; /* Mostra o cursor como ponteiro ao passar sobre o botão */
+  margin-bottom: 5px;
+}
+
+.time-list {
+  max-height: 150px; /* Altura máxima da lista */
+  max-width: 230px;
+  overflow-y: auto; /* Tornar a lista rolável */
+  position: absolute;
+  margin-top: 30px;
+  width: 230px;
+  right: 0px;
+}
+
+.time-list h2 {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #f0f0f0;
+}
+
+.time-list ul {
+  padding-left: -10px;
+  margin-right: 5px;
+}
+
+.time-list ul li {
+  list-style: none;
+  font-size: 14px;
+  margin-bottom: 3px;
+
+}
+
+/* Image speed icon slider */
+.clock-icon {
+  position: absolute;
+  top: -22px;
+  right: 16px;
+  width: 50px; /* Ajuste conforme necessário */
+  height: auto; /* Para manter a proporção da imagem */
+  opacity: 0.95;
+}
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsar 3D</title>
+    <link rel="stylesheet" href="./src/style.css" />
+
+
+
+</head>
+
+<body style="position: relative;">
+    <div style="width: 100%; text-align: left; padding-left: 40px;">
+        <p id="instructionText">
+            1 - Clique para selecionar o tipo de material de cada bloco.<br>
+            2 - Clique e arraste os blocos para movê-los.
+        </p>
+    </div>
+
+    <!-- Div do Título: LEI ZERO TERMODINAMICA -->
+    <div class="text">
+        <div class="wrapper">
+            <div id="P" class="letter">P</div>
+            <div class="shadow">P</div>
+        </div>
+        <div class="wrapper">
+            <div id="U" class="letter">U</div>
+            <div class="shadow">U</div>
+        </div>
+        <div class="wrapper">
+            <div id="L" class="letter">L</div>
+            <div class="shadow">L</div>
+        </div>
+        <div class="wrapper">
+            <div id="S" class="letter">S</div>
+            <div class="shadow">S</div>
+        </div>
+        <div class="wrapper">
+            <div id="A" class="letter">A</div>
+            <div class="shadow">A</div>
+        </div>
+        <div class="wrapper">
+            <div id="R" class="letter">R</div>
+            <div class="shadow">R</div>
+        </div>
+        <div class="wrapper">
+          <div id="" class="letter">‎ </div>
+          <div class="shadow">‎ </div>
+      </div>
+        <div class="wrapper">
+            <div id="3" class="letter">3</div>
+            <div class="shadow">3</div>
+        </div>
+        <div class="wrapper">
+            <div id="D" class="letter">D</div>
+            <div class="shadow">D</div>
+        </div>
+
+    </div>
+
+
+
+<!-- CANVAS -->
+    <canvas id="canvas" width="800" height="600"></canvas>
+
+
+
+    <!-- Adiciona botões de "Pausa" e "Play" -->
+    <div class="container">
+      <div class="control-buttons">
+          <button class="pause-button">Pausa</button>
+          <button class="restart-button">Reiniciar</button>
+      </div>
+
+
+  <!-- Adiciona slider  -->
+  <div class="container">
+  <input type="range" min="0" max="4" value="2" class="slider" id="exchangeRateSlider">
+  <div class="exchange-rate" id="exchangeRateDisplay"></div>
+  <div class="slider-label-slow">Devagar</div>
+  <div class="slider-label-fast">Rápido</div>
+  <div class="clearfix"></div>
+  <div class="exchange-rate-label">Taxa de troca de calor</div>
+  <img src="./image-icons/speed.png" alt="Speed icon" class="img-speed">
+</div>
+
+
+<!-- Adiciona imagens -->
+<div style="text-align: center;">
+  <img src="./images/pulsar.jpg" alt="Características de um Pulsar" style="width: 600px; margin-top: 20px;">
+  <br>
+  <img src="./images/jocelyn.jpg" alt="Jocelyn Bell e a descoberta dos Pulsares" style="width: 700px; margin-top: 20px;">
+  <br>
+  <img src="./images/evolution.jpg" alt="Ciclo de vida estelar" style="width: 700px; margin-top: 20px;">
+</div>
+
+
+
+<div style="text-align: center; margin-top: 20px;">
+    <footer style="font-size: 14px;">
+        <p>Criado por: <a href="https://github.com/cometsinthesky" target="_blank" style="color: #f0f0f0; font-size: 13px;">Lucas Ferreira</a>  (MNPEF/UnB)   |  
+        <a href="https://github.com/cometsinthesky/pulsar-3D" target="_blank" style="color: #f0f0f0;">Link do repositório GitHub</a></p>
+    </footer>
+
+    <!-- Créditos e Creative Commons -->
+    <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" style="font-size: 12px;">
+        <a property="dct:title" rel="cc:attributionURL" href="https://github.com/cometsinthesky/pulsar-3D" target="_blank" style="color: #f0f0f0;">Simulação Pulsar 3D</a> by 
+        <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/cometsinthesky" target="_blank" style="color: #f0f0f0;">Lucas Ferreira</a> 
+        is licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" style="color: #f0f0f0;" target="_blank" rel="license noopener noreferrer">
+            CC BY-NC-SA 4.0 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="">
+        </a>
+    </p>
+</div>
+
+    <script src="./src/functions.js"></script>
+    <script src="./src/js/runner.js"></script>
+
+</body>
+
+</html>
