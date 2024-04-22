@@ -54,14 +54,6 @@ background: linear-gradient(to bottom, #000000, #1A1A1A);
 }
 
 
-#canvas {
-  margin-top: 20px;
-  border: 2px solid #b8b8b8;
-  cursor: pointer;
-}
-
-
-
 /* Botão pausa */
 .pause-button{
   font-family: Roboto, sans-serif;

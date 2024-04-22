@@ -12,6 +12,7 @@
 </head>
 
 <body style="position: relative;">
+
     <div style="width: 100%; text-align: left; padding-left: 40px;">
         <p id="instructionText">
             1 - Clique para selecionar o tipo de material de cada bloco.<br>
@@ -19,6 +20,8 @@
         </p>
     </div>
 
+
+   
     <!-- Div do Título: LEI ZERO TERMODINAMICA -->
     <div class="text">
         <div class="wrapper">
@@ -60,13 +63,11 @@
 
     </div>
 
+    
+    <!-- Renderizador do Three.js -->
+    <div id="threejs-container"></div>
 
-
-<!-- CANVAS -->
-    <canvas id="canvas" width="800" height="600"></canvas>
-
-
-
+    
     <!-- Adiciona botões de "Pausa" e "Play" -->
     <div class="container">
       <div class="control-buttons">
@@ -82,10 +83,9 @@
   <div class="slider-label-slow">Devagar</div>
   <div class="slider-label-fast">Rápido</div>
   <div class="clearfix"></div>
-  <div class="exchange-rate-label">Taxa de troca de calor</div>
+  <div class="exchange-rate-label">Velocidade da simulação</div>
   <img src="./image-icons/speed.png" alt="Speed icon" class="img-speed">
 </div>
-
 
 <!-- Adiciona imagens -->
 <div style="text-align: center;">
@@ -115,8 +115,12 @@
     </p>
 </div>
 
+<!-- Incluindo a versão online do Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <script src="./src/functions.js"></script>
     <script src="./src/js/runner.js"></script>
+
 
 </body>
 
