@@ -1,5 +1,5 @@
 # Pulsar 3D ⚛️
-(English)
+(English | EN)
 
 ![Pulsar Image](link_to_pulsar_image)
 
