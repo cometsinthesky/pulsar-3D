@@ -16,11 +16,11 @@ Pulsar 3D é uma simulação interativa em 3D de um Pulsar, uma estrela de nêut
 
 ### Passos
 
-⁕ Acessando a simulação:
+Acessando a simulação:
 
 - Acesse a página web da simulação em [https://cometsinthesky.github.io/pulsar-3D/](https://cometsinthesky.github.io/pulsar-3D/).
 
-⁕ Se preferir usar a simulação offline, siga as seguintes instruções:
+Se preferir usar a simulação offline, siga as seguintes instruções:
 * Na página do [repositório](https://github.com/cometsinthesky/pulsar-3D) clique no ícone verde **<>code**;
 * Em seguida, clique em "Download ZIP", ou se preferir o download direto clique [AQUI](https://github.com/cometsinthesky/pulsar-3D/archive/refs/heads/main.zip);
 * Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
@@ -38,7 +38,7 @@ Pulsar 3D é uma simulação interativa em 3D de um Pulsar, uma estrela de nêut
 
 A simulação em tempo real de Pulsar 3D é baseada em modelos astronômicos precisos e algoritmos de física. Ela oferece uma representação visual dos campos magnéticos, emissões de radiação e rotação do pulsar. Você pode observar como esses elementos interagem e afetam o ambiente ao redor do pulsar.
 
-⁕ Agora você está pronto para explorar a simulação e aprender mais sobre os Pulsares.
+Agora você está pronto para explorar a simulação e aprender mais sobre os Pulsares.
 
 <p align="center">
 <img src="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2313/files/2020/06/yeah-science.jpg" alt="Yeah Science" height="230">
