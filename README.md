@@ -1,12 +1,13 @@
-# Pulsar 3D
+# Pulsar 3D ⚛️
+(Português | Pt-BR)
 
 ![Pulsar Image](link_para_uma_imagem_do_pulsar)
 
-## Descrição
+## Descrição 📝
 
 Pulsar 3D é uma simulação interativa em 3D de um Pulsar, uma estrela de nêutrons altamente magnetizada que emite feixes regulares de radiação eletromagnética. Esta simulação oferece uma experiência visual e educacional única para explorar as características e dinâmicas desses fascinantes objetos astronômicos.
 
-## Como Usar
+## Como Usar 👨‍🏫
 
 ### Requisitos
 
@@ -33,7 +34,7 @@ Pulsar 3D é uma simulação interativa em 3D de um Pulsar, uma estrela de nêut
 - Botão pausa/play: pausa e continua a simulação.
 - Botão reiniciar: reinicia a simulação.
 
-## Dinâmica da Simulação
+## Dinâmica da Simulação 🎮🕹️
 
 A simulação em tempo real de Pulsar 3D é baseada em modelos astronômicos precisos e algoritmos de física. Ela oferece uma representação visual dos campos magnéticos, emissões de radiação e rotação do pulsar. Você pode observar como esses elementos interagem e afetam o ambiente ao redor do pulsar.
 
@@ -43,7 +44,7 @@ A simulação em tempo real de Pulsar 3D é baseada em modelos astronômicos pre
 <img src="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2313/files/2020/06/yeah-science.jpg" alt="Yeah Science" height="230">
 </p>
  
-## Educação
+## Educação 📚✏️
 
 Pulsar 3D foi desenvolvido com o propósito de educar e inspirar. Aqui estão algumas maneiras de usar esta simulação para aprendizado:
 
