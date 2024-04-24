@@ -28,8 +28,8 @@ Pulsar 3D é uma simulação interativa em 3D de um Pulsar, uma estrela de nêut
 ### Controles
 
 - Use o botão esquerdo do mouse para clicar e arrastar na cena para controlar a câmera.
-- Uso o scroll do mouse para aumentar ou diminuir a distância do pulsar.
-- Use o botão direito do mouse para posicionar o pulsar em outro local da cena. 
+- Use o scroll do mouse para aumentar ou diminuir a distância do pulsar.
+- Use o botão direito do mouse para clicar e arrastar o pulsar e posicioná-lo em outro local da cena. 
 - Botão pausa/play: pausa e continua a simulação.
 - Botão reiniciar: reinicia a simulação.
 
@@ -42,7 +42,7 @@ A simulação em tempo real de Pulsar 3D é baseada em modelos astronômicos pre
 <p align="center">
 <img src="https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/2313/files/2020/06/yeah-science.jpg" alt="Yeah Science" height="230">
 </p>
-
+ 
 ## Educação
 
 Pulsar 3D foi desenvolvido com o propósito de educar e inspirar. Aqui estão algumas maneiras de usar esta simulação para aprendizado:
