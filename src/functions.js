@@ -1,25 +1,25 @@
 // Configuração básica
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('threejs-container').appendChild(renderer.domElement);
 
 // Esfera representando o pulsar
-const geometry = new THREE.SphereGeometry(1, 32, 32);
-const material = new THREE.MeshPhongMaterial({ color: 0xff0000 });
+const geometry = new THREE.SphereGeometry(0.5, 64, 64);
+const material = new THREE.MeshPhongMaterial({ color: 0xabe5ff });
 const pulsar = new THREE.Mesh(geometry, material);
 scene.add(pulsar);
 
 // Cones nos polos do pulsar
-const coneGeometry = new THREE.ConeGeometry(0.3, 1, 32);
-const coneMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
+const coneGeometry = new THREE.ConeGeometry(0.2, 1, 64);
+const coneMaterial = new THREE.MeshPhongMaterial({ color: 0xfaed3a });
 const cone1 = new THREE.Mesh(coneGeometry, coneMaterial);
 const cone2 = new THREE.Mesh(coneGeometry, coneMaterial);
 
 // Posiciona os cones nos polos da esfera
-cone1.position.set(0, -1.3, 0);
-cone2.position.set(0, 1.3, 0);
+cone1.position.set(0, -1.15, 0);
+cone2.position.set(0, 1.15, 0);
 
 // Inverte o cone1 ao longo do eixo Y
 cone1.scale.setY(2);
@@ -30,11 +30,11 @@ pulsar.add(cone1);
 pulsar.add(cone2);
 
 // Configuração de luz
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
 scene.add(ambientLight);
 
 const pointLight = new THREE.PointLight(0xffffff, 1);
-pointLight.position.set(5, 5, 5);
+pointLight.position.set(5, 0, 5);
 scene.add(pointLight);
 
 // Posiciona a câmera
@@ -57,9 +57,10 @@ function animate() {
     if (isSimulationRunning) {
         requestAnimationFrame(animate);
         
-        // Rotaciona apenas a esfera principal (pulsar)
-        pulsar.rotation.x += 0.01;
+        // Define a rotação em torno do eixo y com inclinação de 45 graus em relação ao eixo x
         pulsar.rotation.y += 0.01;
+        pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos
+        pulsar.rotation.z = Math.PI / 4; // 45 graus em radianos
 
         renderer.render(scene, camera);
     }
