@@ -1,5 +1,5 @@
 # Pulsar 3D ⚛️
-(Português | Pt-BR)
+(Português | Pt-BR) ([English | EN](README/EN/README.md))
 
 ![Pulsar Image](link_para_uma_imagem_do_pulsar)
 
