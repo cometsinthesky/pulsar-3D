@@ -7,22 +7,14 @@ renderer.setSize(800, 600); // Define o tamanho da janela de renderização
 renderer.setClearColor(0x000000); // Define a cor de fundo como branco
 document.getElementById('threejs-container').appendChild(renderer.domElement);
 
-// // Esfera representando o pulsar
-// const geometry = new THREE.SphereGeometry(0.5, 64, 64);
-// const material = new THREE.MeshPhongMaterial({ color: 0xabe5ff });
-// const pulsar = new THREE.Mesh(geometry, material);
-// scene.add(pulsar);
-
 
 // Esfera representando o pulsar com textura de estrelas
-const geometry = new THREE.SphereGeometry(0.5, 64, 64);
+const geometry = new THREE.SphereGeometry(0.5, 100, 100);
 const textureLoader = new THREE.TextureLoader();
-const starTexture = textureLoader.load('images/map.jpg');
+const starTexture = textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/images/map.jpg');
 const starMaterial = new THREE.MeshBasicMaterial({ map: starTexture });
 const pulsar = new THREE.Mesh(geometry, starMaterial);
 scene.add(pulsar);
-
-// BKP https://blenderartists.org/uploads/default/original/4X/4/e/3/4e31caa0f5acc386e4a504eab2269ebdb47f0307.jpg 
 
 // Cones nos polos do pulsar
 const coneGeometry = new THREE.ConeGeometry(0.2, 1, 64);
