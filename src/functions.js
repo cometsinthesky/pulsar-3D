@@ -43,6 +43,7 @@ pointLight.position.set(-10, -10, 0);
 scene.add(pointLight);
 
 // Posiciona a câmera
+// Distância da câmera do Pulsar
 camera.position.z = 5;
 
 // Adiciona OrbitControls
@@ -50,33 +51,39 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // Movimento suave da câmera
 controls.dampingFactor = 0.3; // Fator de amortecimento
 
+
 // Variável para controlar o estado da simulação
 let isSimulationRunning = true;
 
-// Função para pausar e retomar a animação
-function toggleSimulation() {
-    isSimulationRunning = !isSimulationRunning;
-    pauseButton.textContent = isSimulationRunning ? 'Pausa' : 'Play';
-    if (isSimulationRunning) {
-        animate();
-    }
+// Velocidade inicial de rotação
+let rotationSpeed = 0.05;
+
+// Variável para controlar a rotação
+let isRotationRunning = true; 
+
+// Função para pausar e retomar a rotação
+function toggleRotation() {
+    isRotationRunning = !isRotationRunning;
+    pauseButton.textContent = isRotationRunning ? 'Pausa' : 'Play';
 }
 
 // Função de animação
 function animate() {
-    if (isSimulationRunning) {
-        requestAnimationFrame(animate);
-        
-        // Define a rotação em torno do eixo y com inclinação de 45 graus em relação ao eixo x
-        pulsar.rotation.y += 0.05;
-        pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos
-        pulsar.rotation.z = Math.PI / 4; // 45 graus em radianos
-
-        // Atualiza os OrbitControls
-        controls.update();
-
-        renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+    
+    if (isRotationRunning) {
+        // Se a rotação estiver ativa, aplicar a rotação em torno do eixo y
+        pulsar.rotation.y += rotationSpeed;
     }
+    
+    // Define a inclinação de 45 graus em relação aos eixos x e z
+    pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos
+    pulsar.rotation.z = Math.PI / 4; // 45 graus em radianos
+
+    // Atualiza os OrbitControls
+    controls.update();
+
+    renderer.render(scene, camera);
 }
 
 // Selecione os botões de pausa e reiniciar
@@ -85,7 +92,7 @@ const restartButton = document.querySelector('.restart-button');
 
 // Adicione um evento de clique ao botão de pausa/play
 pauseButton.addEventListener('click', function() {
-    toggleSimulation();
+    toggleRotation();
 });
 
 // Adicione um evento de clique ao botão de reiniciar
