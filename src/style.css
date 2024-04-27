@@ -5,8 +5,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-/* Adiciona gradiente de preto a branco */
-background: linear-gradient(to bottom, #000000, #1A1A1A);
+  /* Adiciona gradiente de preto a branco */
+  background: linear-gradient(to bottom, #000000, #1A1A1A);
 }
 
 /* New Title Hover */
@@ -23,52 +23,62 @@ background: linear-gradient(to bottom, #000000, #1A1A1A);
   transform: scale(1.1);
 
   .wrapper {
-      padding-left: 24px;
-      padding-right: 24px;
-      padding-top: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 30px;
 
+    .letter {
+      transition: ease-out 0.3s;
+      /* Distância entre os títulos */
+      transform: translateY(40%);
+    }
+
+    .shadow {
+      transform: scale(1.1, -1.1);
+      color: #414141cc;
+      transition: ease-in 0.1s, ease-out 0.1s;
+    }
+
+    &:hover {
       .letter {
-          transition: ease-out 0.3s;
-          /* Distância entre os títulos */
-          transform: translateY(40%);
+        transform: translateY(-30%);
       }
 
       .shadow {
-          transform: scale(1.1, -1.1);
-          color: #414141cc;
-          transition: ease-in 0.1s, ease-out 0.1s;
+        opacity: 0;
+        transform: translateY(30%);
       }
-
-      &:hover {
-          .letter {
-              transform: translateY(-30%);
-          }
-
-          .shadow {
-              opacity: 0;
-              transform: translateY(30%);
-          }
-      }
+    }
   }
 }
 
 
 /* Botão pausa */
-.pause-button{
+.pause-button {
   font-family: Roboto, sans-serif;
   font-weight: bold;
   position: absolute;
-  top: 270px; /* Ajuste conforme necessário */
-  left: 120px; /* Ajuste conforme necessário */
+  top: 270px;
+  /* Ajuste conforme necessário */
+  left: 120px;
+  /* Ajuste conforme necessário */
   padding: 8px 26px;
-  background-color: #4CAF50; /* Cor de fundo do botão */
-  color: white; /* Cor do texto do botão */
-  border: none; /* Remove a borda */
-  border-radius: 5px; /* Borda arredondada */
-  cursor: pointer; /* Mostra o cursor como ponteiro ao passar sobre o botão */
-  font-size: 14px; /* Tamanho da fonte */
-  width: 95px; /* Largura fixa do botão */
-  text-align: center; /* Centralizar o texto */
+  background-color: #4CAF50;
+  /* Cor de fundo do botão */
+  color: white;
+  /* Cor do texto do botão */
+  border: none;
+  /* Remove a borda */
+  border-radius: 5px;
+  /* Borda arredondada */
+  cursor: pointer;
+  /* Mostra o cursor como ponteiro ao passar sobre o botão */
+  font-size: 14px;
+  /* Tamanho da fonte */
+  width: 95px;
+  /* Largura fixa do botão */
+  text-align: center;
+  /* Centralizar o texto */
 }
 
 /* Botão reinicia */
@@ -76,26 +86,36 @@ background: linear-gradient(to bottom, #000000, #1A1A1A);
   font-family: Roboto, sans-serif;
   font-weight: bold;
   position: absolute;
-  top: 330px; /* Ajuste conforme necessário */
-  left: 112px; /* Ajuste conforme necessário */
+  top: 330px;
+  /* Ajuste conforme necessário */
+  left: 112px;
+  /* Ajuste conforme necessário */
   padding: 8px 26px;
-  background-color: #4CAF50; /* Cor de fundo do botão */
-  color: white; /* Cor do texto do botão */
-  border: none; /* Remove a borda */
-  border-radius: 5px; /* Borda arredondada */
-  cursor: pointer; /* Mostra o cursor como ponteiro ao passar sobre o botão */
-  font-size: 14px; /* Tamanho da fonte */
+  background-color: #4CAF50;
+  /* Cor de fundo do botão */
+  color: white;
+  /* Cor do texto do botão */
+  border: none;
+  /* Remove a borda */
+  border-radius: 5px;
+  /* Borda arredondada */
+  cursor: pointer;
+  /* Mostra o cursor como ponteiro ao passar sobre o botão */
+  font-size: 14px;
+  /* Tamanho da fonte */
 }
 
 .pause-button:hover,
 .restart-button:hover {
-  background-color: #45a049; /* Altera a cor de fundo quando o botão é passado com o mouse */
+  background-color: #45a049;
+  /* Altera a cor de fundo quando o botão é passado com o mouse */
 }
 
 /* Estilo quando pressionado */
 .pause-button:active,
 .restart-button:active {
-  background-color: #50bb56; /* Cor de fundo mais escura */
+  background-color: #50bb56;
+  /* Cor de fundo mais escura */
 }
 
 
@@ -122,4 +142,44 @@ footer {
 
 .colorgenerator {
   color: #abe5ff;
+}
+
+
+/* Adicione estilos específicos para a landing page aqui */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('images/landingbackground.jpg');
+  background-size: cover;
+  backdrop-filter: blur(20px);
+}
+.landing-content {
+  color: #f0f0f0;
+  max-width: 95%;
+  text-align: center;
+}
+.enter-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+.enter-button:hover {
+  background-color: #45a049;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 3s ease;
 }
