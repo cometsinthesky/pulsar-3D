@@ -1,26 +1,28 @@
 // Configuração básica
 const scene = new THREE.Scene();
+//                                     FV, Aspect Ratio, Near plane, Far plane 
 const camera = new THREE.PerspectiveCamera(50, 800 / 600, 0.1, 100);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(800, 600); // Define o tamanho da janela de renderização
 renderer.setClearColor(0x000000); // Define a cor de fundo como branco
 document.getElementById('threejs-container').appendChild(renderer.domElement);
 
-// Esfera representando o pulsar
-const geometry = new THREE.SphereGeometry(0.5, 64, 64);
-const material = new THREE.MeshPhongMaterial({ color: 0xabe5ff });
-const pulsar = new THREE.Mesh(geometry, material);
-scene.add(pulsar);
-
-
-// // Esfera representando o pulsar com textura de estrelas
+// // Esfera representando o pulsar
 // const geometry = new THREE.SphereGeometry(0.5, 64, 64);
-// const textureLoader = new THREE.TextureLoader();
-// const starTexture = textureLoader.load('https://blenderartists.org/uploads/default/original/4X/4/e/3/4e31caa0f5acc386e4a504eab2269ebdb47f0307.jpg');
-// const starMaterial = new THREE.MeshBasicMaterial({ map: starTexture });
-// const pulsar = new THREE.Mesh(geometry, starMaterial);
+// const material = new THREE.MeshPhongMaterial({ color: 0xabe5ff });
+// const pulsar = new THREE.Mesh(geometry, material);
 // scene.add(pulsar);
 
+
+// Esfera representando o pulsar com textura de estrelas
+const geometry = new THREE.SphereGeometry(0.5, 64, 64);
+const textureLoader = new THREE.TextureLoader();
+const starTexture = textureLoader.load('images/map.jpg');
+const starMaterial = new THREE.MeshBasicMaterial({ map: starTexture });
+const pulsar = new THREE.Mesh(geometry, starMaterial);
+scene.add(pulsar);
+
+// BKP https://blenderartists.org/uploads/default/original/4X/4/e/3/4e31caa0f5acc386e4a504eab2269ebdb47f0307.jpg 
 
 // Cones nos polos do pulsar
 const coneGeometry = new THREE.ConeGeometry(0.2, 1, 64);
@@ -45,7 +47,7 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
 scene.add(ambientLight);
 
 const pointLight = new THREE.PointLight(0xffffff, 1);
-pointLight.position.set(5, 0, 5);
+pointLight.position.set(-10, -10, 0);
 scene.add(pointLight);
 
 // Posiciona a câmera
@@ -74,7 +76,7 @@ function animate() {
         requestAnimationFrame(animate);
         
         // Define a rotação em torno do eixo y com inclinação de 45 graus em relação ao eixo x
-        pulsar.rotation.y += 0.01;
+        pulsar.rotation.y += 0.05;
         pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos
         pulsar.rotation.z = Math.PI / 4; // 45 graus em radianos
 
