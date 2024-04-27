@@ -1,3 +1,23 @@
+
+function redirectToSimulation() {
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.add('fade-out');
+    // Substitui a entrada atual no histórico de navegação pela página da simulação
+    history.replaceState({}, '', 'index.html');
+}
+
+// Adiciona um ouvinte de evento de transição ao elemento .overlay
+const overlay = document.querySelector('.overlay');
+overlay.addEventListener('transitionend', function (event) {
+    // Verifica se a transição que terminou é a de opacidade
+    if (event.propertyName === 'opacity') {
+        // Remove o elemento .overlay do DOM
+        overlay.remove();
+        // Inicia a animação do pulsar
+        isRotationRunning = true;
+    }
+});
+
 // Configuração básica
 const scene = new THREE.Scene();
 //                                     FV, Aspect Ratio, Near plane, Far plane 
@@ -35,11 +55,11 @@ pulsar.add(cone1);
 pulsar.add(cone2);
 
 // Configuração de luz
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
-const pointLight = new THREE.PointLight(0xffffff, 1);
-pointLight.position.set(-10, -10, 0);
+const pointLight = new THREE.PointLight(0xffffff, 0.7);
+pointLight.position.set(10, 0, 10);
 scene.add(pointLight);
 
 // Posiciona a câmera
@@ -59,7 +79,7 @@ let isSimulationRunning = true;
 let rotationSpeed = 0.05;
 
 // Variável para controlar a rotação
-let isRotationRunning = true; 
+let isRotationRunning = false;
 
 // Função para pausar e retomar a rotação
 function toggleRotation() {
@@ -70,12 +90,12 @@ function toggleRotation() {
 // Função de animação
 function animate() {
     requestAnimationFrame(animate);
-    
+
     if (isRotationRunning) {
         // Se a rotação estiver ativa, aplicar a rotação em torno do eixo y
         pulsar.rotation.y += rotationSpeed;
     }
-    
+
     // Define a inclinação de 45 graus em relação aos eixos x e z
     pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos
     pulsar.rotation.z = Math.PI / 4; // 45 graus em radianos
@@ -91,16 +111,17 @@ const pauseButton = document.querySelector('.pause-button');
 const restartButton = document.querySelector('.restart-button');
 
 // Adicione um evento de clique ao botão de pausa/play
-pauseButton.addEventListener('click', function() {
+pauseButton.addEventListener('click', function () {
     toggleRotation();
 });
 
 // Adicione um evento de clique ao botão de reiniciar
 restartButton.addEventListener('click', function() {
     // Implemente a lógica para reiniciar a simulação
-    // Isso pode envolver redefinir variáveis, limpar o canvas, etc.
-    // Aqui, por exemplo, vamos apenas recarregar a página
-    location.reload();
+    // Aqui vamos reiniciar a simulação definindo as variáveis apropriadas
+    isRotationRunning = false; // Começar a rotação novamente
+    pulsar.rotation.set(0, 0, 0); // Rotação inicial com o eixo y a 30 graus (30 * Math.PI / 180)
+    controls.reset(); // Redefinir os controles da câmera
 });
 
 // Inicia a animação
