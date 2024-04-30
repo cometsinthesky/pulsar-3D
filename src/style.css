@@ -147,6 +147,8 @@ footer {
 
 /* Adicione estilos específicos para a landing page aqui */
 .overlay {
+  background-image: url('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/images/landingbackground.jpg');
+  background-size: cover;
   position: fixed;
   top: 0;
   left: 0;
@@ -155,31 +157,44 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('images/landingbackground.jpg');
-  background-size: cover;
   backdrop-filter: blur(20px);
 }
+
 .landing-content {
   color: #f0f0f0;
-  max-width: 95%;
+  max-width: 100%;
+  max-height: 100%;
   text-align: center;
 }
+
 .enter-button {
-  background-color: #4CAF50;
+  background-color: #45a049;
   color: white;
   padding: 15px 30px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  transition: background-color 0.3s ease;
+  transition: background-color 1s ease; /* Mantém a transição da cor de fundo */
   margin-top: 10px;
+  display: inline-block; /* Garante que o botão seja exibido como um bloco */
 }
+
 .enter-button:hover {
-  background-color: #45a049;
+  background-color: #4CAF50;
+  transform: scale(1.03); /* Aplica uma escala ao botão ao passar o mouse */
+  transition: transform 0.5s ease; /* Adiciona uma transição gradual de 0.5 segundo */
+}
+
+.enter-button:hover, .enter-button {
+  transition: background-color 1s ease, transform 0.5s ease; /* Adiciona uma transição gradual de 0.5 segundo ao retirar o mouse */
 }
 
 .fade-out {
   opacity: 0;
-  transition: opacity 3s ease;
+  transition: opacity 2s ease;
+}
+
+.hidden {
+  display: none;
 }
