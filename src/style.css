@@ -9,6 +9,23 @@ body {
   background: linear-gradient(to bottom, #000000, #1A1A1A);
 }
 
+#audio-container {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+}
+
+#audio-button {
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
 /* New Title Hover */
 .text {
   font-family: "Roboto";
@@ -175,19 +192,25 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  transition: background-color 1s ease; /* Mantém a transição da cor de fundo */
+  transition: background-color 1s ease;
+  /* Mantém a transição da cor de fundo */
   margin-top: 10px;
-  display: inline-block; /* Garante que o botão seja exibido como um bloco */
+  display: inline-block;
+  /* Garante que o botão seja exibido como um bloco */
 }
 
 .enter-button:hover {
   background-color: #4CAF50;
-  transform: scale(1.03); /* Aplica uma escala ao botão ao passar o mouse */
-  transition: transform 0.5s ease; /* Adiciona uma transição gradual de 0.5 segundo */
+  transform: scale(1.03);
+  /* Aplica uma escala ao botão ao passar o mouse */
+  transition: transform 0.5s ease;
+  /* Adiciona uma transição gradual de 0.5 segundo */
 }
 
-.enter-button:hover, .enter-button {
-  transition: background-color 1s ease, transform 0.5s ease; /* Adiciona uma transição gradual de 0.5 segundo ao retirar o mouse */
+.enter-button:hover,
+.enter-button {
+  transition: background-color 1s ease, transform 0.5s ease;
+  /* Adiciona uma transição gradual de 0.5 segundo ao retirar o mouse */
 }
 
 .fade-out {
@@ -197,4 +220,9 @@ footer {
 
 .hidden {
   display: none;
+}
+
+#threejs-container {
+  cursor: pointer;
+  /* Muda o cursor para uma mão quando o mouse estiver sobre o elemento com o ID 'threejs-container' */
 }

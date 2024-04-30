@@ -1,4 +1,32 @@
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtém referências para o elemento de áudio e o botão de controle
+    var audio = document.getElementById('music');
+    var button = document.getElementById('audio-button');
+
+    // Configurações iniciais do áudio
+    audio.autoplay = true; // Ativa a reprodução automática
+    audio.volume = 1; // Define o volume inicial como 50%
+
+    // Função para alternar entre reproduzir e pausar o áudio
+    function toggleAudio() {
+        if (audio.paused) {
+            audio.play();
+            button.innerHTML = "&#x1F50A;"; // Altera o ícone para o ícone de alto-falante
+        } else {
+            audio.pause();
+            button.innerHTML = "&#x1F507;"; // Altera o ícone para o ícone de mudo
+        }
+    }
+
+    // Inicializa o áudio tocando e define o ícone do botão
+    toggleAudio();
+
+    // Adiciona um ouvinte de evento de clique para o botão de controle do áudio
+    button.addEventListener('click', toggleAudio);
+});
+
+
 // Função para efeito de máquina de escrever
 function typewriterEffect(element, text, speed, callback) {
     let index = 0;
@@ -17,6 +45,7 @@ function typewriterEffect(element, text, speed, callback) {
     }, speed);
 }
 
+
 // Seleciona os elementos de título e parágrafo
 const titleElement = document.querySelector('h1');
 const paragraphElement = document.querySelector('.landing-content .landing-paragraph');
@@ -26,8 +55,8 @@ const titleText = "Bem-vind@ à Simulação Pulsar 3D";
 const paragraphText = "Explore o fascinante mundo dos pulsares em uma experiência tridimensional!"; // Certifique-se de que o texto esteja correto
 
 // Velocidades de digitação em milissegundos para o título e parágrafo
-const titleTypingSpeed = 100;
-const paragraphTypingSpeed = 50;
+const titleTypingSpeed = 120;
+const paragraphTypingSpeed = 60;
 
 // Aplica o efeito de máquina de escrever ao título
 typewriterEffect(titleElement, titleText, titleTypingSpeed, () => {
@@ -60,6 +89,14 @@ function redirectToSimulation() {
     history.replaceState({}, '', 'index.html');
 }
 
+// Show hidden elements when enter button clicked
+document.querySelector('.enter-button').addEventListener('click', function () {
+    const backgroundElements = document.querySelectorAll('.hidden');
+    backgroundElements.forEach(element => {
+        element.classList.remove('hidden');
+    });
+});
+
 // Adiciona um ouvinte de evento de transição ao elemento .overlay
 const overlay = document.querySelector('.overlay');
 overlay.addEventListener('transitionend', function (event) {
@@ -71,6 +108,8 @@ overlay.addEventListener('transitionend', function (event) {
         isRotationRunning = true;
     }
 });
+
+
 
 // Configuração básica
 const scene = new THREE.Scene();
