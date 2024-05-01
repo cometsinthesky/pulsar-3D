@@ -5,7 +5,7 @@
 
 ## Descrição 📝
 
-Pulsar 3D é uma simulação interativa em 3D de um Pulsar, uma estrela de nêutrons altamente magnetizada que emite feixes regulares de radiação eletromagnética. Esta simulação oferece uma experiência visual e educacional única para explorar as características e dinâmicas desses fascinantes objetos astronômicos.
+Pulsar 3D é uma simulação interativa em 3D de um Pulsar, uma estrela de nêutrons em alta rotação altamente magnetizada que emite feixes regulares de radiação eletromagnética. Esta simulação oferece uma experiência visual e educacional única para explorar as características e dinâmicas desses fascinantes objetos astronômicos.
 
 ## Como Usar 👨‍🏫
 
@@ -36,7 +36,11 @@ Se preferir usar a simulação offline, siga as seguintes instruções:
 
 ## Dinâmica da Simulação 🎮🕹️
 
-A simulação em tempo real de Pulsar 3D é baseada em modelos astronômicos precisos e algoritmos de física. Ela oferece uma representação visual dos campos magnéticos, emissões de radiação e rotação do pulsar. Você pode observar como esses elementos interagem e afetam o ambiente ao redor do pulsar.
+A simulação em tempo real de Pulsar 3D utiliza a biblioteca Three.js para controle de câmera, criação de objetos em 3D e funções como o SkyBox para controle de fundo e imersão 3D. 
+
+O fundo estelar real da NASA, encontrado em [Deep Star Maps](https://svs.gsfc.nasa.gov/4851/), proporciona um ambiente autêntico e imersivo para a simulação.
+
+Além disso, a simulação inclui imagens descritivas sobre o comportamento dos pulsares, fornecendo um recurso didático valioso para uso em sala de aula. A simulação proporciona a visualização e interação da rotação do pulsar, campos magnéticos e emissões de radiação. Os usuários podem observar como esses elementos interagem e afetam o ambiente ao redor do pulsar, proporcionando uma compreensão mais profunda desses fenômenos astronômicos fascinantes.
 
 Agora você está pronto para explorar a simulação e aprender mais sobre os Pulsares.
 
