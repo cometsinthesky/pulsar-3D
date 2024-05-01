@@ -45,24 +45,41 @@ function typewriterEffect(element, text, speed, callback) {
     }, speed);
 }
 
-
-// Seleciona os elementos de título e parágrafo
-const titleElement = document.querySelector('h1');
+// Seleciona os elementos parágrafo
 const paragraphElement = document.querySelector('.landing-content .landing-paragraph');
 
-// Textos para os títulos e parágrafos
-const titleText = "Bem-vind@ à Simulação Pulsar 3D";
+// Texto para o parágrafo
 const paragraphText = "Explore o fascinante mundo dos pulsares em uma experiência tridimensional!"; // Certifique-se de que o texto esteja correto
 
-// Velocidades de digitação em milissegundos para o título e parágrafo
-const titleTypingSpeed = 120;
-const paragraphTypingSpeed = 60;
+// Velocidades de digitação em milissegundos para o parágrafo
+const paragraphTypingSpeed = 50;
 
-// Aplica o efeito de máquina de escrever ao título
-typewriterEffect(titleElement, titleText, titleTypingSpeed, () => {
-    // Aplica o efeito de máquina de escrever ao parágrafo após a digitação do título ser concluída
-    typewriterEffect(paragraphElement, paragraphText, paragraphTypingSpeed);
+setTimeout(() => {
+    // Aplica o efeito de máquina de escrever ao parágrafo
+typewriterEffect(paragraphElement, paragraphText, paragraphTypingSpeed);
+}, 4000);
+
+// GSAP FADE IN CONTROLER
+document.addEventListener('DOMContentLoaded', function () {
+    gsap.from('.fade-in-hover', { opacity: 0, duration: 5, delay: 1 });
+    gsap.from('.fade-in-title', { opacity: 0, duration: 5, delay: 3 });
+    gsap.from('.fade-in-paragraph', { opacity: 0, duration: 5, delay: 3 });
 });
+
+
+// Fechar o dropdown quando o usuário clica fora dele
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.style.display === "block") {
+          openDropdown.style.display = "none";
+        }
+      }
+    }
+  }; 
+
 
 // Seleciona o botão
 const button = document.querySelector('.enter-button');
@@ -109,9 +126,15 @@ overlay.addEventListener('transitionend', function (event) {
     }
 });
 
+document.querySelector('.enter-button').addEventListener('click', function () {
+    // Remove a classe 'hidden' dos elementos do fundo quando o botão for clicado
+    const backgroundElements = document.querySelectorAll('.hidden');
+    backgroundElements.forEach(element => {
+        element.classList.remove('hidden');
+    });
+});
 
-
-// Configuração básica
+// Configuração básica da cena
 const scene = new THREE.Scene();
 //                                     FV, Aspect Ratio, Near plane, Far plane 
 const camera = new THREE.PerspectiveCamera(50, 800 / 600, 0.1, 100);
@@ -174,11 +197,28 @@ let rotationSpeed = -0.05;
 // Variável para controlar a rotação
 let isRotationRunning = false;
 
+
 // Função para pausar e retomar a rotação
 function toggleRotation() {
     isRotationRunning = !isRotationRunning;
     pauseButton.textContent = isRotationRunning ? 'Pausa' : 'Play';
 }
+
+// Selecione os botões de pausa e reiniciar
+const pauseButton = document.querySelector('.pause-button');
+const restartButton = document.querySelector('.restart-button');
+
+// Adicione um evento de clique ao botão de pausa/play
+pauseButton.addEventListener('click', function () {
+    toggleRotation();
+});
+
+// Adicione um evento de clique ao botão de reiniciar
+restartButton.addEventListener('click', function () {
+    isRotationRunning = false; // Define a rotação como parada
+    pauseButton.textContent = 'Play'; // Atualiza o texto do botão pauseButton para 'Play'
+});
+
 
 // Função de animação
 function animate() {
@@ -198,15 +238,6 @@ function animate() {
 
     renderer.render(scene, camera);
 }
-
-// Selecione os botões de pausa e reiniciar
-const pauseButton = document.querySelector('.pause-button');
-const restartButton = document.querySelector('.restart-button');
-
-// Adicione um evento de clique ao botão de pausa/play
-pauseButton.addEventListener('click', function () {
-    toggleRotation();
-});
 
 // Defina angleInRadians no escopo global e inicialize com 0 graus
 let angleInRadians = THREE.MathUtils.degToRad(0);

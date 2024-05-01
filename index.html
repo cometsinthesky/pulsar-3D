@@ -14,22 +14,40 @@
     <!-- Audio container -->
     <div id="audio-container">
         <audio id="music" autoplay loop>
-            <source src="https://github.com/cometsinthesky/pulsar-3D/raw/main/music/Musictown-cinematic-atmosphere.mp3"
+            <source
+                src="https://github.com/cometsinthesky/pulsar-3D/raw/main/music/Amurich-electronic-ambient-music.mp3"
                 type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
         <button id="audio-button"></button>
     </div>
 
-    <div style="width: 100%; text-align: left; padding-left: 40px;">
-        <p id="instructionText">
-            1 - Botão esquerdo do mouse: clique e arraste o pulsar para controlar a câmera.<br>
-            2 - Scroll do mouse: aumenta ou diminui a distância do pulsar.<br>
-            3 - Botão direito do mouse: clique e arraste para posicionar o pulsar.
-        </p>
+<!-- Botão dropdown -->
+<div class="dropdown">
+    <button class="dropdown-btn">
+      <img src="/image-icons/joystick.svg" alt="Joystick" class="icon"> <!-- Ícone de joystick -->
+    </button>
+    <!-- Dropdown conteúdo -->
+    <div class="dropdown-content">
+      <p id="instructionText">
+        1 - Botão esquerdo do mouse: clique e arraste o pulsar para controlar a câmera.<br>
+        2 - Scroll do mouse: aumenta ou diminui a distância do pulsar.<br>
+        3 - Botão direito do mouse: clique e arraste para posicionar o pulsar.
+      </p>
+    </div>
+  </div>
+
+    <!-- TITLE LANDING PAGE -->
+    <div class="overlay">
+        <div class="landing-content">
+            <h1 class="fade-in-title" style="font-size:30px;">Bem-vind@ à Simulação Pulsar 3D</h1>
+            <p class="landing-paragraph fade-in-paragraph" style="font-size: 20px;">&nbsp;</p>
+            <button class="enter-button fade-in-paragraph" onclick="redirectToSimulation()">Entrar na Simulação</button>
+        </div>
     </div>
 
-    <div class="text">
+    <!--  Pulsar 3D Hover Title -->
+    <div class="text fade-in-hover">
         <!-- Conteúdo do título: PULSAR 3D -->
         <div class="wrapper">
             <div id="P" class="letter">P</div>
@@ -81,14 +99,6 @@
         </div>
     </div>
 
-    <div class="overlay">
-        <div class="landing-content">
-            <h1 style="font-size: 36px;"></h1>
-            <p class="landing-paragraph" style="font-size: 20px;">&nbsp;</p>
-            <button class="enter-button" onclick="redirectToSimulation()">Entrar na Simulação</button>
-        </div>
-    </div>
-
     <div style="text-align: center;" class="hidden">
         <!-- Adiciona imagens -->
         <img src="./images/pulsar.jpg" alt="Características de um Pulsar" style="width: 600px; margin-top: 20px;">
@@ -99,6 +109,7 @@
         <img src="./images/evolution.jpg" alt="Ciclo de vida estelar" style="width: 900px; margin-top: 40px;">
     </div>
 
+    <!-- FOOTER -->
     <div style="text-align: center; margin-top: 20px;" class="hidden">
         <footer style="font-size: 14px;">
             <p>Criado por: <a href="https://github.com/cometsinthesky" target="_blank"
@@ -129,22 +140,15 @@
         </p>
     </div>
 
-
+    <!-- APIs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <!-- Inclua o GSAP através do CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
+    <!-- SCRIPTS -->
     <script src="./src/functions.js"></script>
     <script src="./src/js/runner.js"></script>
-
-    <script>
-        document.querySelector('.enter-button').addEventListener('click', function () {
-            // Remove a classe 'hidden' dos elementos do fundo quando o botão for clicado
-            const backgroundElements = document.querySelectorAll('.hidden');
-            backgroundElements.forEach(element => {
-                element.classList.remove('hidden');
-            });
-        });
-    </script>
 
 </body>
 
