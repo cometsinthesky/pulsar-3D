@@ -65,7 +65,7 @@ Em julho de 1967, um novo radiotelescópio de baixa frequência foi inaugurado n
 No começo do projeto, ao analisar as gravações feitas em tiras de papel, Jocelyn Bell notou uma fonte que apresentava um padrão de cintilação incomum. Após algumas semanas, percebeu que essa fonte, que não se assemelhava a outras fontes astronômicas conhecidas, nem às fontes terrestres de interferência de rádio, o sinal dela às vezes reaparecia, quando o telescópio estava apontado para uma direção específica do céu. Após cuidadosa investigação, Bell descobriu que essa fonte era observada na mesma hora sideral a cada dia, indicando ser uma fonte astronômica fixa. Ela discutiu isso com seu orientador e decidiram examinar mais de perto o padrão de cintilação. No início de novembro de 1967, um registrador de gráficos mais rápido foi instalado. Após um mês sem avistamentos, no dia 28 de novembro daquele ano, a fonte reapareceu e foi revelada como uma série de pulsos curtos (menos de 0,3 segundos) separados por cerca de 1,3 segundos (PENNY, 2013, FERREIRA, ANDRADE, LANGHI, 2024, no prelo). Como mostra as linhas de gráfico na parte superior da Fig. 4, trata-se do sinal real capturado do pulsar CP1919.
 
 <p align="center">
-<img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/jocelyn.jpg" alt="Jocelyn Bell Pulsar discovery" height="600">
+<img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/jocelyn.jpg" alt="Jocelyn Bell Pulsar discovery" height="50%" width="50%">
 </p>
 
 ### Definição 📖
