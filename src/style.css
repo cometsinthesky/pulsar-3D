@@ -25,12 +25,11 @@ body {
   cursor: pointer;
 }
 
-
 /* New Title Hover */
 .text {
   font-family: "Roboto";
   color: #f0f0f0;
-  font-size: 32px;
+  font-size: 40px;
   margin-bottom: 10px;
   display: flex;
   position: relative;
@@ -38,6 +37,7 @@ body {
   text-align: center;
   user-select: none;
   transform: scale(1.1);
+  z-index: 9999;
 
   .wrapper {
     padding-left: 24px;
@@ -192,31 +192,43 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  transition: background-color 1s ease;
-  /* Mantém a transição da cor de fundo */
   margin-top: 10px;
   display: inline-block;
-  /* Garante que o botão seja exibido como um bloco */
+  position: relative;
+  transition: background-color 1s ease, transform 0.5s ease; /* Transições aplicadas a ambos os estados */
 }
 
 .enter-button:hover {
   background-color: #4CAF50;
   transform: scale(1.03);
-  /* Aplica uma escala ao botão ao passar o mouse */
-  transition: transform 0.5s ease;
-  /* Adiciona uma transição gradual de 0.5 segundo */
 }
 
-.enter-button:hover,
-.enter-button {
-  transition: background-color 1s ease, transform 0.5s ease;
-  /* Adiciona uma transição gradual de 0.5 segundo ao retirar o mouse */
+.enter-button:active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 1%; /* Adiciona uma borda circular ao efeito de clique */
+  background-color: rgba(255, 255, 255, 0.5); /* Adiciona um efeito de clique semi-transparente */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.1s; /* Adiciona uma transição suave para o efeito de clique */
 }
+
+.enter-button:active::after {
+  transform: scale(1); /* Aumenta o tamanho do efeito de clique ao clicar */
+  opacity: 1; /* Torna o efeito de clique visível */
+}
+
+
 
 .fade-out {
   opacity: 0;
   transition: opacity 2s ease;
 }
+
 
 .hidden {
   display: none;
@@ -226,3 +238,9 @@ footer {
   cursor: pointer;
   /* Muda o cursor para uma mão quando o mouse estiver sobre o elemento com o ID 'threejs-container' */
 }
+
+
+
+
+
+
