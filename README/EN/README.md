@@ -1,5 +1,5 @@
 # Pulsar 3D 🌌⚛️
-([Português | Pt-BR)](./main/README.md))  |  (**[English | EN]**)
+([Português | Pt-BR)](https://github.com/cometsinthesky/pulsar-3D))  |  **English | EN**
 
 ![Pulsar Image](link_to_a_pulsar_image)
 
