@@ -170,12 +170,12 @@ document.getElementById('threejs-container').appendChild(renderer.domElement);
 // Carregar texturas para cada face do cubo
 const textureLoader = new THREE.TextureLoader();
 const textures = [
-    textureLoader.load('right.jpg'),
-    textureLoader.load('left.jpg'),
-    textureLoader.load('top.jpg'),
-    textureLoader.load('bottom.jpg'),
-    textureLoader.load('front.jpg'),
-    textureLoader.load('back.jpg')
+    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/right.png'), 
+    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/left.png'),
+    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/top.png'),
+    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/bottom.png'),
+    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/front.png'),
+    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/back.png')
 ];
 
 // Criar um material para cada textura
