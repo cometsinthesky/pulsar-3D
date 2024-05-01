@@ -30,7 +30,7 @@ If you prefer to use the simulation offline, follow these instructions:
 
 - Use the left mouse button to click and drag on the scene to control the camera.
 - Use the mouse scroll to zoom in or out from the pulsar.
-- Use the right mouse button to click and drag the pulsar and position it elsewhere in the scene.
+- Use the right mouse button to click and drag the camera to another location in the scene.
 - Play/Pause button: pauses and resumes the simulation.
 - Reset button: resets the simulation.
 
