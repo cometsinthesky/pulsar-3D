@@ -5,7 +5,7 @@
 
 ## Description 📝
 
-Pulsar 3D is an interactive 3D simulation of a Pulsar, a highly magnetized neutron star that emits regular beams of electromagnetic radiation. This simulation offers a unique visual and educational experience to explore the characteristics and dynamics of these fascinating astronomical objects.
+Pulsar 3D is an interactive 3D simulation of a Pulsar, a highly magnetized neutron star with rapidly rotatition and emitting regular beams (pulses) of electromagnetic radiation. This simulation provides a unique visual and educational experience to explore the characteristics and dynamics of these fascinating astronomical objects.
 
 ## How to Use 👨‍🏫
 
