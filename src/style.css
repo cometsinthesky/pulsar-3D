@@ -140,8 +140,8 @@ body {
 /* Estilo do botão dropdown */
 .dropdown {
   position: absolute;
-  top: 20px; /* Distância do topo */
-  left: 20px; /* Distância da esquerda */
+  top: 15px; /* Distância do topo */
+  left: 15px; /* Distância da esquerda */
 }
 
 .dropdown-btn {
@@ -155,7 +155,7 @@ body {
   display: none;
   position: absolute;
   background-color: #f0f0f0;
-  min-width: 450px;
+  min-width: 260px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 9999;
   border-radius: 5px;
@@ -174,8 +174,8 @@ body {
 
 /* Estilo do ícone de joystick */
 .icon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 

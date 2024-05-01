@@ -56,8 +56,9 @@ const paragraphTypingSpeed = 50;
 
 setTimeout(() => {
     // Aplica o efeito de máquina de escrever ao parágrafo
-typewriterEffect(paragraphElement, paragraphText, paragraphTypingSpeed);
+    typewriterEffect(paragraphElement, paragraphText, paragraphTypingSpeed);
 }, 4000);
+
 
 // GSAP FADE IN CONTROLER
 document.addEventListener('DOMContentLoaded', function () {
@@ -67,21 +68,42 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Fechar o dropdown quando o usuário clica fora dele
-window.onclick = function(event) {
-    if (!event.target.matches('.dropdown-btn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      for (var i = 0; i < dropdowns.length; i++) {
+//INSTRUCTION BUTTON AND CONTAINER TOGGLE
+window.addEventListener("click", function (event) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var joystickIcon = document.querySelector(".dropdown-btn");
+
+    for (var i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i];
         if (openDropdown.style.display === "block") {
-          openDropdown.style.display = "none";
+            if (event.target !== openDropdown && !openDropdown.contains(event.target) && event.target !== joystickIcon && !joystickIcon.contains(event.target)) {
+                openDropdown.style.display = "none";
+            }
         }
-      }
     }
-  }; 
+});
+
+document.querySelector(".dropdown-btn").addEventListener("click", function (event) {
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+    } else {
+        dropdownContent.style.display = "block";
+    }
+});
+
+document.querySelector(".dropdown-content").addEventListener("click", function (event) {
+    if (event.target !== this) {
+        this.style.display = "none";
+    }
+});
+
+document.querySelector(".dropdown-content").addEventListener("click", function (event) {
+    event.stopPropagation();
+});
 
 
-// Seleciona o botão
+// BUTTON ENTER SIMULATION
 const button = document.querySelector('.enter-button');
 
 // Define as cores
@@ -99,6 +121,7 @@ function cycleColors() {
 setInterval(cycleColors, 1600);
 
 
+//OVERLAY E TRANSIÇÃO
 function redirectToSimulation() {
     const overlay = document.querySelector('.overlay');
     overlay.classList.add('fade-out');
@@ -133,6 +156,7 @@ document.querySelector('.enter-button').addEventListener('click', function () {
         element.classList.remove('hidden');
     });
 });
+
 
 // Configuração básica da cena
 const scene = new THREE.Scene();
