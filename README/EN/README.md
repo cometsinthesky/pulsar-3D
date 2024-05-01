@@ -50,13 +50,9 @@ Now you are ready to explore the simulation and learn more about Pulsars.
  
 ## Education 📚✏️
 
-Pulsar 3D was developed with the purpose of educating and inspiring. Here are some ways to use this simulation for learning:
+Mourão (1987) defines in his Encyclopedic Dictionary of Astronomy and Astronautics, that a pulsar is a:
 
-- **Astronomy Teaching**: Explore the characteristics of a pulsar, such as its rapid rotation and radiation emissions.
-  
-- **Magnetic Fields Physics**: Understand how the intense magnetic fields of a pulsar influence its environment.
-
-- **Interactive Experience**: Students can interact with the simulation to visualize abstract concepts concretely.
+> A stellar radio source emitting pulses of average duration of 35 milliseconds and repeating at extremely regular intervals of approximately 1.4 seconds. Such emission must be produced by a very small and dense neutron star which, as it rotates, emits a beam of radio waves similar to the flashes emitted by a lighthouse ... The name pulsar comes from the contraction of the English expression: Pulsa(ting) r(adio sources), which is equivalent to pulsating radio source (MOURÃO, 1987, p. 654).
 
 ## Contributions
 
