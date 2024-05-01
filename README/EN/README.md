@@ -36,7 +36,11 @@ If you prefer to use the simulation offline, follow these instructions:
 
 ## Simulation Dynamics 🎮🕹️
 
-The real-time simulation of Pulsar 3D is based on precise astronomical models and physics algorithms. It offers a visual representation of the magnetic fields, radiation emissions, and rotation of the pulsar. You can observe how these elements interact and affect the environment around the pulsar.
+The real-time simulation of Pulsar 3D utilizes the Three.js library for camera control, 3D object creation, and functions such as the SkyBox for background control and 3D immersion.
+
+The real stellar background from NASA, found in [Deep Star Maps](https://svs.gsfc.nasa.gov/4851/), provides an authentic and immersive environment for the simulation.
+
+Furthermore, the simulation includes descriptive images of pulsar behavior, providing a valuable educational resource for classroom use. The simulation enables visualization and interaction with pulsar rotation, magnetic fields, and radiation emissions. Users can observe how these elements interact and affect the environment around the pulsar, providing a deeper understanding of these fascinating astronomical phenomena.
 
 Now you are ready to explore the simulation and learn more about Pulsars.
 
