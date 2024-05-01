@@ -167,10 +167,30 @@ renderer.setSize(800, 600); // Define o tamanho da janela de renderização
 renderer.setClearColor(0x000000); // Define a cor de fundo
 document.getElementById('threejs-container').appendChild(renderer.domElement);
 
+// Carregar texturas para cada face do cubo
+const textureLoader = new THREE.TextureLoader();
+const textures = [
+    textureLoader.load('right.jpg'),
+    textureLoader.load('left.jpg'),
+    textureLoader.load('top.jpg'),
+    textureLoader.load('bottom.jpg'),
+    textureLoader.load('front.jpg'),
+    textureLoader.load('back.jpg')
+];
+
+// Criar um material para cada textura
+const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide }));
+
+// Criar um cubo com esses materiais
+const skyboxGeometry = new THREE.BoxGeometry(100, 100, 100); // Tamanho do cubo
+const skybox = new THREE.Mesh(skyboxGeometry, materials);
+
+// Adicionar o cubo do skybox à cena
+scene.add(skybox);
+
 
 // Esfera representando o pulsar com textura de estrelas
 const geometry = new THREE.SphereGeometry(0.5, 100, 100);
-const textureLoader = new THREE.TextureLoader();
 const starTexture = textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/images/map.jpg');
 const starMaterial = new THREE.MeshBasicMaterial({ map: starTexture });
 const pulsar = new THREE.Mesh(geometry, starMaterial);
@@ -215,7 +235,7 @@ controls.dampingFactor = 0.1; // Fator de amortecimento
 // Variável para controlar o estado da simulação
 let isSimulationRunning = true;
 
-// Velocidade inicial de rotação
+// Velocidade inicial de rotação e sentido de rotação
 let rotationSpeed = -0.05;
 
 // Variável para controlar a rotação
@@ -285,7 +305,6 @@ function setRotationInDegrees(angleInDegrees) {
 
 // Define a rotação inicial em 180 graus
 setRotationInDegrees(180);
-
 
 // Inicia a animação
 animate();
