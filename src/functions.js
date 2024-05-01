@@ -67,6 +67,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Fechar o dropdown quando o usuário clica fora dele
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.style.display === "block") {
+          openDropdown.style.display = "none";
+        }
+      }
+    }
+  }; 
+
+
 // Seleciona o botão
 const button = document.querySelector('.enter-button');
 
@@ -183,11 +197,28 @@ let rotationSpeed = -0.05;
 // Variável para controlar a rotação
 let isRotationRunning = false;
 
+
 // Função para pausar e retomar a rotação
 function toggleRotation() {
     isRotationRunning = !isRotationRunning;
     pauseButton.textContent = isRotationRunning ? 'Pausa' : 'Play';
 }
+
+// Selecione os botões de pausa e reiniciar
+const pauseButton = document.querySelector('.pause-button');
+const restartButton = document.querySelector('.restart-button');
+
+// Adicione um evento de clique ao botão de pausa/play
+pauseButton.addEventListener('click', function () {
+    toggleRotation();
+});
+
+// Adicione um evento de clique ao botão de reiniciar
+restartButton.addEventListener('click', function () {
+    isRotationRunning = false; // Define a rotação como parada
+    pauseButton.textContent = 'Play'; // Atualiza o texto do botão pauseButton para 'Play'
+});
+
 
 // Função de animação
 function animate() {
@@ -207,15 +238,6 @@ function animate() {
 
     renderer.render(scene, camera);
 }
-
-// Selecione os botões de pausa e reiniciar
-const pauseButton = document.querySelector('.pause-button');
-const restartButton = document.querySelector('.restart-button');
-
-// Adicione um evento de clique ao botão de pausa/play
-pauseButton.addEventListener('click', function () {
-    toggleRotation();
-});
 
 // Defina angleInRadians no escopo global e inicialize com 0 graus
 let angleInRadians = THREE.MathUtils.degToRad(0);

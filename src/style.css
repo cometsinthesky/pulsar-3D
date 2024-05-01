@@ -30,6 +30,7 @@ body {
   font-family: "Roboto";
   color: #f0f0f0;
   font-size: 40px;
+  margin-top: 10px;
   margin-bottom: 10px;
   display: flex;
   position: relative;
@@ -37,7 +38,7 @@ body {
   text-align: center;
   user-select: none;
   transform: scale(1.1);
-  z-index: 9999;
+  z-index: 1;
 
   .wrapper {
     padding-left: 24px;
@@ -136,11 +137,53 @@ body {
 }
 
 
+/* Estilo do botão dropdown */
+.dropdown {
+  position: absolute;
+  top: 20px; /* Distância do topo */
+  left: 20px; /* Distância da esquerda */
+}
+
+.dropdown-btn {
+  background-color: transparent; /* Fundo transparente */
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo do dropdown conteúdo */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f0f0f0;
+  min-width: 450px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 9999;
+  border-radius: 5px;
+}
+
+.dropdown-content p {
+  padding: 10px;
+  margin: 0;
+  z-index: 9999;
+}
+
+/* Mostrar o dropdown conteúdo quando o botão é clicado */
+.dropdown-btn:focus + .dropdown-content {
+  display: block;
+}
+
+/* Estilo do ícone de joystick */
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+
 #instructionText {
   font-size: 12px;
   text-align: left;
   margin-bottom: 0px;
-  color: #f0f0f0;
+  color: #252525;
 }
 
 
@@ -221,7 +264,6 @@ footer {
   transform: scale(1); /* Aumenta o tamanho do efeito de clique ao clicar */
   opacity: 1; /* Torna o efeito de clique visível */
 }
-
 
 
 .fade-out {
