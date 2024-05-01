@@ -1,5 +1,7 @@
 Pulsar 3D © 2024 by Lucas Ferreira is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
 
+# CC BY-NC 4.0 DEED
+# Attribution-NonCommercial 4.0 International
 # You are free to:
 ## Share — copy and redistribute the material in any medium or format
 ## Adapt — remix, transform, and build upon the material
