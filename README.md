@@ -30,7 +30,7 @@ Se preferir usar a simulação offline, siga as seguintes instruções:
 
 - Use o botão esquerdo do mouse para clicar e arrastar na cena para controlar a câmera.
 - Use o scroll do mouse para aumentar ou diminuir a distância do pulsar.
-- Use o botão direito do mouse para clicar e arrastar o pulsar e posicioná-lo em outro local da cena. 
+- Use o botão direito do mouse para clicar e trasladar a câmera para outro local da cena. 
 - Botão pausa/play: pausa e continua a simulação.
 - Botão reiniciar: reinicia a simulação.
 
