@@ -51,7 +51,7 @@ Agora você está pronto para explorar a simulação e aprender mais sobre os Pu
 ## Educação 📚✏️
 
 Mourão (1987) define em seu Dicionário Enciclopédico de Astronomia e Astronáutica, que um pulsar é uma:
-Fonte de rádio estelar emissora de impulsos de duração média de 35 milésimos de segundo e que se repetem em intervalos extremamente regulares da ordem de 1,4 segundo, aproximadamente. Tal emissão deve ser produzida por uma muito pequena e densa estrela de nêutron que ao girar emite um feixe de ondas de rádio à semelhança dos clarões emitidos por um farol … O nome pulsar é oriundo da contração da expressão inglesa: Pulsa(ting) r(adio sources), que equivale a fonte de rádio pulsante (MOURÃO, 1987, p. 654).
+>Fonte de rádio estelar emissora de impulsos de duração média de 35 milésimos de segundo e que se repetem em intervalos extremamente regulares da ordem de 1,4 segundo, aproximadamente. Tal emissão deve ser produzida por uma muito pequena e densa estrela de nêutron que ao girar emite um feixe de ondas de rádio à semelhança dos clarões emitidos por um farol … O nome pulsar é oriundo da contração da expressão inglesa: Pulsa(ting) r(adio sources), que equivale a fonte de rádio pulsante (MOURÃO, 1987, p. 654).
 
 
 ## Contribuições
