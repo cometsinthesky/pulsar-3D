@@ -161,7 +161,7 @@ document.querySelector('.enter-button').addEventListener('click', function () {
 // Configuração básica da cena
 const scene = new THREE.Scene();
 //                                     FV, Aspect Ratio, Near plane, Far plane 
-const camera = new THREE.PerspectiveCamera(50, 800 / 600, 0.1, 100);
+const camera = new THREE.PerspectiveCamera(50, 800 / 600, 0.1, 10000);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(800, 600); // Define o tamanho da janela de renderização
 renderer.setClearColor(0x000000); // Define a cor de fundo
@@ -182,7 +182,7 @@ const textures = [
 const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide }));
 
 // Criar um cubo com esses materiais
-const skyboxGeometry = new THREE.BoxGeometry(100, 100, 100); // Tamanho do cubo
+const skyboxGeometry = new THREE.BoxGeometry(1000, 1000, 1000); // Tamanho do cubo
 const skybox = new THREE.Mesh(skyboxGeometry, materials);
 
 // Adicionar o cubo do skybox à cena
@@ -190,7 +190,7 @@ scene.add(skybox);
 
 
 // Esfera representando o pulsar com textura de estrelas
-const geometry = new THREE.SphereGeometry(0.5, 100, 100);
+const geometry = new THREE.SphereGeometry(0.5, 256, 256);
 const starTexture = textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/images/map.jpg');
 const starMaterial = new THREE.MeshBasicMaterial({ map: starTexture });
 const pulsar = new THREE.Mesh(geometry, starMaterial);
