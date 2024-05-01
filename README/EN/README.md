@@ -65,7 +65,7 @@ In July 1967, a new low-frequency radio telescope was inaugurated at the Lord's 
 At the beginning of the project, while analyzing the recordings made on strips of paper, Jocelyn Bell noticed a source that exhibited an unusual flicker pattern. After a few weeks, she realized that this source, which did not resemble other known astronomical sources or terrestrial sources of radio interference, sometimes reappeared when the telescope was pointed in a specific direction in the sky. After careful investigation, Bell discovered that this source was observed at the same sidereal time every day, indicating it was a fixed astronomical source. She discussed this with her supervisor and they decided to examine the flicker pattern more closely. In early November 1967, a faster chart recorder was installed. After a month without sightings, on November 28 of that year, the source reappeared and was revealed as a series of short pulses (less than 0.3 seconds) separated by about 1.3 seconds (PENNY, 2013, cited in FERREIRA, ANDRADE, LANGHI, 2024, in press). As shown by the graph lines in the top part of the image below, this is the actual signal captured from the CP1919 pulsar.
 
 <p align="center">
-<img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/jocelyn.jpg" alt="Jocelyn Bell Pulsar discovery" height="100%" width="100%">
+<img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/jocelyn.jpg" alt="Jocelyn Bell Pulsar discovery" height="80%" width=80%">
 </p>
 
 ### Definition 📖
