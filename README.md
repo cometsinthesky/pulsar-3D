@@ -36,7 +36,7 @@ Se preferir usar a simulação offline, siga as seguintes instruções:
 
 ## Dinâmica da Simulação 📊🌐
 
-A simulação em tempo real de Pulsar 3D utiliza a biblioteca Three.js para controle de câmera, criação de objetos em 3D e funções como o SkyBox para controle de fundo e imersão 3D. 
+A simulação Pulsar 3D utiliza a biblioteca Three.js para controle de câmera, criação de objetos em 3D e funções como o SkyBox para controle de fundo e imersão 3D. 
 
 O fundo estelar real da NASA, encontrado em [Deep Star Maps](https://svs.gsfc.nasa.gov/4851/), proporciona um ambiente autêntico e imersivo para a simulação. Esse conjunto de mapas estelares foi criado plotando a posição, brilho e cor de 1,7 bilhão de estrelas dos catálogos estelares Hipparcos-2, Tycho-2 e Gaia Data Release 2.
 
