@@ -167,26 +167,68 @@ renderer.setSize(800, 600); // Define o tamanho da janela de renderização
 renderer.setClearColor(0x000000); // Define a cor de fundo
 document.getElementById('threejs-container').appendChild(renderer.domElement);
 
-// Carregar texturas para cada face do cubo
-const textureLoader = new THREE.TextureLoader();
-const textures = [
-    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/right.png'), 
-    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/left.png'),
-    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/top.png'),
-    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/bottom.png'),
-    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/front.png'),
-    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/back.png')
-];
+// Posiciona a câmera na origem (0, 0, 0)
+camera.position.set(0, 0, -5);
 
-// Criar um material para cada textura
-const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide }));
+// Direciona a câmera para o ponto (0, 0, -1)
+camera.lookAt(10, 0, 5);
 
-// Criar um cubo com esses materiais
-const skyboxGeometry = new THREE.BoxGeometry(1000, 1000, 1000); // Tamanho do cubo
-const skybox = new THREE.Mesh(skyboxGeometry, materials);
 
-// Adicionar o cubo do skybox à cena
+//SKYBOX AND EXR READER
+var loader = new THREE.EXRLoader();
+loader.load('path/to/your/file.exr', function(texture) {
+    // Aqui você pode prosseguir para configurar o ambiente HDR
+});
+
+var pmremGenerator = new THREE.PMREMGenerator(renderer);
+pmremGenerator.compileEquirectangularShader();
+
+var envMap = pmremGenerator.fromEquirectangular(texture).texture;
+
+scene.background = envMap;
+scene.environment = envMap;
+
+texture.dispose();
+pmremGenerator.dispose();
+
+// SHADER CONTROL EXPOSURE
+var exposureShader = {
+    uniforms: {
+        "exposure": { value: 1.0 },
+        "tDiffuse": { value: null }
+    },
+    
+    vertexShader: `
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    `,
+
+    fragmentShader: `
+        uniform float exposure;
+        uniform sampler2D tDiffuse;
+        varying vec2 vUv;
+        void main() {
+            vec4 color = texture2D(tDiffuse, vUv);
+            color = color * exposure;
+            gl_FragColor = color;
+        }
+    `
+};
+
+var shaderMaterial = new THREE.ShaderMaterial({
+    uniforms: exposureShader.uniforms,
+    vertexShader: exposureShader.vertexShader,
+    fragmentShader: exposureShader.fragmentShader
+});
+
+var skyboxGeometry = new THREE.BoxGeometry(100, 100, 100);
+var skybox = new THREE.Mesh(skyboxGeometry, shaderMaterial);
 scene.add(skybox);
+
+shaderMaterial.uniforms.exposure.value = 2.0; // Exemplo de aumento de exposição
 
 
 // Esfera representando o pulsar com textura de estrelas
