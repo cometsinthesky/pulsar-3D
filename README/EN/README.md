@@ -36,7 +36,7 @@ If you prefer to use the simulation offline, follow these instructions:
 
 ## Simulation Dynamics 📊🌐
 
-The real-time simulation of Pulsar 3D uses the Three.js library for camera control, creation of 3D objects, and functions such as the SkyBox for background control and 3D immersion.
+The Pulsar 3D simulation uses the Three.js library for camera control, creation of 3D objects, and functions such as the SkyBox for background control and 3D immersion.
 
 The actual starry background from NASA, found at [Deep Star Maps](https://svs.gsfc.nasa.gov/4851/), provides an authentic and immersive environment for the simulation. This set of star maps was created by plotting the position, brightness, and color of 1.7 billion stars from the Hipparcos-2, Tycho-2, and Gaia Data Release 2 star catalogs.
 
