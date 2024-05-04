@@ -282,6 +282,115 @@ footer {
 }
 
 
+.menu {
+  position: absolute;
+  top: 260px;
+  right: 20px;
+  width: 170px;
+  height: 300px;
+  background-color: rgba(32, 32, 32, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for maior que a altura */
+  opacity: 0.9;
+}
+
+.slider {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.slider label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.slider input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #f0f0f0;
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 5px;
+}
+
+.slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.slider input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.checkboxes label {
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.checkboxes input[type="checkbox"] {
+  display:();
+}
+
+.checkboxes input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.checkboxes input[type="checkbox"] + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ccc;
+  background-color: #f0f0f0;
+  opacity: 0.7;
+}
+
+.checkboxes input[type="checkbox"]:checked + label:before {
+  background-color: #4CAF50;
+}
+
+.checkboxes input[type="checkbox"] + label:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.checkboxes input[type="checkbox"]:checked + label:after {
+  display: block;
+}
+
+
 
 
 
