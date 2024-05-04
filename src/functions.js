@@ -161,7 +161,7 @@ document.querySelector('.enter-button').addEventListener('click', function () {
 // Configuração básica da cena
 const scene = new THREE.Scene();
 //                                     FV, Aspect Ratio, Near plane, Far plane 
-const camera = new THREE.PerspectiveCamera(50, 800 / 600, 0.1, 10000);
+const camera = new THREE.PerspectiveCamera(50, 800 / 600, 0.1, 9100);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(800, 600); // Define o tamanho da janela de renderização
 renderer.setClearColor(0x000000); // Define a cor de fundo
@@ -170,7 +170,7 @@ document.getElementById('threejs-container').appendChild(renderer.domElement);
 // Carregar texturas para cada face do cubo
 const textureLoader = new THREE.TextureLoader();
 const textures = [
-    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/right.png'), 
+    textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/right.png'),
     textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/left.png'),
     textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/top.png'),
     textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/skybox/bottom.png'),
@@ -182,7 +182,7 @@ const textures = [
 const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide }));
 
 // Criar um cubo com esses materiais
-const skyboxGeometry = new THREE.BoxGeometry(1000, 1000, 1000); // Tamanho do cubo
+const skyboxGeometry = new THREE.BoxGeometry(9000, 9000, 9000); // Tamanho do cubo
 const skybox = new THREE.Mesh(skyboxGeometry, materials);
 
 // Adicionar o cubo do skybox à cena
@@ -228,7 +228,7 @@ pulsar.add(cone1);
 pulsar.add(cone2);
 
 // Configuração de luz
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
 scene.add(ambientLight);
 
 const pointLight = new THREE.PointLight(0xffffff, 0.7);
@@ -288,6 +288,21 @@ function animate() {
         // Se a rotação estiver ativa, aplicar a rotação em torno do eixo y
         pulsar.rotation.y += rotationSpeed;
     }
+
+    // Verifica a posição da câmera
+    const cameraDistance = camera.position.length();
+
+    // Limita a distância da câmera a 1200 unidades
+    if (cameraDistance > 1400) {
+        // Define a posição da câmera para estar a 1200 unidades de distância
+        camera.position.setLength(1400);
+    }
+    // Limita a distância da câmera
+    if (cameraDistance < 0.8) {
+        // Define a posição da câmera para estar a 1 unidade
+        camera.position.setLength(0.8);
+    }
+
 
     // Define a inclinação de 45 graus em relação aos eixos x e z
     pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos
