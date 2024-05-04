@@ -192,15 +192,28 @@ scene.add(skybox);
 // Esfera representando o pulsar com textura de estrelas
 const geometry = new THREE.SphereGeometry(0.5, 256, 256);
 const starTexture = textureLoader.load('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/images/map.jpg');
-const starMaterial = new THREE.MeshBasicMaterial({ map: starTexture });
-const pulsar = new THREE.Mesh(geometry, starMaterial);
+// Criar um material PBR (Physically Based Rendering) usando MeshStandardMaterial
+const pulsarMaterial = new THREE.MeshStandardMaterial({
+    map: starTexture, // Mapa de textura da estrela
+    metalness: 0.2, // Definindo o valor de metalness para 1 para uma aparência totalmente metálica
+    roughness: 0.6 // Definindo o valor de roughness para controlar o quanto a superfície é áspera (0 = muito brilhante, 1 = muito fosco)
+});
+// Ativar o uso do envMap padrão
+pulsarMaterial.envMap = scene.background;
+// Criar a esfera representando o pulsar com o novo material
+const pulsar = new THREE.Mesh(geometry, pulsarMaterial);
+// Adicionar a esfera à cena
 scene.add(pulsar);
+
 
 // Cones nos polos do pulsar
 const coneGeometry = new THREE.ConeGeometry(0.2, 1, 64);
 const coneMaterial = new THREE.MeshPhongMaterial({ color: 0xfaed3a });
 const cone1 = new THREE.Mesh(coneGeometry, coneMaterial);
 const cone2 = new THREE.Mesh(coneGeometry, coneMaterial);
+// Definindo a transparência do material do cone
+coneMaterial.transparent = true; // Permite que o material seja transparente
+coneMaterial.opacity = 0.4; // Define a opacidade do material (0 = totalmente transparente, 1 = totalmente opaco)
 
 // Posiciona os cones nos polos da esfera
 cone1.position.set(0, -1.15, 0);
@@ -219,10 +232,13 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
 const pointLight = new THREE.PointLight(0xffffff, 0.7);
-pointLight.position.set(10, 0, 10);
+pointLight.position.set(1, 0, 10);
 scene.add(pointLight);
 
 // Posiciona a câmera
+// Definindo a posição inicial da câmera
+camera.position.set(0.5, 0.1, 0);
+
 // Distância da câmera do Pulsar
 camera.position.z = 5;
 
@@ -236,7 +252,7 @@ controls.dampingFactor = 0.1; // Fator de amortecimento
 let isSimulationRunning = true;
 
 // Velocidade inicial de rotação e sentido de rotação
-let rotationSpeed = -0.05;
+let rotationSpeed = -0.25;
 
 // Variável para controlar a rotação
 let isRotationRunning = false;
