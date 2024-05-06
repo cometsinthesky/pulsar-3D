@@ -146,8 +146,21 @@ overlay.addEventListener('transitionend', function (event) {
         overlay.remove();
         // Inicia a animação do pulsar
         isRotationRunning = true;
+
+        // Remove a classe 'hidden' dos elementos do menu após a transição
+        const menu = document.querySelector('.menu');
+        menu.classList.remove('hidden');
+
+        // Remove a classe 'hidden' dos elementos de slider e checkboxes após a transição
+        const sliders = document.querySelectorAll('.slider');
+        sliders.forEach(slider => {
+            slider.classList.remove('hidden');
+        });
+        const checkboxes = document.querySelector('.checkboxes');
+        checkboxes.classList.remove('hidden');
     }
 });
+
 
 document.querySelector('.enter-button').addEventListener('click', function () {
     // Remove a classe 'hidden' dos elementos do fundo quando o botão for clicado
@@ -196,7 +209,7 @@ const starTexture = textureLoader.load('https://raw.githubusercontent.com/comets
 const pulsarMaterial = new THREE.MeshStandardMaterial({
     map: starTexture, // Mapa de textura da estrela
     metalness: 0.2, // Definindo o valor de metalness para 1 para uma aparência totalmente metálica
-    roughness: 0.6 // Definindo o valor de roughness para controlar o quanto a superfície é áspera (0 = muito brilhante, 1 = muito fosco)
+    roughness: 0.5 // Definindo o valor de roughness para controlar o quanto a superfície é áspera (0 = muito brilhante, 1 = muito fosco)
 });
 // Ativar o uso do envMap padrão
 pulsarMaterial.envMap = scene.background;
@@ -252,7 +265,7 @@ controls.dampingFactor = 0.1; // Fator de amortecimento
 let isSimulationRunning = true;
 
 // Velocidade inicial de rotação e sentido de rotação
-let rotationSpeed = -0.25;
+let rotationSpeed = -0.2;
 
 // Variável para controlar a rotação
 let isRotationRunning = false;
@@ -302,7 +315,6 @@ function animate() {
         // Define a posição da câmera para estar a 1 unidade
         camera.position.setLength(0.8);
     }
-
 
     // Define a inclinação de 45 graus em relação aos eixos x e z
     pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos

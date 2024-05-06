@@ -76,9 +76,9 @@ body {
   font-family: Roboto, sans-serif;
   font-weight: bold;
   position: absolute;
-  top: 270px;
+  top: 380px;
   /* Ajuste conforme necessário */
-  left: 120px;
+  left: 70px;
   /* Ajuste conforme necessário */
   padding: 8px 26px;
   background-color: #4CAF50;
@@ -104,9 +104,9 @@ body {
   font-family: Roboto, sans-serif;
   font-weight: bold;
   position: absolute;
-  top: 330px;
+  top: 440px;
   /* Ajuste conforme necessário */
-  left: 112px;
+  left: 62px;
   /* Ajuste conforme necessário */
   padding: 8px 26px;
   background-color: #4CAF50;
@@ -281,10 +281,10 @@ footer {
   /* Muda o cursor para uma mão quando o mouse estiver sobre o elemento com o ID 'threejs-container' */
 }
 
-
+/* Adiciona menu, sliders e selectors */
 .menu {
   position: absolute;
-  top: 260px;
+  top: 280px;
   right: 20px;
   width: 170px;
   height: 300px;
@@ -390,6 +390,11 @@ footer {
   display: block;
 }
 
+.menu.hidden,
+.slider.hidden,
+.checkboxes.hidden {
+    display: none;
+}
 
 
 
