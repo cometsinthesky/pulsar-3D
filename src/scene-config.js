@@ -78,7 +78,7 @@ scene.add(pointLight);
 
 // Posiciona a câmera
 // Definindo a posição inicial da câmera
-camera.position.set(0.5, 0.1, 0);
+camera.position.set(0.3, 0.1, 0);
 
 // Distância da câmera do Pulsar
 camera.position.z = 5;
@@ -119,19 +119,24 @@ restartButton.addEventListener('click', function () {
     isRotationRunning = false; // Define a rotação como parada
     pauseButton.textContent = 'Play'; // Atualiza o texto do botão pauseButton para 'Play'
 
-    // Calcula a posição do valor padrão no slider
-    const defaultSliderPosition = ((defaultRotationSpeed - minRotationSpeed) / (maxRotationSpeed - minRotationSpeed)) * 100;
-
-    // Define o valor do slider para a posição do meio (50)
+    // Define o valor do slider para a posição original (45 graus)
+    const defaultSliderPosition = 45;
     sliderInput.value = defaultSliderPosition;
 
+// Define a inclinação da esfera para 45 graus em relação aos eixos x e z
+const degrees = 45; // 0 a 90 graus
+const inclination = degrees * Math.PI/180; // Convertendo para radianos
+pulsar.rotation.x = inclination;
+pulsar.rotation.z = inclination;
+
     // Atualiza a intensidade da luz ambiente para o valor padrão
-    const defaultIntensity = ((defaultValue - minSliderValue) / (maxSliderValue - minSliderValue)) * (maxIntensity - minIntensity) + minIntensity;
+    const defaultIntensity = ((defaultSliderPosition - minSliderValue) / (maxSliderValue - minSliderValue)) * (maxIntensity - minIntensity) + minIntensity;
     ambientLight.intensity = defaultIntensity;
 
     // Atualiza a velocidade de rotação para o valor padrão
     updateRotationSpeed();
 });
+
 
 
 // Função de animação
@@ -157,15 +162,22 @@ function animate() {
         camera.position.setLength(0.8);
     }
 
-    // Define a inclinação de 45 graus em relação aos eixos x e z
-    pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos
-    pulsar.rotation.z = Math.PI / 4; // 45 graus em radianos
+    // // Define a inclinação de 45 graus em relação aos eixos x e z
+    // pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos
+    // pulsar.rotation.z = Math.PI / 4; // 45 graus em radianos
+    
 
+// Verifique o valor do slider e atualize a inclinação da esfera
+const sliderValue = parseInt(document.getElementById('inclinação').value);
+// Mapeia o valor do slider de 0 a 100 para 0 a 90 graus
+const inclination = mapRange(sliderValue, 0, 100, 0, Math.PI/2);
+pulsar.rotation.z = inclination;
     // Atualiza os OrbitControls
     controls.update();
 
     renderer.render(scene, camera);
 }
+
 
 // Defina angleInRadians no escopo global e inicialize com 0 graus
 let angleInRadians = THREE.MathUtils.degToRad(0);
