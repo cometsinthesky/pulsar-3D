@@ -94,7 +94,27 @@ slider.addEventListener('input', function() {
         return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
     }
 
+    
+// Função para adicionar ou remover os vetores de eixo de rotação
+function toggleRotationAxisVectors(checked) {
+    if (checked) {
+        scene.add(arrowHelper1);
+        scene.add(arrowHelper2);
+    } else {
+        scene.remove(arrowHelper1);
+        scene.remove(arrowHelper2);
+    }
+}
 
+// Evento de escuta para detectar mudanças no estado do checkbox
+var rotationAxisCheckbox = document.getElementById('rotationAxisCheckbox');
+rotationAxisCheckbox.addEventListener('change', function(event) {
+    var checked = event.target.checked;
+    toggleRotationAxisVectors(checked);
+});
+
+// Inicialmente, esconde os vetores de eixo de rotação
+toggleRotationAxisVectors(false);
 
 
 // Inicia a animação
