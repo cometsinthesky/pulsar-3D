@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
 // SLIDERS AND MENU BUTTONS
 
 // SLIDER VELOCIDADE
+// Função para mapear um valor de um intervalo para outro
+function mapRange(value, minInput, maxInput, minOutput, maxOutput) {
+    return minOutput + (value - minInput) * (maxOutput - minOutput) / (maxInput - minInput);
+}
+
+// SLIDER VELOCIDADE
 // Seleciona o elemento de entrada do slider
 const sliderInput = document.getElementById('velocidade');
 
@@ -83,6 +89,10 @@ slider.addEventListener('input', function() {
     ambientLight.intensity = clampedValue;
 });
 
+       // Função auxiliar para mapear um valor de um intervalo para outro
+       function mapRange(value, low1, high1, low2, high2) {
+        return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+    }
 
 
 
