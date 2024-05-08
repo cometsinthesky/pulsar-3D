@@ -166,6 +166,11 @@ const particulas2 = new THREE.Points(particulas2Geometry, particulas2Material);
 pulsar.add(particulas2);
 
 
+// Criar a malha quadriculada com material transparente
+var gridMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.5 });
+var gridHelper = new THREE.GridHelper(50, 50, gridMaterial);
+gridHelper.visible = true; // Torna a grade visível
+scene.add(gridHelper);
 
 
 
@@ -191,24 +196,6 @@ var headWidth2 = 0.1; // largura da cabeça do vetor
 var arrowHelper2 = new THREE.ArrowHelper(direction2, origin2, length2, color2);
 arrowHelper2.setLength(length2, headLength2, headWidth2);
 scene.add(arrowHelper2);
-
-// // ADICIONA VETORES DOS CONES
-// // Vetor acima do cone1
-// var direction3 = new THREE.Vector3(0, 1, 0); // direção para cima
-// var origin3 = cone1.position.clone(); // posição do cone1
-// var length3 = 1000; // comprimento do vetor
-// var color3 = 0xfaed3a ; // cor do vetor
-// var arrowHelper3 = new THREE.ArrowHelper(direction3, origin3, length3, color3);
-// pulsar.add(arrowHelper3);
-
-// // Vetor acima do cone2
-// var direction4 = new THREE.Vector3(0, -1, 0); // direção para cima
-// var origin4 = cone2.position.clone(); // posição do cone2
-// var length4 = 1000; // comprimento do vetor
-// var color4 = 0xfaed3a ; // cor do vetor
-// var arrowHelper4 = new THREE.ArrowHelper(direction4, origin4, length4, color4);
-// pulsar.add(arrowHelper4);
-
 
 
 // Configuração de luz
@@ -266,11 +253,11 @@ restartButton.addEventListener('click', function () {
     const defaultSliderPosition = 45;
     sliderInput.value = defaultSliderPosition;
 
-// Define a inclinação da esfera para 45 graus em relação aos eixos x e z
-const degrees = 45; // 0 a 90 graus
-const inclination = degrees * Math.PI/180; // Convertendo para radianos
-pulsar.rotation.x = inclination;
-pulsar.rotation.z = inclination;
+    // Define a inclinação da esfera para 45 graus em relação aos eixos x e z
+    const degrees = 45; // 0 a 90 graus
+    const inclination = degrees * Math.PI / 180; // Convertendo para radianos
+    pulsar.rotation.x = inclination;
+    pulsar.rotation.z = inclination;
 
     // Atualiza a intensidade da luz ambiente para o valor padrão
     const defaultIntensity = ((defaultSliderPosition - minSliderValue) / (maxSliderValue - minSliderValue)) * (maxIntensity - minIntensity) + minIntensity;
@@ -305,16 +292,12 @@ function animate() {
         camera.position.setLength(0.8);
     }
 
-    // // Define a inclinação de 45 graus em relação aos eixos x e z
-    // pulsar.rotation.x = Math.PI / 4; // 45 graus em radianos
-    // pulsar.rotation.z = Math.PI / 4; // 45 graus em radianos
-    
 
-// Verifique o valor do slider e atualize a inclinação da esfera
-const sliderValue = parseInt(document.getElementById('inclinação').value);
-// Mapeia o valor do slider de 0 a 100 para 0 a 90 graus
-const inclination = mapRange(sliderValue, 0, 100, 0, Math.PI/2);
-pulsar.rotation.z = inclination;
+    // Verifique o valor do slider e atualize a inclinação da esfera
+    const sliderValue = parseInt(document.getElementById('inclinação').value);
+    // Mapeia o valor do slider de 0 a 100 para 0 a 90 graus
+    const inclination = mapRange(sliderValue, 0, 100, 0, Math.PI / 2);
+    pulsar.rotation.z = inclination;
     // Atualiza os OrbitControls
     controls.update();
 
@@ -344,3 +327,5 @@ function setRotationInDegrees(angleInDegrees) {
 
 // Define a rotação inicial em 180 graus
 setRotationInDegrees(180);
+
+

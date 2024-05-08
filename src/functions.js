@@ -76,7 +76,7 @@ updateRotationSpeed();
 const slider = document.getElementById('luminosidade');
 
 // Adicionando um evento de escuta para capturar mudanças no valor do slider
-slider.addEventListener('input', function() {
+slider.addEventListener('input', function () {
     // Obtendo o valor atual do slider
     const sliderValue = parseFloat(this.value) / 100; // Convertendo para um valor entre 0 e 1
 
@@ -89,12 +89,12 @@ slider.addEventListener('input', function() {
     ambientLight.intensity = clampedValue;
 });
 
-       // Função auxiliar para mapear um valor de um intervalo para outro
-       function mapRange(value, low1, high1, low2, high2) {
-        return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
-    }
+// Função auxiliar para mapear um valor de um intervalo para outro
+function mapRange(value, low1, high1, low2, high2) {
+    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+}
 
-    
+
 // Função para adicionar ou remover os vetores de eixo de rotação
 function toggleRotationAxisVectors(checked) {
     if (checked) {
@@ -108,7 +108,7 @@ function toggleRotationAxisVectors(checked) {
 
 // Evento de escuta para detectar mudanças no estado do checkbox
 var rotationAxisCheckbox = document.getElementById('rotationAxisCheckbox');
-rotationAxisCheckbox.addEventListener('change', function(event) {
+rotationAxisCheckbox.addEventListener('change', function (event) {
     var checked = event.target.checked;
     toggleRotationAxisVectors(checked);
 });
@@ -117,6 +117,36 @@ rotationAxisCheckbox.addEventListener('change', function(event) {
 toggleRotationAxisVectors(false);
 
 
+//CHECKBOX JATO DE RADIAÇÃO
+// Inicialmente, ocultar as partículas
+particulas.visible = false;
+particulas2.visible = false;
+
+// Adicionar um evento de escuta à checkbox
+document.getElementById('beamsCheckbox').addEventListener('change', function() {
+    if (this.checked) {
+        // Se a checkbox for selecionada, mostrar as partículas
+        particulas.visible = true;
+        particulas2.visible = true;
+    } else {
+        // Se a checkbox for desmarcada, ocultar as partículas
+        particulas.visible = false;
+        particulas2.visible = false;
+    }
+});
+
+
+
 // Inicia a animação
 animate();
 
+
+// Descarta os recursos usados pelos objetos quando não for mais necessário
+// Remove quaisquer referências a recursos de memória associados a esse objeto, 
+// permitindo que o coletor de lixo do JavaScript os libere quando apropriado.
+
+gridHelper.dispose();
+arrowHelper1.dispose();
+arrowHelper2.dispose();
+particulas.dispose();
+particulas2.dispose();
