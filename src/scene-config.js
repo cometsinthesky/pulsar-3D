@@ -166,13 +166,26 @@ const particulas2 = new THREE.Points(particulas2Geometry, particulas2Material);
 pulsar.add(particulas2);
 
 
-// Criar a malha quadriculada com material transparente
+// ADD GRID
 var gridMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.5 });
-var gridHelper = new THREE.GridHelper(50, 50, gridMaterial);
+var gridHelper = new THREE.GridHelper(80, 80, gridMaterial);
 gridHelper.visible = true; // Torna a grade visível
 scene.add(gridHelper);
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Função para esconder ou mostrar o gridHelper
+    function toggleGridHelperVisibility() {
+        gridHelper.visible = document.getElementById("malhaCheckbox").checked;
+    }
 
+    // Event listener para o checkbox
+    document.getElementById("malhaCheckbox").addEventListener("change", function() {
+        toggleGridHelperVisibility(); // Chama a função para esconder ou mostrar o gridHelper
+    });
+
+    // Inicialmente, esconder o gridHelper
+    toggleGridHelperVisibility();
+});
 
 //ADICIONA VETORES
 // EIXO DE ROTAÇÃO UP
