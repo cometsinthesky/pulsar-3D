@@ -281,7 +281,6 @@ restartButton.addEventListener('click', function () {
 });
 
 
-
 // Função de animação
 function animate() {
     requestAnimationFrame(animate);

@@ -1,20 +1,30 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtém referências para o elemento de áudio e o botão de controle
-    var audio = document.getElementById('music');
+    // Obtém referências para os elementos de áudio e o botão de controle
+    var audio1 = document.getElementById('music');
+    var audio2 = document.getElementById('sfx');
+
+    // Define a velocidade de reprodução para 1.5 vezes a velocidade normal
+    audio2.playbackRate = 0.5; // Isso reproduzirá o áudio 1.5 vezes mais rápido que a velocidade normal
+
+    // Configurações iniciais dos áudios
+    audio1.autoplay = true; // Ativa a reprodução automática
+    audio1.volume = 0.8; // Define o volume inicial como 80%
+    audio2.autoplay = true; // Ativa a reprodução automática
+    audio2.volume = 0.5; // Define o volume inicial como 70%
+
+    // Obtém referência para o botão de controle
     var button = document.getElementById('audio-button');
 
-    // Configurações iniciais do áudio
-    audio.autoplay = true; // Ativa a reprodução automática
-    audio.volume = 1; // Define o volume inicial como 50%
-
-    // Função para alternar entre reproduzir e pausar o áudio
+    // Função para alternar entre reproduzir e pausar os áudios
     function toggleAudio() {
-        if (audio.paused) {
-            audio.play();
+        if (audio1.paused && audio2.paused) {
+            audio1.play();
+            audio2.play();
             button.innerHTML = "&#x1F50A;"; // Altera o ícone para o ícone de alto-falante
         } else {
-            audio.pause();
+            audio1.pause();
+            audio2.pause();
             button.innerHTML = "&#x1F507;"; // Altera o ícone para o ícone de mudo
         }
     }
@@ -25,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Adiciona um ouvinte de evento de clique para o botão de controle do áudio
     button.addEventListener('click', toggleAudio);
 });
+
 
 
 // SLIDERS AND MENU BUTTONS
@@ -123,7 +134,7 @@ particulas.visible = false;
 particulas2.visible = false;
 
 // Adicionar um evento de escuta à checkbox
-document.getElementById('beamsCheckbox').addEventListener('change', function() {
+document.getElementById('beamsCheckbox').addEventListener('change', function () {
     if (this.checked) {
         // Se a checkbox for selecionada, mostrar as partículas
         particulas.visible = true;
