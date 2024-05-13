@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var audio2 = document.getElementById('sfx');
 
     // Define a velocidade de reprodução para 1.5 vezes a velocidade normal
-    audio2.playbackRate = 0.5; // Isso reproduzirá o áudio 1.5 vezes mais rápido que a velocidade normal
+    audio2.playbackRate = 1.2; // Isso reproduzirá o áudio 1.5 vezes mais rápido que a velocidade normal
 
     // Configurações iniciais dos áudios
     audio1.autoplay = true; // Ativa a reprodução automática
     audio1.volume = 0.8; // Define o volume inicial como 80%
     audio2.autoplay = true; // Ativa a reprodução automática
-    audio2.volume = 0.5; // Define o volume inicial como 70%
+    audio2.volume = 0.9; // Define o volume inicial como 70%
 
     // Obtém referência para o botão de controle
     var button = document.getElementById('audio-button');

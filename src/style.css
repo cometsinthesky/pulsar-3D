@@ -362,6 +362,7 @@ footer {
 
 .checkboxes input[type="checkbox"] {
   display:();
+  cursor: pointer;
 }
 
 .checkboxes input[type="checkbox"] + label {
@@ -384,6 +385,7 @@ footer {
 
 .checkboxes input[type="checkbox"]:checked + label:before {
   background-color: #4CAF50;
+  cursor: pointer;
 }
 
 .checkboxes input[type="checkbox"] + label:after {
@@ -397,6 +399,7 @@ footer {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   display: none;
+  cursor: pointer;
 }
 
 .checkboxes input[type="checkbox"]:checked + label:after {
