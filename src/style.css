@@ -10,7 +10,7 @@ body {
 }
 
 #audio-container {
-  position: fixed;
+  position: absolute;
   top: 15px;
   right: 15px;
   z-index: 9999;
@@ -277,17 +277,17 @@ footer {
 }
 
 #threejs-container {
-  cursor: pointer;
-  /* Muda o cursor para uma mão quando o mouse estiver sobre o elemento com o ID 'threejs-container' */
+  position: relative;
+  cursor: pointer;  /* Muda o cursor para uma mão quando o mouse estiver sobre o elemento com o ID 'threejs-container' */
 }
 
 /* Adiciona menu, sliders e selectors */
 .menu {
   position: absolute;
-  top: 280px;
+  top: 270px;
   right: 20px;
   width: 170px;
-  height: 340px;
+  height: 320px;
   background-color: rgba(32, 32, 32, 0.6);
   border-radius: 10px;
   padding: 10px;
@@ -345,12 +345,13 @@ footer {
 .legend {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
+  margin-top: 0px;
+  pointer-events: none; /* Impede que a legenda seja clicável ou selecionável */
 }
 
 .legend span {
   font-size: 10px; /* Tamanho da fonte */
-  padding: 7.5px; /* Espaçamento interno */
+  padding: 5.7px; /* Espaçamento interno */
 }
 
 
