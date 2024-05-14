@@ -97,6 +97,7 @@ body {
   /* Largura fixa do botão */
   text-align: center;
   /* Centralizar o texto */
+  user-select: none; /* Impede a seleção do texto */
 }
 
 /* Botão reinicia */
@@ -121,6 +122,7 @@ body {
   /* Mostra o cursor como ponteiro ao passar sobre o botão */
   font-size: 14px;
   /* Tamanho da fonte */
+  user-select: none; /* Impede a seleção do texto */
 }
 
 .pause-button:hover,
@@ -184,6 +186,7 @@ body {
   text-align: left;
   margin-bottom: 0px;
   color: #252525;
+  user-select: none; /* Impede a seleção de texto dentro do elemento */
 }
 
 
@@ -197,6 +200,7 @@ footer {
   padding-left: 32px;
   padding-right: 32px;
   color: #f0f0f0;
+  user-select: none; /* Impede a seleção de texto dentro do elemento */
 }
 
 
@@ -279,6 +283,7 @@ footer {
 #threejs-container {
   position: relative;
   cursor: pointer;  /* Muda o cursor para uma mão quando o mouse estiver sobre o elemento com o ID 'threejs-container' */
+  pointer-events: auto; /* Permite que este elemento responda aos eventos do mouse */
 }
 
 /* Adiciona menu, sliders e selectors */
@@ -294,6 +299,7 @@ footer {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for maior que a altura */
   opacity: 0.9;
+  user-select: none; /* Impede a seleção do texto */
 }
 
 .slider {

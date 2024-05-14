@@ -70,6 +70,31 @@ pulsar.add(cone1);
 pulsar.add(cone2);
 
 
+//ADD DOUBLE CLICK
+// Adiciona um event listener para detectar cliques duplos no elemento #threejs-container
+document.getElementById('threejs-container').addEventListener('dblclick', function(event) {
+    // Verifica se o clique duplo ocorreu na esfera
+    const intersects = raycaster.intersectObject(pulsar);
+
+    // Se o clique duplo ocorreu na esfera
+    if (intersects.length > 0) {
+        // Centraliza a esfera no centro da tela a uma distância de 3 unidades
+        const newPosition = new THREE.Vector3(0, 0, -2);
+        // Atualiza a posição da câmera
+        camera.position.copy(newPosition);
+        // Atualiza os controles da câmera
+        controls.target.set(0, 0, 0);
+        // Atualiza a direção da câmera
+        camera.lookAt(0, 0, 0);
+
+        // Impede a propagação do evento para outros elementos
+        event.stopPropagation();
+    }
+});
+
+
+
+
 //ADICIONA PARTÍCULAS NOS CONES
 // Definir a quantidade de partículas
 const quantidadeParticulas = 10000;
