@@ -1,3 +1,53 @@
+//ADD FULLSCREEN PRESS F
+// Função para alternar o modo de tela cheia
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        // Entra no modo de tela cheia
+        const container = document.getElementById('threejs-container');
+        if (container.requestFullscreen) {
+            container.requestFullscreen();
+        } else if (container.webkitRequestFullscreen) { // Safari
+            container.webkitRequestFullscreen();
+        } else if (container.msRequestFullscreen) { // Internet Explorer
+            container.msRequestFullscreen();
+        }
+    } else {
+        // Sai do modo de tela cheia
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { // Safari
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // Internet Explorer
+            document.msExitFullscreen();
+        }
+    }
+}
+
+// Listener para tecla pressionada
+document.addEventListener('keydown', function(event) {
+    // Verifica se a tecla pressionada é a tecla "F"
+    if (event.key === 'f' || event.key === 'F') {
+        toggleFullscreen();
+    }
+});
+
+// Listener para ajustar o tamanho do renderizador quando sai do modo de tela cheia
+document.addEventListener('fullscreenchange', function() {
+    if (!document.fullscreenElement) {
+        // Saiu do modo de tela cheia, redefine o tamanho do renderizador para 800x600
+        renderer.setSize(800, 600);
+        camera.aspect = 800 / 600;
+        camera.updateProjectionMatrix();
+    } else {
+        // Entrou no modo de tela cheia, ajusta o tamanho do renderizador
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+    }
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     // Obtém referências para os elementos de áudio e o botão de controle
