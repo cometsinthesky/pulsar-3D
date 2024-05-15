@@ -195,7 +195,7 @@ a:visited {
 }
 
 footer {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: -10px;
   padding-left: 32px;
   padding-right: 32px;
@@ -420,6 +420,44 @@ footer {
 }
 
 
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: #f0f0f0;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.button1 {
+  background-color: #f44336;
+  color: #f0f0f0;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button1:hover {
+  background-color: #da2b1f;
+  color: #f0f0f0;
+}
+
+.button1:active {
+  transition-duration: 0.1s;
+  transform: translateY(2px); /* Mover o botão 2px para baixo quando clicado */
+  box-shadow: none; /* Remover sombra quando clicado */
+}
+
+.counterStat {
+  color: #f0f0f0;
+  font-size: 16px;
+}
 
 
 

@@ -101,9 +101,9 @@ function mapRange(value, minInput, maxInput, minOutput, maxOutput) {
 const sliderInput = document.getElementById('velocidade');
 
 // Define os valores mínimo, máximo e padrão do slider
-const minRotationSpeed = -0.05;
-const maxRotationSpeed = -0.4;
-const defaultRotationSpeed = -0.2;
+const minRotationSpeed = -0.01;
+const maxRotationSpeed = -0.3;
+const defaultRotationSpeed = -0.1;
 
 // Define a função para atualizar a velocidade de rotação com base no valor do slider
 function updateRotationSpeed() {
