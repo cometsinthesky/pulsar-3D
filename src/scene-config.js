@@ -48,6 +48,31 @@ const pulsar = new THREE.Mesh(geometry, pulsarMaterial);
 scene.add(pulsar);
 
 
+// Função para adicionar glow à esfera pulsar
+function addGlowToPulsar() {
+    // Criar um material para a esfera com emissão
+    const pulsarGlowMaterial = new THREE.MeshBasicMaterial({ color: 0x10a3fe, transparent: true, opacity: 0.18, side: THREE.FrontSide });
+
+    // Clonar a geometria da esfera
+    const pulsarGlowGeometry = geometry.clone();
+
+    // Criar a malha da esfera com o novo material
+    const pulsarGlow = new THREE.Mesh(pulsarGlowGeometry, pulsarGlowMaterial);
+
+    // Aumentar ligeiramente o tamanho da esfera para criar um efeito de glow
+    pulsarGlow.scale.multiplyScalar(1.04);
+
+    // Adicionar a esfera com glow à cena
+    scene.add(pulsarGlow);
+
+    // Retornar a esfera com glow
+    return pulsarGlow;
+}
+
+// Chamar a função para adicionar glow à esfera pulsar
+const pulsarGlow = addGlowToPulsar();
+
+
 // Cones nos polos do pulsar
 const coneGeometry1 = new THREE.ConeGeometry(0.2, 1, 64);
 const coneMaterial1 = new THREE.MeshStandardMaterial({ color: 0xfaed3a });
@@ -71,27 +96,27 @@ pulsar.add(cone1);
 pulsar.add(cone2);
 
 
-//ADICIONA PARTÍCULAS NOS CONES
+// ADICIONA PARTÍCULAS NOS CONES COMO LINHAS
 // Definir a quantidade de partículas
 const quantidadeParticulas = 10000;
 
 // Definir parâmetros do cone
 const raioBaseInicial = 0.05;
-const alturaCone = 9000;
-const raioBaseFinal = 250; // Vértice do cone
+const alturaCone = 2000;
+const raioBaseFinal = 80; // Vértice do cone
 
-// Criar a geometria das partículas
+// Criar a geometria das linhas
 const particulasGeometry = new THREE.BufferGeometry();
 
-// Criar arrays para armazenar as posições das partículas
-const positions = new Float32Array(quantidadeParticulas * 3);
+// Criar arrays para armazenar as posições das linhas
+const positions = new Float32Array(quantidadeParticulas * 3 * 2); // * 2 porque cada linha tem dois pontos
 
 // Preencher os arrays com posições ao longo do cone
 for (let i = 0; i < quantidadeParticulas; i++) {
     // Gerar coordenadas cilíndricas aleatórias dentro do cone
     const altura = Math.random() * alturaCone;
     const alturaNormalizada = altura / alturaCone; // Normaliza a altura entre 0 e 1
-    const theta = Math.random() * (Math.PI * 2) * Math.PI; // Ângulo aleatório
+    const theta = Math.random() * Math.PI * 2; // Ângulo aleatório
 
     // Calcula o raio usando uma função cônica para evitar aglomeração nas bordas
     const raio = raioBaseInicial + alturaNormalizada * (raioBaseFinal - raioBaseInicial);
@@ -100,45 +125,50 @@ for (let i = 0; i < quantidadeParticulas; i++) {
     const x = raio * Math.cos(theta);
     const z = raio * Math.sin(theta);
 
-    // Definir a posição da partícula
-    positions[i * 3] = x;
-    positions[i * 3 + 1] = altura;
-    positions[i * 3 + 2] = z;
+    // Definir a posição do início da linha
+    positions[i * 6] = x;
+    positions[i * 6 + 1] = altura;
+    positions[i * 6 + 2] = z;
+
+    // Definir a posição do fim da linha (um pouco deslocada)
+    positions[i * 6 + 3] = x;
+    positions[i * 6 + 4] = altura + 5; // Ajuste a altura para um pequeno deslocamento
+    positions[i * 6 + 5] = z;
 }
 
-// Adicionar as posições à geometria das partículas
+// Adicionar as posições à geometria das linhas
 particulasGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
-// Criar o material das partículas
-const particulasMaterial = new THREE.PointsMaterial({ color: 0xfaed3a, size: 0.05 });
+// Criar o material das linhas
+const particulasMaterial = new THREE.LineBasicMaterial({ color: 0xfaed3a });
 
-// Criar o objeto das partículas
-const particulas = new THREE.Points(particulasGeometry, particulasMaterial);
+// Criar o objeto das linhas
+const particulas = new THREE.LineSegments(particulasGeometry, particulasMaterial);
 
-// Adicionar as partículas como filhas da esfera
+// Adicionar as linhas como filhas da esfera
 pulsar.add(particulas);
 
-
-//ADD PARTÍCULAS CONE NEGATIVO
+// ADD PARTÍCULAS CONE NEGATIVO COMO LINHAS
 // Definir a quantidade de partículas
 const quantidadeParticulas2 = 10000;
 
 // Definir parâmetros do cone
 const raioBaseInicial2 = 0.05;
-const alturaCone2 = 9000;
-const raioBaseFinal2 = 250; // Vértice do cone
-// Criar a geometria das partículas
+const alturaCone2 = 2000;
+const raioBaseFinal2 = 80; // Vértice do cone
+
+// Criar a geometria das linhas
 const particulas2Geometry = new THREE.BufferGeometry();
 
-// Criar arrays para armazenar as posições das partículas
-const positions2 = new Float32Array(quantidadeParticulas2 * 3);
+// Criar arrays para armazenar as posições das linhas
+const positions2 = new Float32Array(quantidadeParticulas2 * 3 * 2); // * 2 porque cada linha tem dois pontos
 
 // Preencher os arrays com posições ao longo do cone
 for (let i = 0; i < quantidadeParticulas2; i++) {
     // Gerar coordenadas cilíndricas aleatórias dentro do cone
     const altura = (Math.random() * -1) * alturaCone2;
     const alturaNormalizada = altura / alturaCone2; // Normaliza a altura entre 0 e 1
-    const theta = Math.random() * (Math.PI * 2) * Math.PI; // Ângulo aleatório
+    const theta = Math.random() * Math.PI * 2; // Ângulo aleatório
 
     // Calcula o raio usando uma função cônica para evitar aglomeração nas bordas
     const raio = raioBaseInicial2 + alturaNormalizada * (raioBaseFinal2 - raioBaseInicial2);
@@ -147,24 +177,29 @@ for (let i = 0; i < quantidadeParticulas2; i++) {
     const x = raio * Math.cos(theta);
     const z = raio * Math.sin(theta);
 
-    // Definir a posição da partícula
-    positions2[i * 3] = x;
-    positions2[i * 3 + 1] = altura;
-    positions2[i * 3 + 2] = z;
+    // Definir a posição do início da linha
+    positions2[i * 6] = x;
+    positions2[i * 6 + 1] = altura;
+    positions2[i * 6 + 2] = z;
+
+    // Definir a posição do fim da linha (um pouco deslocada)
+    positions2[i * 6 + 3] = x;
+    positions2[i * 6 + 4] = altura - 5; // Ajuste a altura para um pequeno deslocamento
+    positions2[i * 6 + 5] = z;
 }
 
-
-// Adicionar as posições à geometria das partículas
+// Adicionar as posições à geometria das linhas
 particulas2Geometry.setAttribute('position', new THREE.BufferAttribute(positions2, 3));
 
-// Criar o material das partículas
-const particulas2Material = new THREE.PointsMaterial({ color: 0xfaed3a, size: 0.05 });
+// Criar o material das linhas
+const particulas2Material = new THREE.LineBasicMaterial({ color: 0xfaed3a });
 
-// Criar o objeto das partículas
-const particulas2 = new THREE.Points(particulas2Geometry, particulas2Material);
+// Criar o objeto das linhas
+const particulas2 = new THREE.LineSegments(particulas2Geometry, particulas2Material);
 
-// Adicionar as partículas como filhas da esfera
+// Adicionar as linhas como filhas da esfera
 pulsar.add(particulas2);
+
 
 
 // ADD GRID
@@ -370,4 +405,8 @@ document.getElementById('threejs-container').addEventListener('dblclick', functi
         event.stopPropagation();
     }
 });
+
+
+
+
 
