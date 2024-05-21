@@ -168,25 +168,28 @@ pulsar.add(particulas2);
 
 
 // ADD GRID
-var gridMaterial = new THREE.LineBasicMaterial({ color: 0xf0f0f0, transparent: true, opacity: 0.4 });
-var gridHelper = new THREE.GridHelper(50, 50, gridMaterial);
+var gridColor = 0xf0f0f0;
+var gridHelper = new THREE.GridHelper(30, 50, gridColor, gridColor);
+gridHelper.material.opacity = 0.4;
+gridHelper.material.transparent = true;
 gridHelper.visible = true; // Torna a grade visível
 scene.add(gridHelper);
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Função para esconder ou mostrar o gridHelper
     function toggleGridHelperVisibility() {
         gridHelper.visible = document.getElementById("malhaCheckbox").checked;
     }
 
     // Event listener para o checkbox
-    document.getElementById("malhaCheckbox").addEventListener("change", function() {
+    document.getElementById("malhaCheckbox").addEventListener("change", function () {
         toggleGridHelperVisibility(); // Chama a função para esconder ou mostrar o gridHelper
     });
 
     // Inicialmente, esconder o gridHelper
     toggleGridHelperVisibility();
 });
+
 
 //ADICIONA VETORES
 // EIXO DE ROTAÇÃO UP
@@ -213,12 +216,12 @@ scene.add(arrowHelper2);
 
 
 // Configuração de luz
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+const ambientLight = new THREE.AmbientLight(0xffffff, 1.25);
 scene.add(ambientLight);
 
-const pointLight = new THREE.PointLight(0xffffff, 0.7);
-pointLight.position.set(1, 0, 10);
-scene.add(pointLight);
+// const pointLight = new THREE.PointLight(0xffffff, 0.7);
+// pointLight.position.set(1, 0, 10);
+// scene.add(pointLight);
 
 // Posiciona a câmera
 // Definindo a posição inicial da câmera
@@ -237,7 +240,7 @@ controls.dampingFactor = 0.1; // Fator de amortecimento
 let isSimulationRunning = true;
 
 // Velocidade inicial de rotação e sentido de rotação
-let rotationSpeed = -0.2;
+let rotationSpeed = -0.1;
 
 // Variável para controlar a rotação
 let isRotationRunning = false;
@@ -263,21 +266,13 @@ restartButton.addEventListener('click', function () {
     isRotationRunning = false; // Define a rotação como parada
     pauseButton.textContent = 'Play'; // Atualiza o texto do botão pauseButton para 'Play'
 
-    // Define o valor do slider para a posição original (45 graus)
-    const defaultSliderPosition = 45;
-    sliderInput.value = defaultSliderPosition;
-
-    // Define a inclinação da esfera para 45 graus em relação aos eixos x e z
+    // Atualiza a inclinação da esfera para 45 graus em relação aos eixos x e z
     const degrees = 45; // 0 a 90 graus
     const inclination = degrees * Math.PI / 180; // Convertendo para radianos
     pulsar.rotation.x = inclination;
     pulsar.rotation.z = inclination;
 
-    // Atualiza a intensidade da luz ambiente para o valor padrão
-    const defaultIntensity = ((defaultSliderPosition - minSliderValue) / (maxSliderValue - minSliderValue)) * (maxIntensity - minIntensity) + minIntensity;
-    ambientLight.intensity = defaultIntensity;
-
-    // Atualiza a velocidade de rotação para o valor padrão
+    // Atualiza a velocidade de rotação com base no slider
     updateRotationSpeed();
 });
 
@@ -349,7 +344,7 @@ const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
 // Adiciona um event listener para detectar cliques duplos no elemento #threejs-container
-document.getElementById('threejs-container').addEventListener('dblclick', function(event) {
+document.getElementById('threejs-container').addEventListener('dblclick', function (event) {
     // Atualiza as coordenadas do mouse em relação ao tamanho da janela
     mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
     mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
