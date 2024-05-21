@@ -1,7 +1,9 @@
 # Pulsar 3D 🌌⚛️
 **Português | Pt-BR**‎ ✓‎‎‎&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[English | EN](README/EN/README.md)
 
-![Pulsar Image](link_para_uma_imagem_do_pulsar)
+<p align="center">
+<img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/site.jpg" alt="Pulsar 3D simulation homepage" height="80%" width=80%">
+</p>
 
 ## Descrição 📝
 
