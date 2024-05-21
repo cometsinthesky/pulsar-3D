@@ -1,8 +1,9 @@
 # Pulsar 3D 🌌⚛️
+<p align="center">
+<img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/site.jpg" alt="Pulsar 3D simulation homepage" height="100%" width=100%">
+</p>
+
 [Português | Pt-Br](https://github.com/cometsinthesky/pulsar-3D)‎&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;**English | EN**‎ ✓
-
-![Pulsar Image](link_to_a_pulsar_image)
-
 ## Description 📝
 
 Pulsar 3D is an interactive 3D simulation of a Pulsar, a highly magnetized neutron star in rapid rotation that emits regular beams (pulses) of electromagnetic radiation. This simulation offers a unique visual and educational experience to explore the characteristics and dynamics of these fascinating astronomical objects.
