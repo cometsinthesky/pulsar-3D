@@ -3,7 +3,8 @@
 const scene = new THREE.Scene();
 //                                     FV, Aspect Ratio, Near plane, Far plane 
 const camera = new THREE.PerspectiveCamera(50, 800 / 600, 0.1, 9100);
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+
 renderer.setSize(800, 600); // Define o tamanho da janela de renderização
 renderer.setClearColor(0x000000); // Define a cor de fundo
 document.getElementById('threejs-container').appendChild(renderer.domElement);
@@ -68,31 +69,6 @@ cone2.scale.setY(-2);
 // Adiciona os cones como filhos da esfera
 pulsar.add(cone1);
 pulsar.add(cone2);
-
-
-//ADD DOUBLE CLICK
-// Adiciona um event listener para detectar cliques duplos no elemento #threejs-container
-document.getElementById('threejs-container').addEventListener('dblclick', function(event) {
-    // Verifica se o clique duplo ocorreu na esfera
-    const intersects = raycaster.intersectObject(pulsar);
-
-    // Se o clique duplo ocorreu na esfera
-    if (intersects.length > 0) {
-        // Centraliza a esfera no centro da tela a uma distância de 3 unidades
-        const newPosition = new THREE.Vector3(0, 0, -2);
-        // Atualiza a posição da câmera
-        camera.position.copy(newPosition);
-        // Atualiza os controles da câmera
-        controls.target.set(0, 0, 0);
-        // Atualiza a direção da câmera
-        camera.lookAt(0, 0, 0);
-
-        // Impede a propagação do evento para outros elementos
-        event.stopPropagation();
-    }
-});
-
-
 
 
 //ADICIONA PARTÍCULAS NOS CONES
@@ -192,8 +168,8 @@ pulsar.add(particulas2);
 
 
 // ADD GRID
-var gridMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.5 });
-var gridHelper = new THREE.GridHelper(80, 80, gridMaterial);
+var gridMaterial = new THREE.LineBasicMaterial({ color: 0xf0f0f0, transparent: true, opacity: 0.4 });
+var gridHelper = new THREE.GridHelper(50, 50, gridMaterial);
 gridHelper.visible = true; // Torna a grade visível
 scene.add(gridHelper);
 
@@ -333,7 +309,7 @@ function animate() {
     // Verifique o valor do slider e atualize a inclinação da esfera
     const sliderValue = parseInt(document.getElementById('inclinação').value);
     // Mapeia o valor do slider de 0 a 100 para 0 a 90 graus
-    const inclination = mapRange(sliderValue, 0, 100, 0, Math.PI / 2);
+    const inclination = mapRange(sliderValue, 0, 100, 0, Math.PI / 1.8);
     pulsar.rotation.z = inclination;
     // Atualiza os OrbitControls
     controls.update();
@@ -365,4 +341,38 @@ function setRotationInDegrees(angleInDegrees) {
 // Define a rotação inicial em 180 graus
 setRotationInDegrees(180);
 
+
+
+//ADD DOUBLE CLICK
+// Inicializando o Raycaster e o mouse vector
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+// Adiciona um event listener para detectar cliques duplos no elemento #threejs-container
+document.getElementById('threejs-container').addEventListener('dblclick', function(event) {
+    // Atualiza as coordenadas do mouse em relação ao tamanho da janela
+    mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
+    mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
+
+    // Configura o Raycaster com a posição atual do mouse
+    raycaster.setFromCamera(mouse, camera);
+
+    // Calcula os objetos que intersectam o raio
+    const intersects = raycaster.intersectObject(pulsar);
+
+    // Se o clique duplo ocorreu na esfera
+    if (intersects.length > 0) {
+        // Centraliza a esfera no centro da tela a uma distância de 3 unidades
+        const newPosition = new THREE.Vector3(0, 0, -5);
+        // Atualiza a posição da câmera
+        camera.position.copy(newPosition);
+        // Atualiza os controles da câmera
+        controls.target.set(0, 0, 0);
+        // Atualiza a direção da câmera
+        camera.lookAt(0, 0, 0);
+
+        // Impede a propagação do evento para outros elementos
+        event.stopPropagation();
+    }
+});
 
