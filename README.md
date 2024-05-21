@@ -34,7 +34,7 @@ Se preferir usar a simulação offline, siga as seguintes instruções:
 - Use o botão direito do mouse para clicar e trasladar a câmera para outro local da cena. 
 - Botão pausa/play: pausa e continua a simulação.
 - Botão reiniciar: reinicia a simulação.
-- Tecla F: entra e sai do modo tela cheia.
+- Tecla "F": entra e sai do modo tela cheia.
 - Clique duplo em tela cheia: centraliza a câmera no Pulsar.
 
 ## Dinâmica da Simulação 📊🌐
