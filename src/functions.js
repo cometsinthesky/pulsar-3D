@@ -24,7 +24,7 @@ function toggleFullscreen() {
 }
 
 // Listener para tecla pressionada
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     // Verifica se a tecla pressionada é a tecla "F"
     if (event.key === 'f' || event.key === 'F') {
         toggleFullscreen();
@@ -32,7 +32,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Listener para ajustar o tamanho do renderizador quando sai do modo de tela cheia
-document.addEventListener('fullscreenchange', function() {
+document.addEventListener('fullscreenchange', function () {
     if (!document.fullscreenElement) {
         // Saiu do modo de tela cheia, redefine o tamanho do renderizador para 800x600
         renderer.setSize(800, 600);
@@ -90,46 +90,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // SLIDERS AND MENU BUTTONS
 
-// SLIDER VELOCIDADE
-// Função para mapear um valor de um intervalo para outro
-function mapRange(value, minInput, maxInput, minOutput, maxOutput) {
-    return minOutput + (value - minInput) * (maxOutput - minOutput) / (maxInput - minInput);
-}
-
-// SLIDER VELOCIDADE
-// Seleciona o elemento de entrada do slider
+// ADD SPEED SLIDER
+// Seleciona o elemento do slider de velocidade
 const sliderInput = document.getElementById('velocidade');
 
-// Define os valores mínimo, máximo e padrão do slider
+// Define os valores mínimo, máximo e padrão de velocidade de rotação
 const minRotationSpeed = -0.01;
 const maxRotationSpeed = -0.3;
 const defaultRotationSpeed = -0.1;
 
 // Define a função para atualizar a velocidade de rotação com base no valor do slider
 function updateRotationSpeed() {
-    // Obtém o valor atual do slider
-    const sliderValue = parseFloat(sliderInput.value);
-
-    // Calcula a velocidade de rotação com base no valor do slider
-    rotationSpeed = minRotationSpeed + (maxRotationSpeed - minRotationSpeed) * (sliderValue / 100);
-
-    // Atualiza a velocidade de rotação
-    if (isRotationRunning) {
-        pulsar.rotation.y = rotationSpeed;
-    }
+    console.log("Atualizando velocidade de rotação...");
+    const speedIndex = parseInt(sliderInput.value);
+    const speeds = [-0.01, -0.03, -0.05, -0.07, -0.1, -0.15, -0.2, -0.25, -0.3];
+    const speed = speeds[speedIndex];
+    rotationSpeed = speed; // Supondo que 'rotationSpeed' é a variável que controla a velocidade de rotação
 }
-
-// Define o valor inicial do slider como o valor padrão
-sliderInput.value = ((defaultRotationSpeed - minRotationSpeed) / (maxRotationSpeed - minRotationSpeed)) * 100;
 
 // Chama a função updateRotationSpeed para atualizar a rotação com base no valor padrão
 updateRotationSpeed();
 
-// Adiciona um ouvinte de evento de mudança ao elemento de entrada do slider
+// Adiciona um ouvinte de evento de mudança ao elemento de entrada do slider de velocidade
 sliderInput.addEventListener('input', updateRotationSpeed);
 
-// Define a velocidade de rotação inicial com base no valor padrão do slider
-updateRotationSpeed();
 
 
 // SLIDER LUZ AMBIENTE
@@ -141,14 +125,18 @@ slider.addEventListener('input', function () {
     // Obtendo o valor atual do slider
     const sliderValue = parseFloat(this.value) / 100; // Convertendo para um valor entre 0 e 1
 
+    // Mapeando para um intervalo entre 1 e 1.5
+    const mappedValue = sliderValue * 0.5 + 1;
+
     // Limitando o valor mínimo e máximo
-    const minValue = 0.3;
-    const maxValue = 0.95;
-    const clampedValue = Math.min(Math.max(sliderValue, minValue), maxValue);
+    const minValue = 1;
+    const maxValue = 1.5;
+    const clampedValue = Math.min(Math.max(mappedValue, minValue), maxValue);
 
     // Atualizando a intensidade da luz ambiente com o valor do slider
     ambientLight.intensity = clampedValue;
 });
+
 
 // Função auxiliar para mapear um valor de um intervalo para outro
 function mapRange(value, low1, high1, low2, high2) {
