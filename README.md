@@ -35,7 +35,7 @@ Se preferir usar a simulação offline, siga as seguintes instruções:
 - Botão pausa/play: pausa e continua a simulação.
 - Botão reiniciar: reinicia a simulação.
 - Tecla "F": entra e sai do modo tela cheia.
-- Clique duplo em tela cheia: centraliza a câmera no Pulsar.
+- Clique duplo em tela cheia: centraliza a câmera no pulsar.
 
 ## Dinâmica da Simulação 📊🌐
 
