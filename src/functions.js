@@ -166,26 +166,6 @@ rotationAxisCheckbox.addEventListener('change', function (event) {
 toggleRotationAxisVectors(false);
 
 
-//CHECKBOX JATO DE RADIAÇÃO
-// Inicialmente, ocultar as partículas
-particulas.visible = false;
-particulas2.visible = false;
-
-// Adicionar um evento de escuta à checkbox
-document.getElementById('beamsCheckbox').addEventListener('change', function () {
-    if (this.checked) {
-        // Se a checkbox for selecionada, mostrar as partículas
-        particulas.visible = true;
-        particulas2.visible = true;
-    } else {
-        // Se a checkbox for desmarcada, ocultar as partículas
-        particulas.visible = false;
-        particulas2.visible = false;
-    }
-});
-
-
-
 // Inicia a animação
 animate();
 
