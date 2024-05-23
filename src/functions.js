@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
 // SLIDERS AND MENU BUTTONS
 
 // ADD SPEED SLIDER
