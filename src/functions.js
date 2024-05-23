@@ -178,3 +178,7 @@ arrowHelper1.dispose();
 arrowHelper2.dispose();
 particulas.dispose();
 particulas2.dispose();
+// Dispose da geometria
+line.geometry.dispose();
+// Dispose do material
+line.material.dispose();
