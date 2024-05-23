@@ -101,7 +101,7 @@ var gridColor = 0xf0f0f0;
 var gridHelper = new THREE.GridHelper(30, 50, gridColor, gridColor);
 gridHelper.material.opacity = 0.4;
 gridHelper.material.transparent = true;
-gridHelper.visible = true; // Torna a grade visível
+gridHelper.visible = false; // Define a grade como invisível inicialmente
 scene.add(gridHelper);
 
 document.addEventListener("DOMContentLoaded", function () {
