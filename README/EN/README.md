@@ -31,11 +31,11 @@ If you prefer to use the simulation offline, follow these instructions:
 
 - Use the left mouse button to click and drag in the scene to control the camera.
 - Use the mouse scroll wheel to zoom in or out.
-- Use the right mouse button to click and pan the camera to another location in the scene.
+- Use the right mouse button to click and move the pulsar on the scene.
 - Pause/Play button: pauses and resumes the simulation.
 - Restart button: restarts the simulation.
 - "F" key: toggles fullscreen mode.
-- Double-click in fullscreen: centers the camera on the Pulsar.
+- Double-click in fullscreen: centers the camera on the pulsar.
 
 ## Simulation Dynamics 📊🌐
 
