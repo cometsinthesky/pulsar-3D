@@ -194,6 +194,47 @@ a:visited {
   color: #eeeeee;
 }
 
+
+/* styles.css */
+.accordion-title {
+  padding: 100px;
+  background-color: transparent; /* Remove a cor de fundo */
+  border: none; /* Remove a borda */
+  margin: 0;
+  cursor: pointer;
+}
+
+.title-pointer {
+  cursor: pointer;
+}
+
+.accordion-content {
+  text-align: center;
+  margin-left: 80px;
+  margin-left: 80px;
+  max-width: 1000px;
+  background-color: rgba(255, 255, 255, 0); /* Fundo transparente */
+  font-size: 20px;
+  padding: 10px;
+  display: none; /* Esconde o conteúdo inicialmente */
+  border: none; /* Remove a borda */
+  margin: 0;
+}
+
+.content {
+  text-align: center;
+}
+
+.toggle-icon {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px; /* Tamanho menor para o ícone */
+}
+
+
+
+
+
 footer {
   margin-top: 10px;
   margin-bottom: -10px;

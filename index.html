@@ -54,7 +54,7 @@
     <!-- TITLE LANDING PAGE -->
     <div class="overlay">
         <div class="landing-content">
-            <h1 class="fade-in-title" style="font-size:30px;">Bem-vind@ à Simulação Pulsar 3D</h1>
+            <h1 class="fade-in-title" style="font-size:30px;">Boas vindas à Simulação Pulsar 3D</h1>
             <p class="landing-paragraph fade-in-paragraph" style="font-size: 20px;">&nbsp;</p>
             <button class="enter-button fade-in-paragraph" onclick="redirectToSimulation()">Entrar na Simulação</button>
         </div>
@@ -158,14 +158,70 @@
     </div>
 
 
+    <div class="content content-margin" onclick="toggleText('pulsarText')">
+        <h2 class="title-pointer">O que é um Pulsar? <span class="toggle-icon">▼</span></h1>
+        <p id="pulsarText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px;">
+            Um pulsar é uma estrela de nêutrons altamente magnetizada que gira rapidamente, emitindo feixes de radiação eletromagnética a partir de seus polos magnéticos. Esses feixes de radiação, que podem incluir ondas de rádio, luz visível, raios X e raios gama, são observados da Terra como pulsos regulares de energia, devido à rotação da estrela. Quando o feixe aponta em direção à Terra, é detectado como um pulso, dando a impressão de que a estrela está "pulsando", daí o nome pulsar. Os pulsares são remanescentes densos de supernovas e possuem campos magnéticos incrivelmente fortes, além de uma densidade tão alta que uma pequena quantidade de sua matéria pode pesar milhões de toneladas.
+        </p>
+    </div>
+
     <div style="text-align: center;" class="hidden">
         <!-- Adiciona imagens -->
         <img src="./images/pulsar.jpg" alt="Características de um Pulsar" style="width: 600px; margin-top: 20px;">
-        <br>
+        <br>      
+
+        <div class="content content-margin" onclick="toggleText('jocelynText')">
+            <h2 class="title-pointer">Quem primeiro observou os Pulsares? <span class="toggle-icon">▼</span></h1>
+            <div id="jocelynText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px;">
+                <p>A detecção do primeiro pulsar foi feita por Jocelyn Bell Burnell e foi um dos marcos mais significativos na astrofísica e na história da astronomia. Em 1967, enquanto estudante de doutorado na Universidade de Cambridge, na Inglaterra, Jocelyn desempenhou um papel fundamental na descoberta dos pulsares, utilizando o radiotelescópio Interplanetary Scintillation Array. Com precisão e dedicação, ela analisou os dados coletados e notou um sinal de rádio regular e intermitente que não podia ser atribuído a nenhuma fonte de interferência conhecida. Ao eliminar todas as possíveis causas, como interferência terrestre ou fontes naturais, Jocelyn concluiu que o sinal tinha uma origem astronômica.</p>
+
+                <p>Apesar da descoberta revolucionária, Jocelyn Bell Burnell enfrentou discriminação e falta de reconhecimento no meio acadêmico. O Prêmio Nobel de Física de 1974 foi concedido apenas a seu supervisor, omitindo sua contribuição essencial no trabalho. Esse episódio destaca a importância de valorizar e reconhecer o trabalho das mulheres na ciência, promovendo maior igualdade de gênero e assegurando que suas descobertas sejam devidamente creditadas.</p>
+            </div>
+
         <img src="./images/jocelyn.jpg" alt="Jocelyn Bell e a descoberta dos Pulsares"
             style="width: 700px; margin-top: 40px;">
         <br>
+
+        <div class="content content-margin" onclick="toggleText('formationText')">
+            <h2 class="title-pointer">Como é formado um Pulsar? <span class="toggle-icon">▼</span></h1>
+            <p id="formationText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px;">
+                O processo de formação de um pulsar ocorre durante a explosão de uma supernova, que é o estágio final na vida de uma estrela massiva. Quando uma estrela massiva esgota seu combustível nuclear, ela sofre uma colapso gravitacional, resultando em uma explosão violenta, ejetando suas camadas externas para o espaço e deixando para trás um núcleo extremamente denso, conhecido como estrela de nêutrons. 
+                A estrela de nêutrons resultante pode girar rapidamente devido à conservação do momento angular, concentrando seu campo magnético e emitindo radiação eletromagnética em feixes estreitos a partir de seus polos magnéticos. Esses feixes de radiação são detectados na Terra como pulsos periódicos, dando origem aos pulsares.
+            </p>
+        </div>
+
         <img src="./images/evolution.jpg" alt="Ciclo de vida estelar" style="width: 900px; margin-top: 40px;">
+    </div>
+
+    <div class="content content-margin" onclick="toggleText('structureText')">
+        <h2 class="title-pointer">Qual é a estrutura de um Pulsar? <span class="toggle-icon">▼</span></h1>
+        <div id="structureText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px;">
+            <p style="text-align: left;">Dentro de um pulsar, a composição e o comportamento dos nêutrons são fundamentais para compreender como a estrela funciona e emite radiação. A estrutura de um pulsar envolve várias camadas, cada uma com características específicas dos nêutrons e outras partículas subatômicas.</p>
+
+            <p style="text-align: left;"><b>Camada Externa (Crosta)</b><br>
+                A crosta de um pulsar é composta principalmente por núcleos atômicos pesados e elétrons livres. Nos níveis mais profundos da crosta, a densidade é tão alta que os núcleos atômicos capturam elétrons, formando nêutrons. Esses nêutrons se acumulam, formando uma "sopa" densa de nêutrons intercalada com núcleos de nêutrons.</p>
+
+                <p style="text-align: left;"><b>Camada Interna (Núcleo Externo)</b><br>
+                Superfluido de Nêutrons: No núcleo externo do pulsar, a densidade é ainda maior, transformando os nêutrons em um estado de superfluidez. Neste estado, os nêutrons se movem sem atrito, permitindo uma condução de energia extremamente eficiente.<br>
+                Supercondutividade: Os prótons, que compõem uma pequena fração do núcleo, também podem se tornar supercondutores, contribuindo para a manutenção do campo magnético intenso do pulsar.</p>
+                
+                <p style="text-align: left;"><b>Núcleo Central (Núcleo Interno)</b><br> 
+                Matéria Exótica: No núcleo interno, a densidade é tão extrema que pode haver a formação de partículas exóticas como bósons ou quarks livres, compondo um possível plasma de quarks ou uma mistura de partículas subatômicas ainda não completamente compreendidas.</p>
+                
+                <p style="text-align: left;"><b>Estado de Degenerescência</b><br> 
+                Os nêutrons estão em um estado degenerado, onde a pressão degenerativa dos nêutrons (uma forma de pressão quântica que surge devido ao princípio de exclusão de Pauli) equilibra a força gravitacional que tende a colapsar a estrela ainda mais.</p>
+
+                <p><b>Relação dos nêutrons no Pulsar</p></b>
+                <p style="text-align: left;"><b>Pressão de Degenerescência</b><br>
+                Esta é a força que mantém a estrela de nêutrons estável contra o colapso gravitacional. A pressão é causada pelos nêutrons, que, devido ao princípio de exclusão de Pauli, não podem ocupar o mesmo estado quântico. Essa pressão é o que sustenta a estrutura da estrela de nêutrons.</p>
+
+                <p style="text-align: left;"><b>Superfluidez e Supercondutividade</b><br>
+                A superfluidez dos nêutrons e a supercondutividade dos prótons permitem a condução eficiente de calor e a manutenção de correntes elétricas sem resistência, contribuindo para a estabilidade do campo magnético.
+                </p>
+
+                <p style="text-align: left;"><b>Emissão de Radiação</b><br>
+                A rápida rotação da estrela de nêutrons e a sua intensa magnetosfera criam um ambiente onde partículas carregadas, aceleradas pelos campos elétrico e magnético, emitem radiação. O movimento das partículas dentro da estrela e ao longo de sua superfície influencia a emissão de radiação observada externamente.</p>
+        </div>
     </div>
 
 

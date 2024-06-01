@@ -300,6 +300,24 @@ document.getElementById('threejs-container').addEventListener('dblclick', functi
     }
 });
 
+// Add Accordion
+function toggleText(id) {
+    const content = document.getElementById(id);
+    const icon = content.parentElement.querySelector(".toggle-icon");
+
+    // Alterna a exibição do conteúdo
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        icon.textContent = "▲"; // Muda o ícone para seta para cima
+    } else {
+        content.style.display = "none";
+        icon.textContent = "▼"; // Muda o ícone para seta para baixo
+    }
+}
+
+
+
+
 
 
 
