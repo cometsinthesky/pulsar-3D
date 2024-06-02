@@ -211,14 +211,14 @@ a:visited {
 .accordion-content {
   text-align: center;
   margin-left: 80px;
-  margin-left: 80px;
+  margin-right: 80px;
   max-width: 1000px;
   background-color: rgba(255, 255, 255, 0); /* Fundo transparente */
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
   display: none; /* Esconde o conteúdo inicialmente */
   border: none; /* Remove a borda */
-  margin: 0;
+  margin-top: -30px;
 }
 
 .content {
@@ -230,8 +230,6 @@ a:visited {
   cursor: pointer;
   font-size: 20px; /* Tamanho menor para o ícone */
 }
-
-
 
 
 
@@ -482,6 +480,7 @@ footer {
   border-radius: 20px;
   margin-bottom: 5px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 60px;
 }
 
 .button1:hover {
