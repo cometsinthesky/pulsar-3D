@@ -243,11 +243,6 @@ footer {
 }
 
 
-.colorgenerator {
-  color: #7cd5ff;
-}
-
-
 /* Adicione estilos específicos para a landing page aqui */
 .overlay {
   background-image: url('https://raw.githubusercontent.com/cometsinthesky/pulsar-3D/main/images/landingbackground.jpg');
@@ -499,5 +494,7 @@ footer {
   font-size: 16px;
 }
 
-
+.colorgenerator {
+  color: #a8e4ff;
+}
 

@@ -86,25 +86,40 @@ function drawFieldLines() {
     }
   }
 }
+
 // Selecione o checkbox pelo ID
 const checkbox = document.getElementById("fieldCheckbox");
 
 // Adicione um event listener para o evento de mudança
 checkbox.addEventListener("change", function () {
-  // Verifique se o checkbox está selecionado
-  if (this.checked) {
-    // Se estiver selecionado, chame a função drawFieldLines
-    drawFieldLines(); // Desenha as linhas
-  } else {
-    // Se não estiver selecionado, limpe as linhas da cena
-    clearFieldLines();
-  }
+    // Verifique se o checkbox está selecionado
+    if (this.checked) {
+        // Se estiver selecionado, chame a função drawFieldLines
+        drawFieldLines(); // Desenha as linhas
+
+        // Pausa a simulação
+        isRotationRunning = false;
+        pauseButton.textContent = 'Play'; // Atualiza o texto do botão pauseButton para 'Play'
+
+        // Coloca a inclinação em 0 graus
+        const inclination = 0;
+        pulsar.rotation.x = inclination;
+        pulsar.rotation.z = inclination;
+
+        // Ajusta o valor do slider para 0
+        const slider = document.getElementById('inclinação');
+        slider.value = 0;
+    } else {
+        // Se não estiver selecionado, limpe as linhas da cena
+        clearFieldLines();
+    }
 });
 
 // Função para limpar as linhas de campo magnético da cena
 function clearFieldLines() {
-  // Remova todas as linhas de campo magnético da cena
-  fieldLines.forEach((line) => scene.remove(line));
-  // Limpe a lista fieldLines
-  fieldLines.length = 0;
+    // Remova todas as linhas de campo magnético da cena
+    fieldLines.forEach((line) => scene.remove(line));
+    // Limpe a lista fieldLines
+    fieldLines.length = 0;
 }
+

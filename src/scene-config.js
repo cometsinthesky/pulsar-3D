@@ -51,7 +51,7 @@ scene.add(pulsar);
 // Função para adicionar glow à esfera pulsar
 function addGlowToPulsar() {
     // Criar um material para a esfera com emissão
-    const pulsarGlowMaterial = new THREE.MeshBasicMaterial({ color: 0x87d8fd, transparent: true, opacity: 0.18, side: THREE.FrontSide });
+    const pulsarGlowMaterial = new THREE.MeshBasicMaterial({ color: 0xa8e4ff, transparent: true, opacity: 0.2, side: THREE.FrontSide });
 
     // Clonar a geometria da esfera
     const pulsarGlowGeometry = geometry.clone();
