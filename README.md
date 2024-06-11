@@ -23,19 +23,19 @@ Acessando a simulação:
   
 ### Controles 🎮🕹️
 
-- Use o botão esquerdo do mouse para clicar e arrastar na cena para controlar a câmera.
-- Use o scroll do mouse para aumentar ou diminuir a distância do pulsar.
-- Use o botão direito do mouse para mover o pulsar na cena. 
-- Botão pausa/play: pausa e continua a simulação.
-- Botão reiniciar: reinicia a simulação.
-- Tecla F: entra e sai do modo tela cheia.
-- Clique duplo em tela cheia: centraliza a câmera no pulsar.
-- Espaço: Pausa e inicia a simulação.
-- Teclas - e +: Velocidade de rotação.
-- Tecla P: Jatos de radiação.
-- Tecla R: Eixo de rotação.
-- Tecla M: Campo magnético.
-- Tecla G: Malha.
+- Use o botão esquerdo do mouse para clicar e arrastar na cena para controlar a câmera
+- Use o scroll do mouse para aumentar ou diminuir a distância do pulsar
+- Use o botão direito do mouse para mover o pulsar na cena
+- Botão pausa/play: pausa e continua a simulação
+- Botão reiniciar: reinicia a simulação
+- Tecla F: entra e sai do modo tela cheia
+- Clique duplo em tela cheia: centraliza a câmera no pulsar
+- Espaço: Pausa e inicia a simulação
+- Teclas - e +: Velocidade de rotação
+- Tecla P: Jatos de radiação
+- Tecla R: Eixo de rotação
+- Tecla M: Campo magnético
+- Tecla G: Malha
 
 ## Dinâmica da Simulação 📊🌐
 
