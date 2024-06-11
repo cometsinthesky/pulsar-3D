@@ -1,9 +1,11 @@
 # Pulsar 3D 🌌⚛️
+
 <p align="center">
 <img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/site.jpg" alt="Pulsar 3D simulation homepage" height="90%" width="90%">
 </p>
 
 [Português | Pt-Br](https://github.com/cometsinthesky/pulsar-3D)‎&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;**English | EN**‎ ✓
+
 ## Description 📝
 
 Pulsar 3D is an interactive 3D simulation of a Pulsar, a highly magnetized neutron star in rapid rotation that emits regular beams (pulses) of electromagnetic radiation. This simulation offers a unique visual and educational experience to explore the characteristics and dynamics of these fascinating astronomical objects.
@@ -22,11 +24,12 @@ Accessing the simulation:
 - Access the simulation's webpage at [https://cometsinthesky.github.io/pulsar-3D/](https://cometsinthesky.github.io/pulsar-3D/).
 
 If you prefer to use the simulation offline, follow these instructions:
-* On the [repository page](https://github.com/cometsinthesky/pulsar-3D) click on the green **<>code** button;
-* Then, click on "Download ZIP", or if you prefer direct download click [HERE](https://github.com/cometsinthesky/pulsar-3D/archive/refs/heads/main.zip);
-* Go to the location of the downloaded file and extract the files to a folder;
-* Inside the folder, click on the **index.html** file and drag it to an open browser tab and drop it on that tab. The simulation should load automatically.
-  
+
+- On the [repository page](https://github.com/cometsinthesky/pulsar-3D) click on the green **<>code** button;
+- Then, click on "Download ZIP", or if you prefer direct download click [HERE](https://github.com/cometsinthesky/pulsar-3D/archive/refs/heads/main.zip);
+- Go to the location of the downloaded file and extract the files to a folder;
+- Inside the folder, click on the **index.html** file and drag it to an open browser tab and drop it on that tab. The simulation should load automatically.
+
 ### Controls 🎮🕹️
 
 - Use the left mouse button to click and drag in the scene to control the camera.
@@ -76,7 +79,8 @@ At the beginning of the project, while analyzing the recordings made on strips o
 Pulsars are highly compact neutron stars that emit electromagnetic radiation in regular bursts, like pulses, as they rapidly rotate about their axis. In general, Pulsars are compact stars with diameters of tens of kilometers, but with an average mass of 1.4 M☉ (solar mass), which generates specific conditions of high rotation, high-energy emissions, strong magnetic fields, and intense gravitational field. Additionally, neutron stars represent one of the possible final stages of the life of a massive star, along with a supernova explosion or a black hole (PIRES; PEDUZZI, 2021, cited in FERREIRA, ANDRADE, LANGHI, 2024, in press)
 
 Mourão (1987) defines in his Encyclopedic Dictionary of Astronomy and Astronautics, that a pulsar is a:
->**Stellar radio source emitting pulses of average duration of 35 milliseconds and which repeat at extremely regular intervals of the order of 1.4 seconds, approximately. Such emission must be produced by a very small and dense neutron star that, while spinning, emits a beam of radio waves similar to the flashes emitted by a lighthouse … The name pulsar comes from the contraction of the English expression: Pulsa(ting) r(adio sources), which is equivalent to pulsating radio source (MOURÃO, 1987, p. 654, cited in FERREIRA, ANDRADE, LANGHI, 2024, in press).**
+
+> **Stellar radio source emitting pulses of average duration of 35 milliseconds and which repeat at extremely regular intervals of the order of 1.4 seconds, approximately. Such emission must be produced by a very small and dense neutron star that, while spinning, emits a beam of radio waves similar to the flashes emitted by a lighthouse … The name pulsar comes from the contraction of the English expression: Pulsa(ting) r(adio sources), which is equivalent to pulsating radio source (MOURÃO, 1987, p. 654, cited in FERREIRA, ANDRADE, LANGHI, 2024, in press).**
 
 With the advancement of detections in radio astronomy, the improvement of detection precision, and the processing of data from distant pulsars, it was possible to identify the slowest pulsar ever detected by astronomers to date. In 2018, a pulsar approximately 14 million years old was discovered by a doctoral student at the University of Manchester. The team made the observations through the Low-Frequency Array (LOFAR), whose core is located in the Netherlands, to detect the PSR J0250+5854 pulsar. Until previous years, the slowest rotating pulsar detected had a rotation period of 8.5 seconds. This new pulsar, located in the direction of the Cassiopeia constellation, about 5,200 light-years away from Earth, rotates at a slower speed, in a range of 23.5 seconds (TAN et al, 2018, cited in FERREIRA, ANDRADE, LANGHI, 2024, in press).
 

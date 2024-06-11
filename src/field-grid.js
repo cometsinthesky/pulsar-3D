@@ -3,7 +3,7 @@ var gridColor = 0xf0f0f0;
 var gridHelper = new THREE.GridHelper(30, 50, gridColor, gridColor);
 gridHelper.material.opacity = 0.4;
 gridHelper.material.transparent = true;
-gridHelper.visible = true; // Torna a grade visível
+gridHelper.visible = false; // Define a grade como invisível inicialmente
 scene.add(gridHelper);
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -19,10 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleGridHelperVisibility(); // Chama a função para esconder ou mostrar o gridHelper
     });
 
+  // Event listener para a tecla 'G'
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "g" || event.key === "G") {
+      // Inverte o estado do checkbox
+      document.getElementById("malhaCheckbox").checked =
+        !document.getElementById("malhaCheckbox").checked;
+      toggleGridHelperVisibility(); // Atualiza a visibilidade da grade
+    }
+  });
+
   // Inicialmente, esconder o gridHelper
   toggleGridHelperVisibility();
 });
-
 
 // Função para calcular o vetor de campo magnético B em um ponto r
 function calculateMagneticField(r) {
@@ -87,39 +96,54 @@ function drawFieldLines() {
   }
 }
 
-// Selecione o checkbox pelo ID
-const checkbox = document.getElementById("fieldCheckbox");
-
-// Adicione um event listener para o evento de mudança
-checkbox.addEventListener("change", function () {
-    // Verifique se o checkbox está selecionado
-    if (this.checked) {
-        // Se estiver selecionado, chame a função drawFieldLines
-        drawFieldLines(); // Desenha as linhas
-
-        // Pausa a simulação
-        isRotationRunning = false;
-        pauseButton.textContent = 'Play'; // Atualiza o texto do botão pauseButton para 'Play'
-
-        // Coloca a inclinação em 0 graus
-        const inclination = 0;
-        pulsar.rotation.x = inclination;
-        pulsar.rotation.z = inclination;
-
-        // Ajusta o valor do slider para 0
-        const slider = document.getElementById('inclinação');
-        slider.value = 0;
-    } else {
-        // Se não estiver selecionado, limpe as linhas da cena
-        clearFieldLines();
-    }
+// Adicione um event listener para o evento de pressionar a tecla "m"
+document.addEventListener("keydown", function (event) {
+  if (event.key === "m") {
+    handleCheckboxToggle();
+  }
 });
+
+// Adicione um event listener para o evento de mudança do checkbox
+document
+  .getElementById("fieldCheckbox")
+  .addEventListener("change", handleCheckboxToggle);
+
+// Adicione um event listener para o evento de clique no checkbox
+document
+  .getElementById("fieldCheckbox")
+  .addEventListener("click", function (event) {
+    // Verifique se o evento foi acionado pelo clique no checkbox
+    if (event.target === this) {
+      handleCheckboxToggle();
+    }
+  });
+
+// Função para lidar com a alteração do estado do checkbox e limpar as linhas de campo magnético
+function handleCheckboxToggle() {
+  const checkbox = document.getElementById("fieldCheckbox");
+  // Verifique se o checkbox está selecionado
+  if (checkbox.checked) {
+    // Se estiver selecionado, desmarque o checkbox e limpe as linhas de campo
+    checkbox.checked = false;
+    clearFieldLines();
+  } else {
+    // Se não estiver selecionado, faça as ações correspondentes e marque o checkbox
+    drawFieldLines();
+    isRotationRunning = false;
+    pauseButton.textContent = "Play";
+    const inclination = 0;
+    pulsar.rotation.x = inclination;
+    pulsar.rotation.z = inclination;
+    const slider = document.getElementById("inclinação");
+    slider.value = 0;
+    checkbox.checked = true;
+  }
+}
 
 // Função para limpar as linhas de campo magnético da cena
 function clearFieldLines() {
-    // Remova todas as linhas de campo magnético da cena
-    fieldLines.forEach((line) => scene.remove(line));
-    // Limpe a lista fieldLines
-    fieldLines.length = 0;
+  // Remova todas as linhas de campo magnético da cena
+  fieldLines.forEach((line) => scene.remove(line));
+  // Limpe a lista fieldLines
+  fieldLines.length = 0;
 }
-
