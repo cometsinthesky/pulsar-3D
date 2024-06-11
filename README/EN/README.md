@@ -25,19 +25,19 @@ Accessing the simulation:
 
 ### Controls 🎮🕹️
 
-Use the left mouse button to click and drag in the scene to control the camera.
-Use the mouse scroll wheel to zoom in or out on the pulsar.
-Use the right mouse button to move the pulsar in the scene.
-Pause/play button: pauses and resumes the simulation.
-Restart button: restarts the simulation.
-Key F: enters and exits full-screen mode.
-Double-click in full-screen mode: centers the camera on the pulsar.
-Space bar: Pauses and resumes the simulation.
-Keys - and +: Rotation speed.
-Key P: Radiation jets.
-Key R: Rotation axis.
-Key M: Magnetic field.
-Key G: Grid.
+Use the left mouse button to click and drag in the scene to control the camera
+Use the mouse scroll wheel to zoom in or out on the pulsar
+Use the right mouse button to move the pulsar in the scene
+Pause/play button: pauses and resumes the simulation
+Restart button: restarts the simulation
+Key F: enters and exits full-screen mode
+Double-click in full-screen mode: centers the camera on the pulsar
+Space bar: Pauses and resumes the simulation
+Keys - and +: Rotation speed
+Key P: Radiation jets
+Key R: Rotation axis
+Key M: Magnetic field
+Key G: Grid
 
 ## Simulation Dynamics 📊🌐
 
