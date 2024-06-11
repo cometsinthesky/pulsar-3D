@@ -20,12 +20,6 @@ Pulsar 3D é uma simulação interativa em 3D de um Pulsar, uma estrela de nêut
 Acessando a simulação:
 
 - Acesse a página web da simulação em [https://cometsinthesky.github.io/pulsar-3D/](https://cometsinthesky.github.io/pulsar-3D/).
-
-Se preferir usar a simulação offline, siga as seguintes instruções:
-* Na página do [repositório](https://github.com/cometsinthesky/pulsar-3D) clique no ícone verde **<>code**;
-* Em seguida, clique em "Download ZIP", ou se preferir o download direto clique [AQUI](https://github.com/cometsinthesky/pulsar-3D/archive/refs/heads/main.zip);
-* Vá para o local do arquivo baixado e extraia os arquivos para uma pasta;
-* Dentro da pasta, clique no arquivo **index.html** e arraste-o para uma aba aberta do navegador e solte-o nessa aba. A simulação deverá carregar automaticamente.
   
 ### Controles 🎮🕹️
 
@@ -34,8 +28,14 @@ Se preferir usar a simulação offline, siga as seguintes instruções:
 - Use o botão direito do mouse para mover o pulsar na cena. 
 - Botão pausa/play: pausa e continua a simulação.
 - Botão reiniciar: reinicia a simulação.
-- Tecla "F": entra e sai do modo tela cheia.
+- Tecla F: entra e sai do modo tela cheia.
 - Clique duplo em tela cheia: centraliza a câmera no pulsar.
+- Espaço: Pausa e inicia a simulação.
+- Teclas - e +: Velocidade de rotação.
+- Tecla P: Jatos de radiação.
+- Tecla R: Eixo de rotação.
+- Tecla M: Campo magnético.
+- Tecla G: Malha.
 
 ## Dinâmica da Simulação 📊🌐
 
