@@ -98,7 +98,7 @@ function drawFieldLines() {
 
 // Adicione um event listener para o evento de pressionar a tecla "m"
 document.addEventListener("keydown", function (event) {
-  if (event.key === "m") {
+  if (event.key === "m" || event.key === "M") {
     handleCheckboxToggle();
   }
 });
