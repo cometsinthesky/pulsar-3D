@@ -507,6 +507,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
+
   .pause-button {
     top: 4.4em;
     bottom: 10px;
@@ -580,8 +581,8 @@ html, body {
   }
 
   .accordion-content {
-    margin-left: -5em;
-    margin-right: -5em;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
   #threejs-container {
@@ -607,7 +608,16 @@ html, body {
   }
 }
 
+.accordion-content-desktop {
+margin-left: 60px;
+margin-right: 60px;
+}
+
 @media (max-width: 480px) {
+
+.hidden-mobile {
+  display: none;
+}
 
   html, body {
     max-width: 100%;
@@ -682,8 +692,8 @@ html, body {
   }
 
   .accordion-content {
-    margin-left: -5em;
-    margin-right: -5em;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
   #threejs-container {
@@ -693,13 +703,6 @@ html, body {
     align-items: center;
     margin-bottom: 20vh;
   }
-
-  .element.style {
-    display: flow;
-    width: 400px;
-    height: 400px;
-    touch-action: none;
-}
 
   .images {
     max-width: 350px;
@@ -712,4 +715,10 @@ html, body {
   .textimagescontent{
     margin-top: 39em;
   }
+}
+
+@media (min-width: 480px) {
+.hidden-desktop {
+  display: none;
+}
 }
