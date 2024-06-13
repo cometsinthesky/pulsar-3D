@@ -498,3 +498,218 @@ footer {
   color: #a8e4ff;
 }
 
+
+/* Media Queries para Responsividade */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .pause-button {
+    top: 4.4em;
+    bottom: 10px;
+    align-items: center;
+    width: 100px;
+    max-height: 35px;
+    margin-left: 10em;
+    margin-right: 60px;
+}
+
+.restart-button {
+  top: 4.4em;
+  bottom: 10px;
+  align-items: center;
+  width: 100px;
+  max-height: 35px;
+  margin-left: 2.5em;
+  margin-right: 0;
+}
+
+.menu {
+  top: 44em;
+  bottom: 10vh;
+  align-items: center;
+  width: 50%;
+  height: 20em;
+  margin-right: 4.5em;
+}
+
+  .landing-content {
+    max-width: max-content;
+    max-height: max-content;
+    align-items: center;
+  }
+
+  .text {
+    top: 1vh;
+    font-size: 1em;
+
+
+    .wrapper {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 0px;
+    }
+  }
+
+  .title-pointer {
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .pulsarTitle {
+    margin-top: 200px;
+  }
+
+  .audio-button {
+    right: -1vw;
+    z-index: 9999;
+  }
+
+  .dropdown-btn {
+    left: 1vw;
+    z-index: 9999;
+  }
+
+  .enter-button {
+    align-items: center;
+    font-size: 1em;
+  }
+
+  .accordion-content {
+    margin-left: -5em;
+    margin-right: -5em;
+  }
+
+  #threejs-container {
+    margin-top: 5vh;
+    max-width: 350px;
+    max-height: 600px;
+    align-items: center;
+    margin-bottom: 200px;
+    display: block; /* Certifique-se de que o elemento pode ter margens */
+    box-sizing: border-box; /* Pode ajudar com o cálculo das margens */
+  }
+
+  .images {
+    max-width: 350px;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is treated as a block element */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+  }
+
+  .textimagescontent{
+    margin-top: 39em;
+  }
+}
+
+@media (max-width: 480px) {
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+  .pause-button {
+    top: 4.4em;
+    bottom: 10px;
+    align-items: center;
+    width: 100px;
+    max-height: 35px;
+    margin-left: 10em;
+    margin-right: 60px;
+}
+
+.restart-button {
+  top: 4.4em;
+  bottom: 10px;
+  align-items: center;
+  width: 100px;
+  max-height: 35px;
+  margin-left: 2.5em;
+  margin-right: 0;
+}
+
+.menu {
+  top: 44em;
+  bottom: 10vh;
+  align-items: center;
+  width: 50%;
+  height: 20em;
+  margin-right: 4.5em;
+}
+
+  .landing-content {
+    max-width: max-content;
+    max-height: max-content;
+    align-items: center;
+  }
+
+  .text {
+    top: 1vh;
+    font-size: 1em;
+
+
+    .wrapper {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 0px;
+    }
+  }
+
+  .title-pointer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .audio-button {
+    right: -1vw;
+    z-index: 9999;
+  }
+
+  .dropdown-btn {
+    left: 1vw;
+    z-index: 9999;
+  }
+
+  .enter-button {
+    align-items: center;
+    font-size: 1em;
+  }
+
+  .accordion-content {
+    margin-left: -5em;
+    margin-right: -5em;
+  }
+
+  #threejs-container {
+    margin-top: 5vh;
+    max-width: max-content;
+    max-height: 320px;
+    align-items: center;
+    margin-bottom: 20vh;
+  }
+
+  .element.style {
+    display: flow;
+    width: 400px;
+    height: 400px;
+    touch-action: none;
+}
+
+  .images {
+    max-width: 350px;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is treated as a block element */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto; /* Center the image horizontally */
+  }
+
+  .textimagescontent{
+    margin-top: 39em;
+  }
+}

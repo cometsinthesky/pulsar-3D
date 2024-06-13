@@ -173,17 +173,16 @@
 
     </div>
 
-
-    <div class="content content-margin" onclick="toggleText('pulsarText')">
-        <h2 class="title-pointer">O que é um Pulsar? <span class="toggle-icon">▼</span></h1>
+    <div class="textimagescontent">
+    <div style="text-align: center;" class="hidden">
+        <div class="content content-margin" onclick="toggleText('pulsarText')">
+        <h2 id="pulsarTitle" class="title-pointer">O que é um Pulsar? <span class="toggle-icon">▼</span></h1>
         <p id="pulsarText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px; margin-bottom: 10px; margin-top: -10px;">
             Um pulsar é uma estrela de nêutrons altamente magnetizada que gira rapidamente, emitindo feixes de radiação eletromagnética a partir de seus polos magnéticos. Esses feixes de radiação, que podem incluir ondas de rádio, luz visível, raios X e raios gama, são observados da Terra como pulsos regulares de energia, devido à rotação da estrela. Quando o feixe aponta em direção à Terra, é detectado como um pulso, dando a impressão de que a estrela está "pulsando", daí o nome pulsar. Os pulsares são remanescentes densos de supernovas e possuem campos magnéticos incrivelmente fortes, além de uma densidade tão alta que uma pequena quantidade de sua matéria pode pesar milhões de toneladas.
         </p>
-    </div>
-
-    <div style="text-align: center;" class="hidden">
+        </div>
         <!-- Adiciona imagens -->
-        <img src="./images/pulsar.jpg" alt="Características de um Pulsar" style="width: 600px; margin-top: 20px; margin-bottom: 10px;">
+        <img class="images" src="./images/pulsar.jpg" alt="Características de um Pulsar" style="width: 600px; margin-top: 20px; margin-bottom: 10px;">
         <br>      
 
         <div class="content content-margin" onclick="toggleText('jocelynText')">
@@ -197,11 +196,11 @@
                 Detalhes > Legendas > Traduzir automaticamente > Selecionar idioma > Português.
                 </p>
             </div>
+        </div>
 
-        <img src="./images/jocelyn.jpg" alt="Jocelyn Bell e a descoberta dos Pulsares"
-            style="width: 750px; margin-top: 20px; margin-bottom: 10px;">
-        <br>
+        <img class="images" src="./images/jocelyn.jpg" alt="Jocelyn Bell e a descoberta dos Pulsares" style="width: 750px; margin-top: 20px; margin-bottom: 10px;"><br>
 
+        
         <div class="content content-margin" onclick="toggleText('formationText')">
             <h2 class="title-pointer">Como é formado um Pulsar? <span class="toggle-icon">▼</span></h1>
             <p id="formationText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px; margin-top: -10px; margin-bottom: 10px;">
@@ -210,8 +209,7 @@
             </p>
         </div>
 
-        <img src="./images/evolution.jpg" alt="Ciclo de vida estelar" style="width: 850px; margin-top: 20px; margin-bottom: 10px;">
-    </div>
+        <img class="images" src="./images/evolution.jpg" alt="Ciclo de vida estelar" style="width: 850px; margin-top: 20px; margin-bottom: 10px;">
 
     <div class="content content-margin" onclick="toggleText('structureText')">
         <h2 class="title-pointer">Qual é a estrutura de um Pulsar? <span class="toggle-icon">▼</span></h1>
@@ -241,11 +239,11 @@
 
                 <p style="text-align: left;"><b>Emissão de Radiação</b><br>
                 A rápida rotação da estrela de nêutrons e a sua intensa magnetosfera criam um ambiente onde partículas carregadas, aceleradas pelos campos elétrico e magnético, emitem radiação. O movimento das partículas dentro da estrela e ao longo de sua superfície influencia a emissão de radiação observada externamente.</p>
+            </div>
         </div>
-    </div>
 
-    <img src="./images/neutron-star-interior.jpg" alt="ESstrutura de um pulsar" style="width: 600px; margin-top: 20px;">
-</div>
+    <img class="images" src="./images/neutron-star-interior.jpg" alt="Estrutura de um pulsar" style="width: 600px; margin-top: 20px;">
+
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <div class="CountLike" id="LikeCount">
