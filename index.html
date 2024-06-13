@@ -177,7 +177,7 @@
     <div style="text-align: center;" class="hidden">
         <div class="content content-margin" onclick="toggleText('pulsarText')">
         <h2 id="pulsarTitle" class="title-pointer">O que é um Pulsar? <span class="toggle-icon">▼</span></h1>
-        <p id="pulsarText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px; margin-bottom: 10px; margin-top: -10px;">
+        <p id="pulsarText" class="accordion-content accordion-content-desktop" style="display: none; margin-bottom: 10px; margin-top: -10px;">
             Um pulsar é uma estrela de nêutrons altamente magnetizada que gira rapidamente, emitindo feixes de radiação eletromagnética a partir de seus polos magnéticos. Esses feixes de radiação, que podem incluir ondas de rádio, luz visível, raios X e raios gama, são observados da Terra como pulsos regulares de energia, devido à rotação da estrela. Quando o feixe aponta em direção à Terra, é detectado como um pulso, dando a impressão de que a estrela está "pulsando", daí o nome pulsar. Os pulsares são remanescentes densos de supernovas e possuem campos magnéticos incrivelmente fortes, além de uma densidade tão alta que uma pequena quantidade de sua matéria pode pesar milhões de toneladas.
         </p>
         </div>
@@ -187,7 +187,7 @@
 
         <div class="content content-margin" onclick="toggleText('jocelynText')">
             <h2 class="title-pointer">Quem primeiro observou os Pulsares? <span class="toggle-icon">▼</span></h1>
-            <div id="jocelynText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px; margin-bottom: -10px;">
+            <div id="jocelynText" class="accordion-content accordion-content-desktop" style="display: none; margin-bottom: -10px;">
                 <p>A detecção do primeiro pulsar foi feita por Jocelyn Bell Burnell e foi um dos marcos mais significativos na astrofísica e na história da astronomia. Em 1967, enquanto estudante de doutorado na Universidade de Cambridge, na Inglaterra, Jocelyn desempenhou um papel fundamental na descoberta dos pulsares, utilizando o radiotelescópio Interplanetary Scintillation Array. Com precisão e dedicação, ela analisou os dados coletados e notou um sinal de rádio regular e intermitente que não podia ser atribuído a nenhuma fonte de interferência conhecida. Ao eliminar todas as possíveis causas, como interferência terrestre ou fontes naturais, Jocelyn concluiu que o sinal tinha uma origem astronômica.</p>
 
                 <p>Apesar da descoberta revolucionária, Jocelyn Bell Burnell enfrentou discriminação e falta de reconhecimento no meio acadêmico. O Prêmio Nobel de Física de 1974 foi concedido apenas a seu orientador, omitindo sua contribuição essencial no trabalho. Esse episódio destaca a importância de valorizar e reconhecer o trabalho das mulheres na ciência, promovendo maior igualdade de gênero e assegurando que suas descobertas sejam devidamente creditadas.</p>
@@ -203,7 +203,7 @@
         
         <div class="content content-margin" onclick="toggleText('formationText')">
             <h2 class="title-pointer">Como é formado um Pulsar? <span class="toggle-icon">▼</span></h1>
-            <p id="formationText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px; margin-top: -10px; margin-bottom: 10px;">
+            <p id="formationText" class="accordion-content accordion-content-desktop" style="display: none; margin-top: -10px; margin-bottom: 10px;">
                 O processo de formação de um pulsar ocorre durante a explosão de uma supernova, que é o estágio final na vida de uma estrela massiva. Quando uma estrela massiva esgota seu combustível nuclear, ela sofre uma colapso gravitacional, resultando em uma explosão violenta, ejetando suas camadas externas para o espaço e deixando para trás um núcleo extremamente denso, conhecido como estrela de nêutrons. 
                 A estrela de nêutrons resultante pode girar rapidamente devido à conservação do momento angular, concentrando seu campo magnético e emitindo radiação eletromagnética em feixes estreitos a partir de seus polos magnéticos. Esses feixes de radiação são detectados na Terra como pulsos periódicos, dando origem aos pulsares.
             </p>
@@ -213,7 +213,7 @@
 
     <div class="content content-margin" onclick="toggleText('structureText')">
         <h2 class="title-pointer">Qual é a estrutura de um Pulsar? <span class="toggle-icon">▼</span></h1>
-        <div id="structureText" class="accordion-content" style="display: none; margin-left: 60px; margin-right: 60px; margin-bottom: -5px;">
+        <div id="structureText" class="accordion-content accordion-content-desktop"  style="display: none; margin-bottom: -5px;">
             <p style="text-align: left;">Dentro de um pulsar, a composição e o comportamento dos nêutrons são fundamentais para compreender como essa estrela funciona e emite radiação. A estrutura de um pulsar envolve várias camadas, cada uma com características específicas dos nêutrons e outras partículas subatômicas.</p>
 
             <p style="text-align: left;"><b>Camada Externa (Crosta)</b><br>
@@ -253,8 +253,8 @@
     </div>
 
 
-    <!-- FOOTER -->
-    <div style="text-align: center; margin-top: 20px;" class="hidden">
+    <!-- FOOTER DESKTOP-->
+    <div class="hidden-mobile" style="text-align: center; margin-top: 20px;" class="hidden">
         <footer style="font-size: 14px;">
             <p>Criado por: <a href="https://github.com/cometsinthesky" target="_blank"
                     style="color: #f0f0f0; font-size: 13px;">Lucas Ferreira</a> (MNPEF/UnB) |
@@ -283,6 +283,39 @@
             </a>
         </p>
     </div>
+
+    <!-- FOOTER SMARTPHONE-->
+    <div class="hidden-desktop" style="text-align: center; margin-top: 20px;" class="hidden">
+        <footer style="font-size: 14px;">
+            <p>Criado por: <a href="https://github.com/cometsinthesky" target="_blank"
+                    style="color: #f0f0f0; font-size: 13px;">Lucas Ferreira</a> (MNPEF/UnB) <br>
+                <a href="https://github.com/cometsinthesky/pulsar-3D" target="_blank" style="color: #f0f0f0;">Link do
+                    repositório GitHub</a>
+            </p>
+        </footer>
+
+        <!-- Créditos e Creative Commons -->
+        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" style="font-size: 12px;">
+            <a property="dct:title" rel="cc:attributionURL" href="https://github.com/cometsinthesky/pulsar-3D"
+                target="_blank" style="color: #f0f0f0;">Pulsar 3D</a> by
+            <a rel="cc:attributionURL dct:creator" property="cc:attributionName"
+                href="https://github.com/cometsinthesky" target="_blank" style="color: #f0f0f0;">Lucas Ferreira</a>
+            is licensed under
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" style="color: #f0f0f0;"
+                target="_blank" rel="license noopener noreferrer">
+                CC BY-NC-SA 4.0 <br>
+                    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                    src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img
+                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                    src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img
+                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                    src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img
+                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                    src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="">
+            </a>
+        </p>
+    </div>
+
 
     <!-- APIs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
