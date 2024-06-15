@@ -38,12 +38,10 @@ document.addEventListener("keydown", function (event) {
 // Listener para ajustar o tamanho do renderizador quando sai do modo de tela cheia
 document.addEventListener("fullscreenchange", function () {
   if (!document.fullscreenElement) {
-    // Saiu do modo de tela cheia, redefine o tamanho do renderizador para 800x600
-    renderer.setSize(800, 600);
-    camera.aspect = 800 / 600;
-    camera.updateProjectionMatrix();
+    // Saiu do modo de tela cheia, redefine o tamanho do renderizador para o tamanho configurado
+    adjustRendererSize();
   } else {
-    // Entrou no modo de tela cheia, ajusta o tamanho do renderizador
+    // Entrou no modo de tela cheia, ajusta o tamanho do renderizador para ocupar toda a tela
     const width = window.innerWidth;
     const height = window.innerHeight;
     renderer.setSize(width, height);
@@ -51,6 +49,10 @@ document.addEventListener("fullscreenchange", function () {
     camera.updateProjectionMatrix();
   }
 });
+
+// Chame adjustRendererSize() inicialmente para configurar o tamanho do renderizador conforme o tamanho da tela
+adjustRendererSize();
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // Obtém referências para os elementos de áudio e o botão de controle
