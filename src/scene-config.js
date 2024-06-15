@@ -1,10 +1,46 @@
 // Configuração básica da cena
 const scene = new THREE.Scene();
-//                                     FV, Aspect Ratio, Near plane, Far plane
-const camera = new THREE.PerspectiveCamera(50, 800 / 600, 0.1, 9100);
-const renderer = new THREE.WebGLRenderer({ antialias: true });
 
-renderer.setSize(800, 600); // Define o tamanho da janela de renderização
+// Configura Aspect Ratio e Screensize
+function adjustRendererSize() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  let newHeight = 600;
+
+  if (width <= 480) {
+    // Configurações para smartphone
+    newHeight = 600;
+  } else if (width <= 768) {
+    // Configurações para tablet
+    newHeight = 600;
+  } else if (width <= 1024) {
+    // Configurações para tablet
+    newHeight = 600;
+  } else if (width > 1024) {
+    // Configurações para PC
+    newHeight = 600;
+  }
+
+  renderer.setSize(width, newHeight);
+  camera.aspect = width / newHeight;
+
+  // Atualizar a matriz de projeção da câmera
+  camera.updateProjectionMatrix();
+}
+
+//                                         FV, Aspect Ratio, Near plane, Far plane
+const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 9100);const renderer = new THREE.WebGLRenderer({
+  antialias: true,  precision: 'highp'
+});
+
+// Chamar a função para ajustar o tamanho do renderizador e o aspect ratio da câmera
+adjustRendererSize();
+
+// Ajustar o tamanho e o aspecto da câmera ao redimensionar a janela
+window.addEventListener('resize', adjustRendererSize);
+
+
 renderer.setClearColor(0x000000); // Define a cor de fundo
 document.getElementById("threejs-container").appendChild(renderer.domElement);
 
@@ -154,7 +190,7 @@ camera.position.z = 5;
 // Adiciona OrbitControls
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // Movimento suave da câmera
-controls.dampingFactor = 0.1; // Fator de amortecimento
+controls.dampingFactor = 0.2; // Fator de amortecimento
 
 // Variável para controlar o estado da simulação
 let isSimulationRunning = true;
