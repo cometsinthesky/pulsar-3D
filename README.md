@@ -1,6 +1,6 @@
 # Pulsar 3D 🌌⚛️
 <p align="center">
-<img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/site.png" alt="Pulsar 3D simulation homepage" height="90%" width=90%">
+<img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/site.png" alt="Pulsar 3D simulation homepage" height="100%" width=100%">
 </p>
 
 **Português | Pt-BR**‎ ✓‎‎‎&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[English | EN](README/EN/README.md)
