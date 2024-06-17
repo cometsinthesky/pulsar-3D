@@ -219,7 +219,7 @@ a:visited {
 }
 
 .accordion-content {
-  text-align: center;
+  text-align: left;
   margin-left: 80px;
   margin-right: 80px;
   max-width: 1000px;
@@ -244,8 +244,6 @@ a:visited {
   font-size: 20px;
   /* Tamanho menor para o ícone */
 }
-
-
 
 footer {
   margin-top: 10px;
@@ -531,132 +529,272 @@ footer {
 }
 
 
+
 /* MEDIA QUERY 2560px */
-@media (max-width: 1440px) {
-  
+@media (min-width: 2560px) {
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .menu {
+    scale: 170%;
+    top: 44em;
+    align-items: center;
+    width: 7%;
+    height: 19.5em;
+    margin-right: 3em;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .pause-button {
+    scale: 170%;
+    top: 107.7em;
+    bottom: 10px;
+    align-items: center;
+    width: 112px;
+    max-height: 35px;
+    margin-left: 11.8em;
+  }
+
+  .restart-button {
+    scale: 170%;
+    top: 107.7em;
+    bottom: 10px;
+    align-items: center;
+    width: 112px;
+    max-height: 35px;
+    margin-left: -1.6em;
+  }
+
+  .text {
+    top: 1px;
+    font-size: 3em;
+    margin-bottom: 0.7em;
+
+
+    .wrapper {
+      padding-left: 40px;
+      padding-right: 10px;
+      padding-top: 0px;
+    }
+  }
+
+  .landing-content {
+    scale: 180%;
+    max-width: max-content;
+    max-height: max-content;
+    align-items: center;
+  }
+
+  .pulsarTitle {
+    margin-top: 200px;
+  }
+
+  .audio-button {
+    right: -1vw;
+    z-index: 9999;
+  }
+
+  .dropdown-btn {
+    scale: 170%;
+    margin-left: 1.5em;
+    margin-top: 1em;
+    z-index: 9999;
+  }
+
+  .dropdown-content {
+    scale: 180%;
+    margin-left: 7.2em;
+    margin-top: 7em;
+  }
+
+  #audio-button {
+    font-size: 2.5em;
+    width: 1.8em;
+    height: 0em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .enter-button {
+    align-items: center;
+    font-size: 1em;
+  }
+
+  .images {
+    max-width: 1000px;
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Ensure the image is treated as a block element */
+    margin-left: auto;
+    /* Center the image horizontally */
+    margin-right: auto;
+    /* Center the image horizontally */
+  }
+
+  .textimagescontent {
+    margin-top: 2em;
+  }
+
+  .title-pointer {
+    font-size: 2.7em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .accordion-content {
+    max-width: 1800px;
+    font-size: 2.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .accordion-content-desktop {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+
+  .content {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
 }
+
+
 
 /* MEDIA QUERY 1440px */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
 @media (max-width: 1440px) {
 
-.menu {
-  top: 15.8em;
-  align-items: center;
-  width: 13%;
-  height: 19.5em;
-  margin-right: -1.1em;
-  overflow: hidden;
-  white-space: nowrap; 
-}
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
-.pause-button {
-  top: 48em;
-  bottom: 10px;
-  align-items: center;
-  width: 112px;
-  max-height: 35px;
-  margin-left: 3.15em;
-}
+  .menu {
+    top: 15.8em;
+    align-items: center;
+    width: 13%;
+    height: 19.5em;
+    margin-right: -1.1em;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 
-.restart-button {
-  top: 48em;
-  bottom: 10px;
-  align-items: center;
-  width: 112px;
-  max-height: 35px;
-  margin-left: -4.4em;
-}
+  .pause-button {
+    top: 48em;
+    bottom: 10px;
+    align-items: center;
+    width: 112px;
+    max-height: 35px;
+    margin-left: 3.15em;
+  }
 
-.textimagescontent {
-  margin-top: 1em;
-}
+  .restart-button {
+    top: 48em;
+    bottom: 10px;
+    align-items: center;
+    width: 112px;
+    max-height: 35px;
+    margin-left: -4.4em;
+  }
 
-.text {
-  top: 1px;
-   font-size: 2em;
-   margin-bottom: 0.7em;
- 
- 
-   .wrapper {
-     padding-left: 30px;
-     padding-right: 10px;
-     padding-top: 0px;
-   }
- }
+  .textimagescontent {
+    margin-top: 1em;
+  }
+
+  .text {
+    top: 1px;
+    font-size: 2em;
+    margin-bottom: 0.7em;
+
+
+    .wrapper {
+      padding-left: 30px;
+      padding-right: 10px;
+      padding-top: 0px;
+    }
+  }
 
 }
 
 
 
 /* MEDIA QUERY 1024px */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
 @media (max-width: 1024px) {
 
-.menu {
-  top: 15.8em;
-  align-items: center;
-  width: 17%;
-  height: 19.5em;
-  margin-right: -1.1em;
-  overflow: hidden;
-  white-space: nowrap; 
-}
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
-.pause-button {
-  top: 48em;
-  bottom: 10px;
-  align-items: center;
-  width: 112px;
-  max-height: 35px;
-  margin-left: 3.2em;
-}
+  .menu {
+    top: 15.8em;
+    align-items: center;
+    width: 17%;
+    height: 19.5em;
+    margin-right: -1.1em;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 
-.restart-button {
-  top: 48em;
-  bottom: 10px;
-  align-items: center;
-  width: 112px;
-  max-height: 35px;
-  margin-left: -4.4em;
-}
+  .pause-button {
+    top: 48em;
+    bottom: 10px;
+    align-items: center;
+    width: 112px;
+    max-height: 35px;
+    margin-left: 3.2em;
+  }
 
-.textimagescontent {
-  margin-top: 1em;
-}
+  .restart-button {
+    top: 48em;
+    bottom: 10px;
+    align-items: center;
+    width: 112px;
+    max-height: 35px;
+    margin-left: -4.4em;
+  }
 
-.text {
-  top: 1px;
-   font-size: 2em;
-   margin-bottom: 0.7em;
- 
- 
-   .wrapper {
-     padding-left: 30px;
-     padding-right: 10px;
-     padding-top: 0px;
-   }
- }
+  .textimagescontent {
+    margin-top: 1em;
+  }
 
+  .text {
+    top: 1px;
+    font-size: 2em;
+    margin-bottom: 0.7em;
+
+
+    .wrapper {
+      padding-left: 30px;
+      padding-right: 10px;
+      padding-top: 0px;
+    }
+  }
+
+  .landing-content {
+    scale: 120%;
+    max-width: max-content;
+    max-height: max-content;
+    align-items: center;
+  }
 }
 
 
 
 /* MEDIA QUERY 768px */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
 @media (max-width: 768px) {
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
   .pause-button {
     top: 5.6em;
@@ -683,17 +821,18 @@ html, body {
     height: 19.5em;
     margin-right: 14.8em;
     overflow: hidden;
-    white-space: nowrap; 
+    white-space: nowrap;
   }
 
   .landing-content {
+    scale: 90%;
     max-width: max-content;
     max-height: max-content;
     align-items: center;
   }
 
   .text {
-    top:1px;
+    top: 1px;
     font-size: 1.3em;
     margin-bottom: 2.8em;
 
@@ -792,13 +931,14 @@ html, body {
     top: 44.4em;
     align-items: center;
     width: 51%;
-    height: 20em; 
+    height: 20em;
     margin-right: 4.5em;
     overflow: hidden;
-    white-space: nowrap; 
-}
+    white-space: nowrap;
+  }
 
   .landing-content {
+    scale:90%;
     max-width: max-content;
     max-height: max-content;
     align-items: center;
@@ -837,7 +977,7 @@ html, body {
   }
 
   .accordion-content {
-    margin-left: 1em;
+    margin-left: 1.5em;
     margin-right: 1em;
   }
 
