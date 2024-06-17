@@ -531,6 +531,10 @@ footer {
 }
 
 
+/* MEDIA QUERY 2560px */
+@media (max-width: 1440px) {
+  
+}
 
 /* MEDIA QUERY 1440px */
 html, body {
