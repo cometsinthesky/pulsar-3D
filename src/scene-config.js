@@ -17,9 +17,15 @@ function adjustRendererSize() {
   } else if (width <= 1024) {
     // Configurações para tablet
     newHeight = 600;
-  } else if (width > 1024) {
+  } else if (width <= 1440) {
     // Configurações para PC
     newHeight = 600;
+  } else if (width <= 2560) {
+    // Configurações para PC 4K
+    newHeight = 1400;
+  } else if (width > 2560) {
+    // Configurações para PC 4K
+    newHeight = 1400;
   }
 
   renderer.setSize(width, newHeight);
