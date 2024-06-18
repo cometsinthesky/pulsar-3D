@@ -557,7 +557,7 @@ footer {
     align-items: center;
     width: 112px;
     max-height: 35px;
-    margin-left: 11.8em;
+    margin-left: 11.6em;
   }
 
   .restart-button {
@@ -664,6 +664,17 @@ footer {
     margin-left: 2em;
     margin-right: 2em;
   }
+
+  .footer-desktop {
+    scale: 1.5;
+    margin-bottom: 2em;
+  }
+
+  .button1 {
+    scale: 1.4;
+    margin-top: 5em;
+    margin-bottom: 2.5em;
+  }
 }
 
 
@@ -749,7 +760,7 @@ footer {
     align-items: center;
     width: 112px;
     max-height: 35px;
-    margin-left: 3.2em;
+    margin-left: 3.1em;
   }
 
   .restart-button {
