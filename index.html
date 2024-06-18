@@ -9,20 +9,27 @@
     <title>Pulsar 3D</title>
     <link rel="stylesheet" href="./src/style.css" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K0MDFL9Y53"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-K0MDFL9Y53"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-K0MDFL9Y53');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-<!-- ADD FAVICON -->
-<link rel="apple-touch-icon" sizes="180x180" href="image-icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="image-icons/favicon-32x32.png">
-<link rel="manifest" href="/image-icons/site.webmanifest"></link>
+        gtag('config', 'G-K0MDFL9Y53');
+    </script>
+
+    <!-- ADD FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="image-icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="image-icons/favicon-32x32.png">
+    <link rel="manifest" href="/image-icons/site.webmanifest">
+    </link>
 
 </head>
 
@@ -39,7 +46,8 @@
         </audio>
 
         <audio id="sfx" autoplay loop>
-            <source src="https://github.com/cometsinthesky/pulsar-3D/raw/main/music/pulsar-sfx.mp3"
+            <source
+                src="https://github.com/cometsinthesky/pulsar-3D/raw/main/music/pulsar-sfx.mp3"
                 type="audio/wav">
             Your browser does not support the audio element.
         </audio>
@@ -57,13 +65,17 @@
         <!-- Dropdown conteúdo -->
         <div class="dropdown-content">
             <p id="instructionText">
-                ✧ <strong>Botão esquerdo do mouse</strong>: clique e arraste a cena para controlar a câmera<br>
-                ✧ <strong>Scroll do mouse</strong>: aumenta ou diminui a distância do pulsar<br>
-                ✧ <strong>Botão direito do mouse</strong>: clique e arraste para posicionar o pulsar<br>
+                ✧ <strong>Botão esquerdo do mouse</strong>: clique e arraste a
+                cena para controlar a câmera<br>
+                ✧ <strong>Scroll do mouse</strong>: aumenta ou diminui a
+                distância do pulsar<br>
+                ✧ <strong>Botão direito do mouse</strong>: clique e arraste para
+                posicionar o pulsar<br>
                 ✧ <strong>Espaço</strong>: Pausa e inicia a simulação<br>
                 ✧ <strong>Tecla F</strong>: Entra e sai do modo tela cheia<br>
-                ✧ <strong>Clique duplo em tela cheia</strong>: Centraliza a câmera no Pulsar<br>
-                ✧ <strong>Teclas  -  e  +  </strong>: Velocidade de rotação<br>
+                ✧ <strong>Clique duplo em tela cheia</strong>: Centraliza a
+                câmera no Pulsar<br>
+                ✧ <strong>Teclas - e + </strong>: Velocidade de rotação<br>
                 ✧ <strong>Tecla P </strong>: Jatos de radiação<br>
                 ✧ <strong>Tecla R </strong>: Eixo de rotação<br>
                 ✧ <strong>Tecla M </strong>: Campo magnético<br>
@@ -75,9 +87,12 @@
     <!-- TITLE LANDING PAGE -->
     <div class="overlay">
         <div class="landing-content">
-            <h1 class="fade-in-title" style="font-size:30px;">Boas vindas à Simulação Pulsar 3D</h1>
-            <p class="landing-paragraph fade-in-paragraph" style="font-size: 20px;">&nbsp;</p>
-            <button class="enter-button fade-in-paragraph" onclick="redirectToSimulation()">Entrar na Simulação</button>
+            <h1 class="fade-in-title" style="font-size:30px;">Boas vindas à
+                Simulação Pulsar 3D</h1>
+            <p class="landing-paragraph fade-in-paragraph"
+                style="font-size: 20px;">&nbsp;</p>
+            <button class="enter-button fade-in-paragraph"
+                onclick="redirectToSimulation()">Entrar na Simulação</button>
         </div>
     </div>
 
@@ -138,16 +153,19 @@
     <div class="menu hidden">
         <div class="slider hidden">
             <label for="velocidade">Velocidade:</label>
-            <input type="range" id="velocidade" name="velocidade" min="0" max="8" value="4" step="1">
+            <input type="range" id="velocidade" name="velocidade" min="0"
+                max="8" value="4" step="1">
         </div>
-        
+
         <div class="slider hidden">
             <label for="luminosidade">Luz Ambiente:</label>
-            <input type="range" id="luminosidade" name="luminosidade" min="0" max="100" value="50">
+            <input type="range" id="luminosidade" name="luminosidade" min="0"
+                max="100" value="50">
         </div>
         <div class="slider hidden">
             <label for="inclinação">Inclinação:</label>
-            <input type="range" id="inclinação" name="inclinação" min="0" max="90" value="45" step="15" list="ticks style="height: 20px;>
+            <input type="range" id="inclinação" name="inclinação" min="0"
+                max="90" value="45" step="15" list="ticks style=" height: 20px;>
             <datalist id="ticks">
                 <option value="0">0</option>
                 <option value="15">15</option>
@@ -170,177 +188,431 @@
         </div>
 
         <div class="checkboxes hidden">
-            <label><input id=beamsCheckbox type="checkbox"> Jatos de Radiação</label>
-            <label><input id=rotationAxisCheckbox type="checkbox"> Eixo de Rotação</label>
-            <label><input id=fieldCheckbox type="checkbox"> Campo Magnético</label>
+            <label><input id=beamsCheckbox type="checkbox"> Jatos de
+                Radiação</label>
+            <label><input id=rotationAxisCheckbox type="checkbox"> Eixo de
+                Rotação</label>
+            <label><input id=fieldCheckbox type="checkbox"> Campo
+                Magnético</label>
             <label><input id=malhaCheckbox type="checkbox"> Malha</label>
         </div>
 
     </div>
 
     <div class="textimagescontent">
-    <div style="text-align: center;" class="hidden">
-        <div class="content content-margin" onclick="toggleText('pulsarText')">
-        <h2 id="pulsarTitle" class="title-pointer">O que é um Pulsar? <span class="toggle-icon">▼</span></h1>
-        <p id="pulsarText" class="accordion-content accordion-content-desktop" style="display: none; margin-bottom: 10px; margin-top: -10px;">
-            Um pulsar é uma estrela de nêutrons altamente magnetizada que gira rapidamente, emitindo feixes de radiação eletromagnética a partir de seus polos magnéticos. Esses feixes de radiação, que podem incluir ondas de rádio, luz visível, raios X e raios gama, são observados da Terra como pulsos regulares de energia, devido à rotação da estrela. Quando o feixe aponta em direção à Terra, é detectado como um pulso, dando a impressão de que a estrela está "pulsando", daí o nome pulsar. Os pulsares são remanescentes densos de supernovas e possuem campos magnéticos incrivelmente fortes, além de uma densidade tão alta que uma pequena quantidade de sua matéria pode pesar milhões de toneladas.
-        </p>
-        </div>
-        <!-- Adiciona imagens -->
-        <img class="images" src="./images/pulsar.jpg" alt="Características de um Pulsar" style="width: 600px; margin-top: 20px; margin-bottom: 10px;">
-        <br>      
+        <div style="text-align: center;" class="hidden">
+            <div class="content content-margin"
+                onclick="toggleText('pulsarText')">
+                <h2 id="pulsarTitle" class="title-pointer">O que é um Pulsar?
+                    <span class="toggle-icon">▼</span></h2>
+                    <p id="pulsarText"
+                        class="accordion-content accordion-content-desktop"
+                        style="display: none; margin-top: -10px;">
+                        Um pulsar é uma estrela de nêutrons altamente
+                        magnetizada que gira rapidamente, emitindo feixes de
+                        radiação eletromagnética a partir de seus polos
+                        magnéticos. Esses feixes de radiação, que podem incluir
+                        ondas de rádio, luz visível, raios X e raios gama, são
+                        observados da Terra como pulsos regulares de energia,
+                        devido à rotação da estrela. Quando o feixe aponta em
+                        direção à Terra, é detectado como um pulso, dando a
+                        impressão de que a estrela está "pulsando", daí o nome
+                        pulsar. Os pulsares são remanescentes densos de
+                        supernovas e possuem campos magnéticos incrivelmente
+                        fortes, além de uma densidade tão alta que uma pequena
+                        quantidade de sua matéria pode pesar milhões de
+                        toneladas.
+                    </p>
+            </div>
 
-        <div class="content content-margin" onclick="toggleText('jocelynText')">
-            <h2 class="title-pointer">Quem primeiro observou os Pulsares? <span class="toggle-icon">▼</span></h1>
-            <div id="jocelynText" class="accordion-content accordion-content-desktop" style="display: none; margin-bottom: -10px;">
-                <p>A detecção do primeiro pulsar foi feita por Jocelyn Bell Burnell e foi um dos marcos mais significativos na astrofísica e na história da astronomia. Em 1967, enquanto estudante de doutorado na Universidade de Cambridge, na Inglaterra, Jocelyn desempenhou um papel fundamental na descoberta dos pulsares, utilizando o radiotelescópio Interplanetary Scintillation Array. Com precisão e dedicação, ela analisou os dados coletados e notou um sinal de rádio regular e intermitente que não podia ser atribuído a nenhuma fonte de interferência conhecida. Ao eliminar todas as possíveis causas, como interferência terrestre ou fontes naturais, Jocelyn concluiu que o sinal tinha uma origem astronômica.</p>
+            <!-- Adiciona imagens -->
+            <img class="images" src="./images/pulsar.jpg"
+                alt="Características de um Pulsar"
+                style="width: 600px; margin-bottom: 20px; margin-top: 15px;">
+            <br>
 
-                <p>Apesar da descoberta revolucionária, Jocelyn Bell Burnell enfrentou discriminação e falta de reconhecimento no meio acadêmico. O Prêmio Nobel de Física de 1974 foi concedido apenas a seu orientador, omitindo sua contribuição essencial no trabalho. Esse episódio destaca a importância de valorizar e reconhecer o trabalho das mulheres na ciência, promovendo maior igualdade de gênero e assegurando que suas descobertas sejam devidamente creditadas.</p>
 
-                <p>Um documentário produzido pelo The New York Times, sobre a carreira de Jocelyn Bell, os problemas enfrentados por ela no ambiente acadêmico e a engenhosa detecção dos pulsares na década de 1960 pode ser assistido em <a href="https://youtu.be/NDW9zKqvPJI?si=ME6500m4ci737S2q" target="_blank"><img src="image-icons/youtube.png" alt="Vídeo YouTube Jocelyn Bell" style="width:20px;height:20px; vertical-align: middle;"></a>  <u><a href="https://youtu.be/NDW9zKqvPJI?si=ME6500m4ci737S2q" target="_blank" style="color: inherit; text-decoration: none;">https://youtu.be/NDW9zKqvPJI?si=ME6500m4ci737S2q</a></u>. Para assistir com legenda em português, basta selecionar: Detalhes > Legendas > Traduzir automaticamente > Selecionar idioma > Português.
+            <div class="content content-margin"
+                onclick="toggleText('jocelynText')">
+                <h2 class="title-pointer">Quem primeiro observou os Pulsares?
+                    <span class="toggle-icon">▼</span></h2>
+                    <div id="jocelynText"
+                        class="accordion-content accordion-content-desktop"
+                        style="display: none;">
+                        <p>A detecção do primeiro pulsar foi feita por Jocelyn
+                            Bell Burnell e foi um dos marcos mais significativos
+                            na astrofísica e na história da astronomia. Em 1967,
+                            enquanto estudante de doutorado na Universidade de
+                            Cambridge, na Inglaterra, Jocelyn desempenhou um
+                            papel fundamental na descoberta dos pulsares,
+                            utilizando o radiotelescópio Interplanetary
+                            Scintillation Array. Com precisão e dedicação, ela
+                            analisou os dados coletados e notou um sinal de
+                            rádio regular e intermitente que não podia ser
+                            atribuído a nenhuma fonte de interferência
+                            conhecida. Ao eliminar todas as possíveis causas,
+                            como interferência terrestre ou fontes naturais,
+                            Jocelyn concluiu que o sinal tinha uma origem
+                            astronômica.</p>
+
+                        <p>Apesar da descoberta revolucionária, Jocelyn Bell
+                            Burnell enfrentou discriminação e falta de
+                            reconhecimento no meio acadêmico. O Prêmio Nobel de
+                            Física de 1974 foi concedido apenas a seu
+                            orientador, omitindo sua contribuição essencial no
+                            trabalho. Esse episódio destaca a importância de
+                            valorizar e reconhecer o trabalho das mulheres na
+                            ciência, promovendo maior igualdade de gênero e
+                            assegurando que suas descobertas sejam devidamente
+                            creditadas.</p>
+
+                        <p>Um documentário produzido pelo The New York Times,
+                            sobre a carreira de Jocelyn Bell, os problemas
+                            enfrentados por ela no ambiente acadêmico e a
+                            engenhosa detecção dos pulsares na década de 1960
+                            pode ser assistido em <a
+                                href="https://youtu.be/NDW9zKqvPJI?si=ME6500m4ci737S2q"
+                                target="_blank"><img
+                                    src="image-icons/youtube.png"
+                                    alt="Vídeo YouTube Jocelyn Bell"
+                                    style="width:20px;height:20px; vertical-align: middle;"></a>
+                            <u><a href="https://youtu.be/NDW9zKqvPJI?si=ME6500m4ci737S2q"
+                                    target="_blank"
+                                    style="color: inherit; text-decoration: none;">https://youtu.be/NDW9zKqvPJI?si=ME6500m4ci737S2q</a></u>.
+                            Para assistir com legenda em português, basta
+                            selecionar: Detalhes > Legendas > Traduzir
+                            automaticamente > Selecionar idioma > Português.
+                        </p>
+                    </div>
+            </div>
+
+            <img class="images" src="./images/jocelyn.jpg"
+                alt="Jocelyn Bell e a descoberta dos Pulsares"
+                style="width: 750px; margin-bottom: 20px; margin-top: 20px;"><br>
+
+
+            <div class="content content-margin"
+                onclick="toggleText('pulsarsizeText')">
+                <h2 class="title-pointer">Qual é o tamanho de um Pulsar? <span
+                        class="toggle-icon">▼</span></h2>
+                    <div id="pulsarsizeText"
+                        class="accordion-content accordion-content-desktop"
+                        style="display: none;">
+                        <p>Em termos de tamanho, uma estrela de nêutrons típica
+                            tem um diâmetro de 20 a 30 km, mas contém uma massa
+                            que pode ser até duas vezes maior que a do Sol. Isso
+                            significa que a densidade dessas estrelas é
+                            altíssima. Essa densidade extrema é uma das
+                            características que permitem aos pulsares terem
+                            campos gravitacionais e magnéticos tão intensos. Uma
+                            colher de chá dessa estrela pesaria mais que o Monte
+                            Everest.
+
+                            <p>Comparar a matéria de uma estrela de nêutrons com
+                                a do Monte Everest é uma maneira impressionante
+                                de ilustrar a densidade extrema das estrelas de
+                                nêutrons. Uma estrela de nêutrons é composta
+                                quase inteiramente por nêutrons compactados em
+                                um espaço muito pequeno, resultando em uma
+                                densidade que desafia nossa compreensão. Uma colher 
+                                de chá de material de uma estrela de nêutrons pesaria 
+                                cerca de 6 bilhões de toneladas na Terra.</p>
+                        </p>
+
+                        <p>
+                            O Monte Everest, a montanha mais alta da Terra, com
+                            cerca de 8.848 metros de altura, é uma enorme massa
+                            de rocha, gelo e neve. No entanto, sua densidade
+                            média é relativamente baixa em comparação com a de
+                            uma estrela de nêutrons. A densidade média das
+                            rochas terrestres é de cerca de 2,5 a 2,7 gramas por
+                            centímetro cúbico (g/cm<sup>3</sup>), enquanto a
+                            densidade de uma estrela de nêutrons é da ordem de
+                            10<sup>17</sup> a 10<sup>18</sup> g/cm<sup>3</sup>.
+                            Isso significa que a matéria de uma estrela de
+                            nêutrons é absurdamente mais densa -
+                            da orderm de 100 trilhões a 1 quadrilhão de vezes
+                            mais densa do que uma rocha típica encontrada na
+                            Terra.
+                        </p>
+
+                    </div>
+            </div>
+
+            <img class="images" src="./images/neutron-star-size.jpg"
+                alt="Comparação de tamanho de uma estrela de nêutrons"
+                style="width: 750px; margin-bottom: 20px; margin-top: 20px;"><br>
+
+
+            <div class="content content-margin"
+                onclick="toggleText('formationText')">
+                <h2 class="title-pointer">Como é formado um Pulsar? <span
+                        class="toggle-icon">▼</span></h2>
+                    <div id="formationText"
+                        class="accordion-content accordion-content-desktop"
+                        style="display: none; margin-top: -30px;">
+                        <p>O processo de formação de um pulsar ocorre durante a
+                        explosão de uma supernova, que é o estágio final na vida
+                        de uma estrela massiva. Quando uma estrela massiva
+                        esgota seu combustível nuclear, ela sofre uma colapso
+                        gravitacional, resultando em uma explosão violenta,
+                        ejetando suas camadas externas para o espaço e deixando
+                        para trás um núcleo extremamente denso, conhecido como
+                        estrela de nêutrons.
+                    </p>
+                    
+                    <p>A estrela de nêutrons resultante pode girar rapidamente
+                        devido à conservação do momento angular, concentrando
+                        seu campo magnético e emitindo radiação eletromagnética
+                        em feixes estreitos a partir de seus polos magnéticos.
+                        Esses feixes de radiação são detectados na Terra como
+                        pulsos periódicos, dando origem aos pulsares.</p>
+            </div>
+
+            <img class="images" src="./images/evolution.jpg"
+                alt="Ciclo de vida estelar"
+                style="width: 850px; margin-bottom: 20px; margin-top: 20px;">
+
+
+            <div class="content content-margin"
+                onclick="toggleText('structureText')">
+                <h2 class="title-pointer">Qual é a estrutura de um Pulsar? <span
+                        class="toggle-icon">▼</span></h2>
+                    <div id="structureText"
+                        class="accordion-content accordion-content-desktop"
+                        style="display: none;">
+                        <p style="text-align: left;">Dentro de um pulsar, a
+                            composição e o comportamento dos nêutrons são
+                            fundamentais para compreender como essa estrela
+                            funciona e emite radiação. A estrutura de um pulsar
+                            envolve várias camadas, cada uma com características
+                            específicas dos nêutrons e outras partículas
+                            subatômicas.</p>
+
+                        <p style="text-align: left;"><b>Camada Externa
+                                (Crosta)</b><br>
+                            A crosta de um pulsar é composta principalmente por
+                            núcleos atômicos pesados e elétrons livres. Nos
+                            níveis mais profundos da crosta, a densidade é tão
+                            alta que os núcleos atômicos capturam elétrons,
+                            formando nêutrons. Esses nêutrons se acumulam,
+                            formando uma "sopa" densa de nêutrons intercalada
+                            com núcleos de nêutrons.</p>
+
+                        <p style="text-align: left;"><b>Camada Interna (Núcleo
+                                Externo)</b><br>
+                            Superfluido de Nêutrons: No núcleo externo do
+                            pulsar, a densidade é ainda maior, transformando os
+                            nêutrons em um estado de superfluidez. Neste estado,
+                            os nêutrons se movem sem atrito, permitindo uma
+                            condução de energia extremamente eficiente.<br>
+                            Supercondutividade: Os prótons, que compõem uma
+                            pequena fração do núcleo, também podem se tornar
+                            supercondutores (materiais que permitem a condução
+                            de eletricidade sem resistência), contribuindo para
+                            a manutenção do campo magnético intenso do pulsar.
+                        </p>
+
+                        <p style="text-align: left;"><b>Núcleo Central (Núcleo
+                                Interno)</b><br>
+                            Matéria Exótica: No núcleo interno, a densidade é
+                            tão extrema que pode haver a formação de partículas
+                            exóticas como bósons ou quarks livres, compondo um
+                            possível plasma de quarks ou uma mistura de
+                            partículas subatômicas ainda não completamente
+                            compreendidas pela astrofísica e física de
+                            partículas.</p>
+
+                        <p style="text-align: left;"><b>Estado de
+                                Degenerescência</b><br>
+                            Os nêutrons estão em um estado degenerado, estado da
+                            matéria onde as partículas estão tão densamente
+                            compactadas que os princípios da mecânica quântica
+                            dominam seu comportamento. A pressão degenerativa
+                            dos nêutrons, uma forma de pressão quântica que
+                            surge devido ao princípio de exclusão de Pauli, que
+                            afirma que duas partículas idênticas de spin
+                            semi-inteiro não podem ocupar o mesmo estado
+                            quântico simultaneamente, equilibra a força
+                            gravitacional que tende a colapsar a estrela ainda
+                            mais.</p>
+
+                        <p><b>Relação dos nêutrons no Pulsar</p></b>
+                        <p style="text-align: left;"><b>Pressão de
+                                Degenerescência</b><br>
+                            Esta é a força que mantém a estrela de nêutrons
+                            estável contra o colapso gravitacional. A pressão é
+                            causada pelos nêutrons, que, devido ao princípio de
+                            exclusão de Pauli, não podem ocupar o mesmo estado
+                            quântico. Essa pressão é o que sustenta a estrutura
+                            da estrela de nêutrons.</p>
+
+                        <p style="text-align: left;"><b>Superfluidez e
+                                Supercondutividade</b><br>
+                            A superfluidez dos nêutrons e a supercondutividade
+                            dos prótons permitem a condução eficiente de calor e
+                            a manutenção de correntes elétricas sem resistência,
+                            contribuindo para a estabilidade do campo magnético.
+                        </p>
+
+                        <p style="text-align: left;"><b>Emissão de
+                                Radiação</b><br>
+                            A rápida rotação da estrela de nêutrons e a sua
+                            intensa magnetosfera criam um ambiente onde
+                            partículas carregadas, aceleradas pelos campos
+                            elétrico e magnético, emitem radiação. O movimento
+                            das partículas dentro da estrela e ao longo de sua
+                            superfície influencia a emissão de radiação
+                            observada externamente.</p>
+                    </div>
+            </div>
+
+            <img class="images" src="./images/neutron-star-interior.jpg"
+                alt="Estrutura de um pulsar"
+                style="width: 600px; margin-bottom: 20px; margin-top: 20px;">
+
+
+
+            <link
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                rel="stylesheet" />
+            <div class="CountLike" id="LikeCount">
+                <button id="likeButton" class="button button1">
+                    <i class="fa fa-heart"></i> Like <span
+                        class="counterStat">...</span>
+                </button>
+            </div>
+
+
+            <!-- FOOTER DESKTOP-->
+            <div class="hidden-mobile footer-desktop"
+                style="text-align: center; margin-top: 20px;" class="hidden">
+                <footer style="font-size: 14px;">
+                    <p>Criado por: <a href="https://github.com/cometsinthesky"
+                            target="_blank"
+                            style="color: #f0f0f0; font-size: 13px;">Lucas
+                            Ferreira</a> (MNPEF/UnB) |
+                        <a href="https://github.com/cometsinthesky/pulsar-3D"
+                            target="_blank" style="color: #f0f0f0;">Link do
+                            repositório GitHub</a>
+                    </p>
+                </footer>
+
+                <!-- Créditos e Creative Commons -->
+                <p xmlns:cc="http://creativecommons.org/ns#"
+                    xmlns:dct="http://purl.org/dc/terms/"
+                    style="font-size: 12px;">
+                    <a property="dct:title" rel="cc:attributionURL"
+                        href="https://github.com/cometsinthesky/pulsar-3D"
+                        target="_blank" style="color: #f0f0f0;">Pulsar 3D</a> by
+                    <a rel="cc:attributionURL dct:creator"
+                        property="cc:attributionName"
+                        href="https://github.com/cometsinthesky" target="_blank"
+                        style="color: #f0f0f0;">Lucas Ferreira</a>
+                    is licensed under
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+                        style="color: #f0f0f0;" target="_blank"
+                        rel="license noopener noreferrer">
+                        CC BY-NC-SA 4.0 <img
+                            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+                            alt=""><img
+                            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+                            alt=""><img
+                            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+                            alt=""><img
+                            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+                            alt="">
+                    </a>
                 </p>
             </div>
-        </div>
 
-        <img class="images" src="./images/jocelyn.jpg" alt="Jocelyn Bell e a descoberta dos Pulsares" style="width: 750px; margin-top: 20px; margin-bottom: 10px;"><br>
+            <!-- FOOTER SMARTPHONE-->
+            <div class="hidden-desktop"
+                style="text-align: center; margin-top: 20px;" class="hidden">
+                <footer style="font-size: 14px;">
+                    <p>Criado por: <a href="https://github.com/cometsinthesky"
+                            target="_blank"
+                            style="color: #f0f0f0; font-size: 13px;">Lucas
+                            Ferreira</a> (MNPEF/UnB) <br>
+                        <a href="https://github.com/cometsinthesky/pulsar-3D"
+                            target="_blank" style="color: #f0f0f0;">Link do
+                            repositório GitHub</a>
+                    </p>
+                </footer>
 
-        
-        <div class="content content-margin" onclick="toggleText('formationText')">
-            <h2 class="title-pointer">Como é formado um Pulsar? <span class="toggle-icon">▼</span></h1>
-            <p id="formationText" class="accordion-content accordion-content-desktop" style="display: none; margin-top: -10px; margin-bottom: 10px;">
-                O processo de formação de um pulsar ocorre durante a explosão de uma supernova, que é o estágio final na vida de uma estrela massiva. Quando uma estrela massiva esgota seu combustível nuclear, ela sofre uma colapso gravitacional, resultando em uma explosão violenta, ejetando suas camadas externas para o espaço e deixando para trás um núcleo extremamente denso, conhecido como estrela de nêutrons. 
-                A estrela de nêutrons resultante pode girar rapidamente devido à conservação do momento angular, concentrando seu campo magnético e emitindo radiação eletromagnética em feixes estreitos a partir de seus polos magnéticos. Esses feixes de radiação são detectados na Terra como pulsos periódicos, dando origem aos pulsares.
-            </p>
-        </div>
-
-        <img class="images" src="./images/evolution.jpg" alt="Ciclo de vida estelar" style="width: 850px; margin-top: 20px; margin-bottom: 10px;">
-
-    <div class="content content-margin" onclick="toggleText('structureText')">
-        <h2 class="title-pointer">Qual é a estrutura de um Pulsar? <span class="toggle-icon">▼</span></h1>
-        <div id="structureText" class="accordion-content accordion-content-desktop"  style="display: none; margin-bottom: -5px;">
-            <p style="text-align: left;">Dentro de um pulsar, a composição e o comportamento dos nêutrons são fundamentais para compreender como essa estrela funciona e emite radiação. A estrutura de um pulsar envolve várias camadas, cada uma com características específicas dos nêutrons e outras partículas subatômicas.</p>
-
-            <p style="text-align: left;"><b>Camada Externa (Crosta)</b><br>
-                A crosta de um pulsar é composta principalmente por núcleos atômicos pesados e elétrons livres. Nos níveis mais profundos da crosta, a densidade é tão alta que os núcleos atômicos capturam elétrons, formando nêutrons. Esses nêutrons se acumulam, formando uma "sopa" densa de nêutrons intercalada com núcleos de nêutrons.</p>
-
-                <p style="text-align: left;"><b>Camada Interna (Núcleo Externo)</b><br>
-                Superfluido de Nêutrons: No núcleo externo do pulsar, a densidade é ainda maior, transformando os nêutrons em um estado de superfluidez. Neste estado, os nêutrons se movem sem atrito, permitindo uma condução de energia extremamente eficiente.<br>
-                Supercondutividade: Os prótons, que compõem uma pequena fração do núcleo, também podem se tornar supercondutores (materiais que permitem a condução de eletricidade sem resistência), contribuindo para a manutenção do campo magnético intenso do pulsar.</p>
-                
-                <p style="text-align: left;"><b>Núcleo Central (Núcleo Interno)</b><br> 
-                Matéria Exótica: No núcleo interno, a densidade é tão extrema que pode haver a formação de partículas exóticas como bósons ou quarks livres, compondo um possível plasma de quarks ou uma mistura de partículas subatômicas ainda não completamente compreendidas pela astrofísica e física de partículas.</p>
-                
-                <p style="text-align: left;"><b>Estado de Degenerescência</b><br> 
-                Os nêutrons estão em um estado degenerado, estado da matéria onde as partículas estão tão densamente compactadas que os princípios da mecânica quântica dominam seu comportamento. A pressão degenerativa dos nêutrons, uma forma de pressão quântica que surge devido ao princípio de exclusão de Pauli, que afirma que duas partículas idênticas de spin semi-inteiro não podem ocupar o mesmo estado quântico simultaneamente, equilibra a força gravitacional que tende a colapsar a estrela ainda mais.</p>
-
-                <p><b>Relação dos nêutrons no Pulsar</p></b>
-                <p style="text-align: left;"><b>Pressão de Degenerescência</b><br>
-                Esta é a força que mantém a estrela de nêutrons estável contra o colapso gravitacional. A pressão é causada pelos nêutrons, que, devido ao princípio de exclusão de Pauli, não podem ocupar o mesmo estado quântico. Essa pressão é o que sustenta a estrutura da estrela de nêutrons.</p>
-
-                <p style="text-align: left;"><b>Superfluidez e Supercondutividade</b><br>
-                A superfluidez dos nêutrons e a supercondutividade dos prótons permitem a condução eficiente de calor e a manutenção de correntes elétricas sem resistência, contribuindo para a estabilidade do campo magnético.
+                <!-- Créditos e Creative Commons -->
+                <p xmlns:cc="http://creativecommons.org/ns#"
+                    xmlns:dct="http://purl.org/dc/terms/"
+                    style="font-size: 12px;">
+                    <a property="dct:title" rel="cc:attributionURL"
+                        href="https://github.com/cometsinthesky/pulsar-3D"
+                        target="_blank" style="color: #f0f0f0;">Pulsar 3D</a> by
+                    <a rel="cc:attributionURL dct:creator"
+                        property="cc:attributionName"
+                        href="https://github.com/cometsinthesky" target="_blank"
+                        style="color: #f0f0f0;">Lucas Ferreira</a>
+                    is licensed under
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+                        style="color: #f0f0f0;" target="_blank"
+                        rel="license noopener noreferrer">
+                        CC BY-NC-SA 4.0 <br>
+                        <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+                            alt=""><img
+                            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+                            alt=""><img
+                            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+                            alt=""><img
+                            style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+                            alt="">
+                    </a>
                 </p>
-
-                <p style="text-align: left;"><b>Emissão de Radiação</b><br>
-                A rápida rotação da estrela de nêutrons e a sua intensa magnetosfera criam um ambiente onde partículas carregadas, aceleradas pelos campos elétrico e magnético, emitem radiação. O movimento das partículas dentro da estrela e ao longo de sua superfície influencia a emissão de radiação observada externamente.</p>
             </div>
-        </div>
-
-    <img class="images" src="./images/neutron-star-interior.jpg" alt="Estrutura de um pulsar" style="width: 600px; margin-top: 20px;">
 
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <div class="CountLike" id="LikeCount">
-        <button id="likeButton" class="button button1">
-            <i class="fa fa-heart"></i> Like <span class="counterStat">...</span>
-        </button>
-    </div>
+            <!-- APIs -->
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+            </script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js">
+            </script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/postprocessing/EffectComposer.js">
+            </script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/postprocessing/RenderPass.js">
+            </script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/postprocessing/UnrealBloomPass.js">
+            </script>
+            <!-- Inclui o GSAP -->
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js">
+            </script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.min.js">
+            </script>
+            <!-- Firebase script -->
+            <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js">
+            </script>
 
 
-    <!-- FOOTER DESKTOP-->
-    <div class="hidden-mobile footer-desktop" style="text-align: center; margin-top: 20px;" class="hidden">
-        <footer style="font-size: 14px;">
-            <p>Criado por: <a href="https://github.com/cometsinthesky" target="_blank"
-                    style="color: #f0f0f0; font-size: 13px;">Lucas Ferreira</a> (MNPEF/UnB) |
-                <a href="https://github.com/cometsinthesky/pulsar-3D" target="_blank" style="color: #f0f0f0;">Link do
-                    repositório GitHub</a>
-            </p>
-        </footer>
-
-        <!-- Créditos e Creative Commons -->
-        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" style="font-size: 12px;">
-            <a property="dct:title" rel="cc:attributionURL" href="https://github.com/cometsinthesky/pulsar-3D"
-                target="_blank" style="color: #f0f0f0;">Pulsar 3D</a> by
-            <a rel="cc:attributionURL dct:creator" property="cc:attributionName"
-                href="https://github.com/cometsinthesky" target="_blank" style="color: #f0f0f0;">Lucas Ferreira</a>
-            is licensed under
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" style="color: #f0f0f0;"
-                target="_blank" rel="license noopener noreferrer">
-                CC BY-NC-SA 4.0 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                    src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img
-                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                    src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img
-                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                    src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img
-                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                    src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="">
-            </a>
-        </p>
-    </div>
-
-    <!-- FOOTER SMARTPHONE-->
-    <div class="hidden-desktop" style="text-align: center; margin-top: 20px;" class="hidden">
-        <footer style="font-size: 14px;">
-            <p>Criado por: <a href="https://github.com/cometsinthesky" target="_blank"
-                    style="color: #f0f0f0; font-size: 13px;">Lucas Ferreira</a> (MNPEF/UnB) <br>
-                <a href="https://github.com/cometsinthesky/pulsar-3D" target="_blank" style="color: #f0f0f0;">Link do
-                    repositório GitHub</a>
-            </p>
-        </footer>
-
-        <!-- Créditos e Creative Commons -->
-        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" style="font-size: 12px;">
-            <a property="dct:title" rel="cc:attributionURL" href="https://github.com/cometsinthesky/pulsar-3D"
-                target="_blank" style="color: #f0f0f0;">Pulsar 3D</a> by
-            <a rel="cc:attributionURL dct:creator" property="cc:attributionName"
-                href="https://github.com/cometsinthesky" target="_blank" style="color: #f0f0f0;">Lucas Ferreira</a>
-            is licensed under
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" style="color: #f0f0f0;"
-                target="_blank" rel="license noopener noreferrer">
-                CC BY-NC-SA 4.0 <br>
-                    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                    src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img
-                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                    src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img
-                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                    src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img
-                    style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                    src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="">
-            </a>
-        </p>
-    </div>
-
-
-    <!-- APIs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/postprocessing/EffectComposer.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/postprocessing/RenderPass.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/postprocessing/UnrealBloomPass.js"></script>
-    <!-- Inclui o GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.min.js"></script>
-    <!-- Firebase script -->
-     <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
-
-
-    <!-- SCRIPTS -->
-    <script src="./src/landing-page.js"></script>
-    <script src="./src/scene-config.js"></script>
-    <script src="./src/field-grid.js"></script>
-    <script src="./src/functions.js"></script>
-    <script src="./src/particles.js"></script>
-    <script src="./src/counter.js"></script>
+            <!-- SCRIPTS -->
+            <script src="./src/landing-page.js"></script>
+            <script src="./src/scene-config.js"></script>
+            <script src="./src/field-grid.js"></script>
+            <script src="./src/functions.js"></script>
+            <script src="./src/particles.js"></script>
+            <script src="./src/counter.js"></script>
 
 </body>
+
 </html>
