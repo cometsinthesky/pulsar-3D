@@ -76,7 +76,7 @@ const textures = [
 // Criar um material para cada textura
 const materials = textures.map(
   (texture) =>
-    new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide })
+    new THREE.MeshStandardMaterial({ map: texture, side: THREE.BackSide })
 );
 
 // Criar um cubo com esses materiais
@@ -107,7 +107,7 @@ scene.add(pulsar);
 // Função para adicionar glow à esfera pulsar
 function addGlowToPulsar() {
   // Criar um material para a esfera com emissão
-  const pulsarGlowMaterial = new THREE.MeshBasicMaterial({
+  const pulsarGlowMaterial = new THREE.MeshStandardMaterial({
     color: 0xa8e4ff,
     transparent: true,
     opacity: 0.25,
@@ -196,7 +196,8 @@ camera.position.z = 5;
 // Adiciona OrbitControls
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // Movimento suave da câmera
-controls.dampingFactor = 0.2; // Fator de amortecimento
+controls.dampingFactor = 0.15; // Fator de amortecimento
+controls.rotateSpeed = 0.4;  // Padrão é 1
 
 // Variável para controlar o estado da simulação
 let isSimulationRunning = true;
