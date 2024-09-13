@@ -85,7 +85,7 @@ Mourão (1987) defines in his Encyclopedic Dictionary of Astronomy and Astronaut
 
 With the advancement of detections in radio astronomy, the improvement of detection precision, and the processing of data from distant pulsars, it was possible to identify the slowest pulsar ever detected by astronomers to date. In 2018, a pulsar approximately 14 million years old was discovered by a doctoral student at the University of Manchester. The team made the observations through the Low-Frequency Array (LOFAR), whose core is located in the Netherlands, to detect the PSR J0250+5854 pulsar. Until previous years, the slowest rotating pulsar detected had a rotation period of 8.5 seconds. This new pulsar, located in the direction of the Cassiopeia constellation, about 5,200 light-years away from Earth, rotates at a slower speed, in a range of 23.5 seconds (TAN et al, 2018, cited in FERREIRA, ANDRADE, LANGHI, 2024, in press).
 
----
+## Institutional 🖋️
 
 The Pulsar 3D simulation is in the process of being registered as software with the Technology Development Center (CDT) at the University of Brasilia (UnB).
 
