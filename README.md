@@ -82,7 +82,7 @@ Mourão (1987) define em seu Dicionário Enciclopédico de Astronomia e Astroná
 
 Com o avanço das detecções na radioastronomia, o melhoramento da precisão de detecção e o processamento dos dados de pulsares distantes, foi possível identificar o pulsar mais lento já detectado pelos astrônomos até o momento. Em 2018, um pulsar de aproximadamente 14 milhões de anos de idade, foi descoberto por um estudante de doutorado da Universidade de Manchester. A equipe realizou as observações através do Low-Frequency Array (LOFAR), cujo núcleo está localizado na Holanda, para detectar o pulsar PSR J0250+5854. Até anos anteriores, o pulsar de rotação mais lenta detectado tinha um período de rotação de 8,5 segundos. Esse novo pulsar, localizado na direção da constelação de Cassiopeia, a cerca de 5.200 anos-luz de distância da Terra, gira a uma velocidade mais lenta, num intervalo de 23,5 segundos (TAN et al, 2018, apud FERREIRA, ANDRADE, LANGHI, 2024, no prelo).
 
-### Institucional 🖋️
+## Institucional 🖋️
 
 A simulação Pulsar 3D está em processo de registro de software junto ao Centro de Desenvolvimento Tecnológico (CDT) da Universidade de Brasília (UnB). 
 
