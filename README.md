@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/site.png" alt="Pulsar 3D simulation homepage" width=1000px">
-  <img src="https://github.com/user-attachments/assets/49e03435-83ad-471c-bb67-bd4183632475" width="720px">
+  <img src="https://github.com/user-attachments/assets/49e03435-83ad-471c-bb67-bd4183632475" width="700px">
 </div>
 
 **Português | Pt-BR**‎ ✓‎‎‎&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[English | EN](README/EN/README.md)
