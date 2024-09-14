@@ -1,7 +1,9 @@
 # Pulsar 3D 🌌⚛️
-<p align="center">
-<img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/site.png" alt="Pulsar 3D simulation homepage" height="100%" width=100%">
-</p>
+
+<div align="center">
+  <img src="https://github.com/cometsinthesky/pulsar-3D/blob/main/images/site.png" alt="Pulsar 3D simulation homepage" width=500px">
+  <img src="https://github.com/user-attachments/assets/49e03435-83ad-471c-bb67-bd4183632475" width="500px">
+</div>
 
 **Português | Pt-BR**‎ ✓‎‎‎&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[English | EN](README/EN/README.md)
 ## Descrição 📝
