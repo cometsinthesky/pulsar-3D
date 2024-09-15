@@ -98,4 +98,10 @@ Sugestões e feedback são bem vindos: lucasferreiraunb@gmail.com
 
 Contribuições também são bem-vindas! Sinta-se à vontade para abrir uma Issue ou enviar um Pull Request.
 
+## Buy me a coffee!
+
+Githut Sponsors: [https://github.com/sponsors/cometsinthesky](https://github.com/sponsors/cometsinthesky)
+PayPal: [lucasferreiraunb@gmail.com](lucasferreiraunb@gmail.com)
+Pix: [61983653463](61983653463)
+
 ---
