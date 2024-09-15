@@ -100,4 +100,10 @@ Suggestions and feedback are welcome: lucasferreiraunb@gmail.com
 
 Contributions are also welcome! Feel free to open an Issue or send a Pull Request.
 
+## Buy me a coffee!
+
+- #### GitHub Sponsors: [https://github.com/sponsors/cometsinthesky](https://github.com/sponsors/cometsinthesky?frequency=one-time&sponsor=cometsinthesky)
+- #### PayPal: lucasferreiraunb@gmail.com
+- #### Pix: 61983653463
+
 ---
