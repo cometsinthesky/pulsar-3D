@@ -14,7 +14,7 @@ Pulsar 3D é uma simulação interativa em 3D de um Pulsar, uma estrela de nêut
 
 ### Requisitos
 
-- Navegador web moderno com suporte a WebGL (recomendado: Chrome, Firefox, Safari)
+- Navegador web moderno com suporte a WebGL (recomendado: Chrome, Firefox, Safari, Edge)
 - PC, teclado, mouse
 - Smartphone
 - Tablet
