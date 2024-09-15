@@ -100,7 +100,7 @@ Contribuições também são bem-vindas! Sinta-se à vontade para abrir uma Issu
 
 ## Buy me a coffee!
 
-- #### Githut Sponsors: [https://github.com/sponsors/cometsinthesky](https://github.com/sponsors/cometsinthesky?frequency=one-time&sponsor=cometsinthesky)
+- #### GitHub Sponsors: [https://github.com/sponsors/cometsinthesky](https://github.com/sponsors/cometsinthesky?frequency=one-time&sponsor=cometsinthesky)
 - #### PayPal: lucasferreiraunb@gmail.com
 - #### Pix: 61983653463
 
