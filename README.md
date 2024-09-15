@@ -100,8 +100,8 @@ Contribuições também são bem-vindas! Sinta-se à vontade para abrir uma Issu
 
 ## Buy me a coffee!
 
-Githut Sponsors: [https://github.com/sponsors/cometsinthesky](https://github.com/sponsors/cometsinthesky)
-PayPal: [lucasferreiraunb@gmail.com](lucasferreiraunb@gmail.com)
-Pix: [61983653463](61983653463)
+- #### Githut Sponsors: [https://github.com/sponsors/cometsinthesky](https://github.com/sponsors/cometsinthesky)
+- #### PayPal: lucasferreiraunb@gmail.com
+- #### Pix: 61983653463
 
 ---
