@@ -15,7 +15,7 @@ Pulsar 3D is an interactive 3D simulation of a Pulsar, a highly magnetized neutr
 
 ### Requirements
 
-- Modern web browser with WebGL support (recommended: Chrome, Firefox, Safari)
+- Modern web browser with WebGL support (recommended: Chrome, Firefox, Safari, Edge)
 - PC, keyboard, mouse
 - Smartphone
 - Tablet
