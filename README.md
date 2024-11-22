@@ -86,7 +86,7 @@ Com o avanço das detecções na radioastronomia, o melhoramento da precisão de
 
 ## Institucional 🖋️
 
-A simulação Pulsar 3D foi lançada oficialmente durante a Global Hands-on Universe Conference 2024 ([https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448](https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448) em 01:59:12).
+A simulação Pulsar 3D foi lançada oficialmente durante a Global Hands-on Universe Conference 2024 ([https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448](https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448), coloque o vídeo em 01:59:10).
 
 Um plano de aula detalhado em como utilizar o Pulsar 3D em sala de aula e em projetos pode ser acessado em [https://zenodo.org/records/13824696](https://zenodo.org/records/13824696)
 
@@ -102,7 +102,7 @@ Sugestões e feedback são bem vindos: lucasferreiraunb@gmail.com
 
 Contribuições também são bem-vindas! Sinta-se à vontade para abrir uma Issue ou enviar um Pull Request.
 
-## Buy me a coffee!
+### Buy me a coffee!
 
 - #### GitHub Sponsors: [https://github.com/sponsors/cometsinthesky](https://github.com/sponsors/cometsinthesky?frequency=one-time&sponsor=cometsinthesky)
 - #### PayPal: lucasferreiraunb@gmail.com
