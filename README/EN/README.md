@@ -88,11 +88,15 @@ With the advancement of detections in radio astronomy, the improvement of detect
 
 ## Institutional 🖋️
 
-The Pulsar 3D simulation is in the process of being registered as software with the Technology Development Center (CDT) at the University of Brasilia (UnB).
+The Pulsar 3D simulation was officially launched during the Global Hands-on Universe Conference 2024 [https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448&t=7150](https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448&t=7150).
 
-It is an educational product of the National Professional Master's Program in Physics Teaching (MNPEF), Pole 01 - University of Brasilia (UnB), under the supervision of Prof. Dr. Vanessa Carvalho de Andrade (UnB/IF).
+A detailed lesson plan on how to use Pulsar 3D in the classroom and in projects can be accessed at [https://zenodo.org/records/13824696](https://zenodo.org/records/13824696).
 
-The images and texts from this project are also part of the forthcoming article "FROM LEDS TO PULSARS: A LOW-COST INTERACTIVE EXPERIMENT FOR TEACHING ASTRONOMY AND ASTROPHYSICS IN SCHOOLS" (FERREIRA, ANDRADE, LANGHI, 2024)."
+The Pulsar 3D simulation was registered with the National Institute of Industrial Property (INPI) on October 1, 2024, under process number BR512024003499-4, with the support of the Center for Technological Development (CDT) at the University of Brasília (UnB) and the Intellectual Property Center (Nupitec).
+
+It is part of an educational product of the National Professional Master's Program in Physics Teaching (MNPEF), pole 01 - University of Brasília (UnB), under the supervision of Prof. Dr. Vanessa Carvalho de Andrade (UnB/IF). Dissertation theme: "From LEDs to Pulsars: An Immersive Didactic Sequence for Teaching Physics and Astrophysics in the Final Years of Elementary School" (FERREIRA; ANDRADE, 2025).
+
+The images and texts of this project are also part of the forthcoming article "FROM LEDs TO PULSARS: AN INTERACTIVE LOW-COST EXPERIMENT FOR TEACHING ASTRONOMY AND ASTROPHYSICS AT SCHOOL" (FERREIRA; ANDRADE; BATISTA; LANGHI, 2024).
 
 ## Contributions
 
@@ -100,7 +104,7 @@ Suggestions and feedback are welcome: lucasferreiraunb@gmail.com
 
 Contributions are also welcome! Feel free to open an Issue or send a Pull Request.
 
-## Buy me a coffee!
+### Buy me a coffee!
 
 - #### GitHub Sponsors: [https://github.com/sponsors/cometsinthesky](https://github.com/sponsors/cometsinthesky?frequency=one-time&sponsor=cometsinthesky)
 - #### PayPal: lucasferreiraunb@gmail.com
