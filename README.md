@@ -86,7 +86,7 @@ Com o avanço das detecções na radioastronomia, o melhoramento da precisão de
 
 ## Institucional 🖋️
 
-A simulação Pulsar 3D foi lançada oficialmente durante a Global Hands-on Universe Conference 2024 ([https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448](https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448&t=7150)).
+A simulação Pulsar 3D foi lançada oficialmente durante a Global Hands-on Universe Conference 2024 ([https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448&t=7150](https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448&t=7150)).
 
 Um plano de aula detalhado em como utilizar o Pulsar 3D em sala de aula e em projetos pode ser acessado em [https://zenodo.org/records/13824696](https://zenodo.org/records/13824696)
 
