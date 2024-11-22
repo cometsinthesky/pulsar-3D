@@ -88,7 +88,7 @@ Com o avanço das detecções na radioastronomia, o melhoramento da precisão de
 
 A simulação Pulsar 3D foi lançada oficialmente durante a Global Hands-on Universe Conference 2024 ([https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448&t=7150](https://www.facebook.com/watch/live/?ref=watch_permalink&v=1284263109605448&t=7150)).
 
-Um plano de aula detalhado em como utilizar o Pulsar 3D em sala de aula e em projetos pode ser acessado em [https://zenodo.org/records/13824696](https://zenodo.org/records/13824696)
+Um plano de aula detalhado em como utilizar o Pulsar 3D em sala de aula e em projetos pode ser acessado em [https://zenodo.org/records/13824696](https://zenodo.org/records/13824696).
 
 A simulação Pulsar 3D foi registrada junto ao Instituto Nacional da Propriedade Industrial – INPI, em 1º de outubro de 2024, sob o processo de número BR512024003499-4, com o apoio do Centro de Desenvolvimento Tecnológico (CDT) da Universidade de Brasília (UnB) e do Núcleo de Propriedade Intelectual (Nupitec).
 
