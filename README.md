@@ -92,7 +92,7 @@ Um plano de aula detalhado em como utilizar o Pulsar 3D em sala de aula e em pro
 
 A simulação Pulsar 3D foi registrada junto ao Instituto Nacional da Propriedade Industrial – INPI, em 1º de outubro de 2024, sob o processo de número BR512024003499-4, com o apoio do Centro de Desenvolvimento Tecnológico (CDT) da Universidade de Brasília (UnB) e do Núcleo de Propriedade Intelectual (Nupitec).
 
-Faz parte como um produto educacional do Programa de Mestrado Nacional Profissional em Ensino de Física (MNPEF), polo 01 - Universidade de Brasília (UnB), sob a orientação da Prof.ª Dr.ª Vanessa Carvalho de Andrade (UnB/IF). Tema da dissertação: "Dos Leds aos Pulsares: Uma Sequência Didática Imersiva para o Ensino de Física e Astrofísica nos Anos Finais do Ensino Fundamental" (FERREIRA; ANDRADE, 2025).
+Faz parte como um produto educacional do Programa de Mestrado Nacional Profissional em Ensino de Física (MNPEF), polo 01 - Universidade de Brasília (UnB), sob a orientação da Prof.ª Dr.ª Vanessa Carvalho de Andrade (UnB/IF). Tema da dissertação: "Dos Leds aos Pulsares: Uma Sequência Didática Imersiva para o Ensino de Física e Astrofísica no Ensino Fundamental e Médio" (FERREIRA; ANDRADE, 2025).
 
 As imagens e textos desse projeto fazem parte, também, do artigo (no prelo) "DOS LEDS AOS PULSARES: UM EXPERIMENTO INTERATIVO DE BAIXO CUSTO PARA O ENSINO DE ASTRONOMIA E ASTROFÍSICA NA ESCOLA" (FERREIRA; ANDRADE; BATISTA; LANGHI, 2024).
 
