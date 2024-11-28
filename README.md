@@ -94,8 +94,6 @@ A simulação Pulsar 3D foi registrada junto ao Instituto Nacional da Propriedad
 
 Faz parte como um produto educacional do Programa de Mestrado Nacional Profissional em Ensino de Física (MNPEF), polo 01 - Universidade de Brasília (UnB), sob a orientação da Prof.ª Dr.ª Vanessa Carvalho de Andrade (UnB/IF). Tema da dissertação: "Dos Leds aos Pulsares: Uma Sequência Didática Imersiva para o Ensino de Física e Astrofísica no Ensino Fundamental e Médio" (FERREIRA; ANDRADE, 2025).
 
-As imagens e textos desse projeto fazem parte, também, do artigo (no prelo) "DOS LEDS AOS PULSARES: UM EXPERIMENTO INTERATIVO DE BAIXO CUSTO PARA O ENSINO DE ASTRONOMIA E ASTROFÍSICA NA ESCOLA" (FERREIRA; ANDRADE; BATISTA; LANGHI, 2024).
-
 ## Contribuições
 
 Sugestões e feedback são bem vindos: lucasferreiraunb@gmail.com
