@@ -94,9 +94,7 @@ A detailed lesson plan on how to use Pulsar 3D in the classroom and in projects 
 
 The Pulsar 3D simulation was registered with the National Institute of Industrial Property (INPI) on October 1, 2024, under process number BR512024003499-4, with the support of the Center for Technological Development (CDT) at the University of Brasília (UnB) and the Intellectual Property Center (Nupitec).
 
-It is part of an educational product of the National Professional Master's Program in Physics Teaching (MNPEF), pole 01 - University of Brasília (UnB), under the supervision of Prof. Dr. Vanessa Carvalho de Andrade (UnB/IF). Dissertation theme: "From LEDs to Pulsars: An Immersive Didactic Sequence for Teaching Physics and Astrophysics in the Final Years of Elementary School" (FERREIRA; ANDRADE, 2025).
-
-The images and texts of this project are also part of the forthcoming article "FROM LEDs TO PULSARS: AN INTERACTIVE LOW-COST EXPERIMENT FOR TEACHING ASTRONOMY AND ASTROPHYSICS AT SCHOOL" (FERREIRA; ANDRADE; BATISTA; LANGHI, 2024).
+It is part of an educational product of the National Professional Master's Program in Physics Teaching (MNPEF), pole 01 - University of Brasília (UnB), under the supervision of Prof. Dr. Vanessa Carvalho de Andrade (UnB/IF). Dissertation theme: "From LEDs to Pulsars: An Immersive Didactic Sequence for Teaching Physics and Astrophysics in Elementary and High School" (FERREIRA; ANDRADE, 2025).
 
 ## Contributions
 
