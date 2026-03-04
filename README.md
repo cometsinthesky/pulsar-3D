@@ -94,6 +94,8 @@ A simulação Pulsar 3D foi registrada junto ao Instituto Nacional da Propriedad
 
 Faz parte como um produto educacional do Programa de Mestrado Nacional Profissional em Ensino de Física (MNPEF), polo 01 - Universidade de Brasília (UnB), sob a orientação da Prof.ª Dr.ª Vanessa Carvalho de Andrade (UnB/IF). Tema da dissertação: "Dos Leds aos Pulsares: Uma Sequência Didática Imersiva para o Ensino de Física e Astrofísica no Ensino Fundamental e Médio" (FERREIRA; ANDRADE, 2025).
 
+Trabalho apresentado e publicado no XXVI SNEF (Simpósio Nacional de Ensino de Física - SNEF 2025), na Universidade Federal Fluminense (UFF), em Niterói - Rio de Janeiro, intitulado: [Pulsares e o Ensino de Física: Uma Sequência Didática Imersiva para os Anos Finais do Ensino Fundamental](https://proceedings.online/snef2025/pdfs/papers/4EDN.pdf) (FERREIRA; ANDRADE, 2025). Durante a aplicação da Sequência Didática, o simulador Pulsar 3D foi utilizado em sala de aula, nos anos finais do Ensino Fundamental, como forma de ilustrar a natureza e o comportamento dos pulsares, de forma visual e acessível.
+
 ## Contribuições
 
 Sugestões e feedback são bem vindos: lucasferreiraunb@gmail.com
