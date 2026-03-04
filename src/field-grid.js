@@ -44,18 +44,22 @@ function calculateMagneticField(r) {
   return B;
 }
 
-// Declare uma lista para armazenar as linhas de campo magnético
+// Lista para armazenar as linhas de campo magnético
 const fieldLines = [];
 
-// Função para limpar as linhas de campo magnético existentes
+// ✅ Grupo do campo magnético preso ao pulsar (herda rotação e inclinação)
+const magneticFieldGroup = new THREE.Group();
+magneticFieldGroup.name = "magneticFieldGroup";
+pulsar.add(magneticFieldGroup);
+
+// Limpa as linhas de campo magnético existentes (remove do grupo, não da cena)
 function clearFieldLines() {
-  fieldLines.forEach((line) => scene.remove(line));
+  fieldLines.forEach((line) => magneticFieldGroup.remove(line));
   fieldLines.length = 0;
 }
 
-// Função para desenhar linhas de campo magnético
+// Desenha linhas de campo magnético (dentro do grupo preso ao pulsar)
 function drawFieldLines() {
-  // Limpe quaisquer linhas de campo magnético existentes antes de desenhar novas
   clearFieldLines();
 
   const numLines = 10; // Número de linhas de campo
@@ -65,13 +69,14 @@ function drawFieldLines() {
     opacity: 0.8,
   });
 
-  const inclinationAngle = THREE.Math.degToRad(30); // Convertendo 30 graus para radianos
+  // Abertura inicial das linhas (apenas distribuição). A inclinação global vem do pulsar.rotation.
+  const inclinationAngle = THREE.Math.degToRad(30);
 
   for (let i = 0; i < numLines; i++) {
     const theta = (i / numLines) * 2 * Math.PI;
     const x = Math.sin(inclinationAngle) * Math.cos(theta);
     const z = Math.sin(inclinationAngle) * Math.sin(theta);
-    const y = Math.cos(inclinationAngle); // Ajustando y para a inclinação de 30 graus
+    const y = Math.cos(inclinationAngle);
 
     const lineGeometry = new THREE.BufferGeometry();
     const points = [];
@@ -81,69 +86,39 @@ function drawFieldLines() {
       points.push(position.clone());
       const B = calculateMagneticField(position).normalize();
       position.add(B.multiplyScalar(0.1)); // Tamanho do passo
-      if (position.length() > 1060) {
-        // Extensão limitada a 1060 unidades
-        break;
-      }
+      if (position.length() > 1060) break; // Extensão limitada a 1060 unidades
     }
 
     if (points.length > 0) {
       lineGeometry.setFromPoints(points);
       const line = new THREE.Line(lineGeometry, lineMaterial);
       fieldLines.push(line);
-      scene.add(line);
+      magneticFieldGroup.add(line);
     }
   }
 }
 
-// Adicione um event listener para o evento de pressionar a tecla "m"
+// Toggle via tecla "M"
 document.addEventListener("keydown", function (event) {
   if (event.key === "m" || event.key === "M") {
+    const checkbox = document.getElementById("fieldCheckbox");
+    checkbox.checked = !checkbox.checked;
     handleCheckboxToggle();
   }
 });
 
-// Adicione um event listener para o evento de mudança do checkbox
+// Toggle via checkbox
 document
   .getElementById("fieldCheckbox")
   .addEventListener("change", handleCheckboxToggle);
 
-// Adicione um event listener para o evento de clique no checkbox
-document
-  .getElementById("fieldCheckbox")
-  .addEventListener("click", function (event) {
-    // Verifique se o evento foi acionado pelo clique no checkbox
-    if (event.target === this) {
-      handleCheckboxToggle();
-    }
-  });
-
-// Função para lidar com a alteração do estado do checkbox e limpar as linhas de campo magnético
+// Liga/desliga o campo magnético sem mexer em rotação/inclinação do pulsar
 function handleCheckboxToggle() {
   const checkbox = document.getElementById("fieldCheckbox");
-  // Verifique se o checkbox está selecionado
   if (checkbox.checked) {
-    // Se estiver selecionado, desmarque o checkbox e limpe as linhas de campo
-    checkbox.checked = false;
-    clearFieldLines();
-  } else {
-    // Se não estiver selecionado, faça as ações correspondentes e marque o checkbox
     drawFieldLines();
-    isRotationRunning = false;
-    pauseButton.textContent = "Play";
-    const inclination = 0;
-    pulsar.rotation.x = inclination;
-    pulsar.rotation.z = inclination;
-    const slider = document.getElementById("inclinação");
-    slider.value = 0;
-    checkbox.checked = true;
+  } else {
+    clearFieldLines();
   }
 }
 
-// Função para limpar as linhas de campo magnético da cena
-function clearFieldLines() {
-  // Remova todas as linhas de campo magnético da cena
-  fieldLines.forEach((line) => scene.remove(line));
-  // Limpe a lista fieldLines
-  fieldLines.length = 0;
-}
