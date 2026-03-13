@@ -1,42 +1,102 @@
-// ADICIONA PARTÍCULAS NOS CONES COMO LINHAS
+// ADICIONA PARTÍCULAS NOS CONES COMO LINHAS ANIMADAS
+// Mantém a mesma proporção visual, extensão e tamanho dos segmentos do jato.
+
 // Definir a quantidade de partículas
 const quantidadeParticulas = 10000;
+const quantidadeParticulas2 = 10000;
 
 // Definir parâmetros do cone
 const raioBaseInicial = 0.015;
 const alturaCone = 2000;
-const raioBaseFinal = 30; // Vértice do cone
+const raioBaseFinal = 30;
 
-// Criar a geometria das linhas
+const raioBaseInicial2 = 0.015;
+const alturaCone2 = 2000;
+const raioBaseFinal2 = 30;
+
+// Comprimento visual de cada traço do jato (mantido igual ao código original)
+const comprimentoSegmento = 10;
+
+// Velocidade do fluxo do jato
+const velocidadeJato = 70;
+
+// Geometrias
 const particulasGeometry = new THREE.BufferGeometry();
+const particulas2Geometry = new THREE.BufferGeometry();
 
-// Criar arrays para armazenar as posições das linhas
-const positions = new Float32Array(quantidadeParticulas * 3 * 2); // * 2 porque cada linha tem dois pontos
+// Arrays de posição
+const positions = new Float32Array(quantidadeParticulas * 3 * 2);
+const positions2 = new Float32Array(quantidadeParticulas2 * 3 * 2);
 
-// Preencher os arrays com posições ao longo do cone
-for (let i = 0; i < quantidadeParticulas; i++) {
-  // Gerar coordenadas cilíndricas aleatórias dentro do cone
-  const altura = Math.random() * alturaCone;
-  const alturaNormalizada = altura / alturaCone; // Normaliza a altura entre 0 e 1
-  const theta = Math.random() * Math.PI * 2; // Ângulo aleatório
+// Dados-base das partículas para animação
+const particleData = [];
+const particleData2 = [];
 
-  // Calcula o raio usando uma função cônica para evitar aglomeração nas bordas
-  const raio =
-    raioBaseInicial + alturaNormalizada * (raioBaseFinal - raioBaseInicial);
+function calcularRaioCone(alturaAtual, alturaMaxima, raioInicial, raioFinal) {
+  const alturaNormalizada = alturaAtual / alturaMaxima;
+  return raioInicial + alturaNormalizada * (raioFinal - raioInicial);
+}
 
-  // Converter coordenadas cilíndricas para cartesianas
+function preencherSegmentoNoCone(array, indexBase, alturaAtual, theta, alturaMaxima, raioInicial, raioFinal, direcao) {
+  const raio = calcularRaioCone(alturaAtual, alturaMaxima, raioInicial, raioFinal);
   const x = raio * Math.cos(theta);
   const z = raio * Math.sin(theta);
+  const yInicio = direcao > 0 ? alturaAtual : -alturaAtual;
+  const yFim = yInicio + comprimentoSegmento * direcao;
 
-  // Definir a posição do início da linha
-  positions[i * 6] = x;
-  positions[i * 6 + 1] = altura;
-  positions[i * 6 + 2] = z;
+  array[indexBase] = x;
+  array[indexBase + 1] = yInicio;
+  array[indexBase + 2] = z;
 
-  // Definir a posição do fim da linha (um pouco deslocada)
-  positions[i * 6 + 3] = x;
-  positions[i * 6 + 4] = altura + 5; // Ajuste a altura para um pequeno deslocamento
-  positions[i * 6 + 5] = z;
+  array[indexBase + 3] = x;
+  array[indexBase + 4] = yFim;
+  array[indexBase + 5] = z;
+}
+
+// Cone positivo
+for (let i = 0; i < quantidadeParticulas; i++) {
+  const altura = Math.random() * alturaCone;
+  const theta = Math.random() * Math.PI * 2;
+
+  particleData.push({
+    altura,
+    theta,
+    velocidade: velocidadeJato * (0.65 + Math.random() * 0.7),
+  });
+
+  preencherSegmentoNoCone(
+    positions,
+    i * 6,
+    altura,
+    theta,
+    alturaCone,
+    raioBaseInicial,
+    raioBaseFinal,
+    1
+  );
+}
+
+// Cone negativo
+for (let i = 0; i < quantidadeParticulas2; i++) {
+  const altura = Math.random() * alturaCone2;
+  const theta = Math.random() * Math.PI * 2;
+
+  particleData2.push({
+    altura,
+    theta,
+    velocidade: velocidadeJato * (0.65 + Math.random() * 0.7),
+  });
+
+  preencherSegmentoNoCone(
+    positions2,
+    i * 6,
+    altura,
+    theta,
+    alturaCone2,
+    raioBaseInicial2,
+    raioBaseFinal2,
+    -1
+  );
 }
 
 // Adicionar as posições à geometria das linhas
@@ -45,120 +105,104 @@ particulasGeometry.setAttribute(
   new THREE.BufferAttribute(positions, 3)
 );
 
-// Criar o material das linhas
-const particulasMaterial = new THREE.LineBasicMaterial({ color: 0xfaed3a });
-
-// Criar o objeto das linhas
-const particulas = new THREE.LineSegments(
-  particulasGeometry,
-  particulasMaterial
-);
-
-// Adicionar as linhas como filhas da esfera
-pulsar.add(particulas);
-
-// ADD PARTÍCULAS CONE NEGATIVO COMO LINHAS
-// Definir a quantidade de partículas
-const quantidadeParticulas2 = 10000;
-
-// Definir parâmetros do cone
-const raioBaseInicial2 = 0.015;
-const alturaCone2 = 2000;
-const raioBaseFinal2 = 30; // Vértice do cone
-
-// Criar a geometria das linhas
-const particulas2Geometry = new THREE.BufferGeometry();
-
-// Criar arrays para armazenar as posições das linhas
-const positions2 = new Float32Array(quantidadeParticulas2 * 3 * 2); // * 2 porque cada linha tem dois pontos
-
-// Preencher os arrays com posições ao longo do cone
-for (let i = 0; i < quantidadeParticulas2; i++) {
-  // Gerar coordenadas cilíndricas aleatórias dentro do cone
-  const altura = Math.random() * -1 * alturaCone2;
-  const alturaNormalizada = altura / alturaCone2; // Normaliza a altura entre 0 e 1
-  const theta = Math.random() * Math.PI * 2; // Ângulo aleatório
-
-  // Calcula o raio usando uma função cônica para evitar aglomeração nas bordas
-  const raio =
-    raioBaseInicial2 + alturaNormalizada * (raioBaseFinal2 - raioBaseInicial2);
-
-  // Converter coordenadas cilíndricas para cartesianas
-  const x = raio * Math.cos(theta);
-  const z = raio * Math.sin(theta);
-
-  // Definir a posição do início da linha
-  positions2[i * 6] = x;
-  positions2[i * 6 + 1] = altura;
-  positions2[i * 6 + 2] = z;
-
-  // Definir a posição do fim da linha (um pouco deslocada)
-  positions2[i * 6 + 3] = x;
-  positions2[i * 6 + 4] = altura - 5; // Ajuste a altura para um pequeno deslocamento
-  positions2[i * 6 + 5] = z;
-}
-
-// Adicionar as posições à geometria das linhas
 particulas2Geometry.setAttribute(
   "position",
   new THREE.BufferAttribute(positions2, 3)
 );
 
 // Criar o material das linhas
+const particulasMaterial = new THREE.LineBasicMaterial({ color: 0xfaed3a });
 const particulas2Material = new THREE.LineBasicMaterial({ color: 0xfaed3a });
 
-// Criar o objeto das linhas
-const particulas2 = new THREE.LineSegments(
-  particulas2Geometry,
-  particulas2Material
-);
+// Criar os objetos das linhas
+const particulas = new THREE.LineSegments(particulasGeometry, particulasMaterial);
+const particulas2 = new THREE.LineSegments(particulas2Geometry, particulas2Material);
 
-//CHECKBOX JATO DE RADIAÇÃO
-// Inicialmente, ocultar as partículas
+// Adicionar as linhas como filhas da esfera
+pulsar.add(particulas);
+pulsar.add(particulas2);
+
+function atualizarJatoDeParticulas(deltaTime) {
+  const posAttr1 = particulasGeometry.attributes.position;
+  const posAttr2 = particulas2Geometry.attributes.position;
+
+  for (let i = 0; i < quantidadeParticulas; i++) {
+    const p = particleData[i];
+    p.altura += p.velocidade * deltaTime;
+
+    if (p.altura > alturaCone) {
+      p.altura = 0;
+    }
+
+    preencherSegmentoNoCone(
+      positions,
+      i * 6,
+      p.altura,
+      p.theta,
+      alturaCone,
+      raioBaseInicial,
+      raioBaseFinal,
+      1
+    );
+  }
+
+  for (let i = 0; i < quantidadeParticulas2; i++) {
+    const p = particleData2[i];
+    p.altura += p.velocidade * deltaTime;
+
+    if (p.altura > alturaCone2) {
+      p.altura = 0;
+    }
+
+    preencherSegmentoNoCone(
+      positions2,
+      i * 6,
+      p.altura,
+      p.theta,
+      alturaCone2,
+      raioBaseInicial2,
+      raioBaseFinal2,
+      -1
+    );
+  }
+
+  posAttr1.needsUpdate = true;
+  posAttr2.needsUpdate = true;
+}
+
+// CHECKBOX JATO DE RADIAÇÃO
 particulas.visible = false;
 particulas2.visible = false;
 
-// Função para alternar a seleção da checkbox
 function toggleCheckbox() {
   var checkbox = document.getElementById("beamsCheckbox");
-  checkbox.checked = !checkbox.checked; // Inverte o estado da checkbox
+  checkbox.checked = !checkbox.checked;
 }
 
-// Adicionar um evento de escuta à checkbox
 document
   .getElementById("beamsCheckbox")
   .addEventListener("change", function () {
     if (this.checked) {
-      // Se a checkbox for selecionada, mostrar as partículas
       particulas.visible = true;
       particulas2.visible = true;
     } else {
-      // Se a checkbox for desmarcada, ocultar as partículas
       particulas.visible = false;
       particulas2.visible = false;
     }
   });
 
-// Listener para tecla pressionada
 document.addEventListener("keydown", function (event) {
-  // Verifica se a tecla pressionada é a tecla "P"
   if (event.key === "p" || event.key === "P") {
-    toggleCheckbox(); // Chama a função para alternar a seleção da checkbox
+    toggleCheckbox();
 
-    // Acessa a checkbox diretamente através de seu ID
     var checkbox = document.getElementById("beamsCheckbox");
 
     if (checkbox.checked) {
-      // Se a checkbox for selecionada, mostrar as partículas
       particulas.visible = true;
       particulas2.visible = true;
     } else {
-      // Se a checkbox for desmarcada, ocultar as partículas
       particulas.visible = false;
       particulas2.visible = false;
     }
   }
 });
-
-// Adicionar as linhas como filhas da esfera
-pulsar.add(particulas2);

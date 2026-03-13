@@ -208,6 +208,9 @@ let rotationSpeed = -0.1;
 // Variável para controlar a rotação
 let isRotationRunning = false;
 
+// Clock para animação temporal do jato de partículas
+const jetClock = new THREE.Clock();
+
 // Função para pausar e retomar a rotação
 function toggleRotation() {
   isRotationRunning = !isRotationRunning;
@@ -251,6 +254,8 @@ restartButton.addEventListener("click", function () {
 function animate() {
   requestAnimationFrame(animate);
 
+  const deltaTime = jetClock.getDelta();
+
   if (isRotationRunning) {
     // Se a rotação estiver ativa, aplicar a rotação em torno do eixo y
     pulsar.rotation.y += rotationSpeed;
@@ -275,6 +280,9 @@ function animate() {
   // Mapeia o valor do slider de 0 a 100 para 0 a 90 graus
   const inclination = mapRange(sliderValue, 0, 100, 0, Math.PI / 1.8);
   pulsar.rotation.z = inclination;
+  // Atualiza a animação do jato de partículas
+  atualizarJatoDeParticulas(deltaTime);
+
   // Atualiza os OrbitControls
   controls.update();
 
