@@ -361,3 +361,55 @@ function toggleText(id) {
     icon.textContent = "▼"; // Muda o ícone para seta para baixo
   }
 }
+
+// Add Earth label
+  function toggleText(id) {
+    const content = document.getElementById(id);
+    const icon = content.parentElement.querySelector(".toggle-icon");
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      icon.textContent = "▲";
+    } else {
+      content.style.display = "none";
+      icon.textContent = "▼";
+    }
+  }
+
+  function createTextSprite(text, fontSize = 16) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+
+    context.font = `${fontSize}px Arial`;
+    const textWidth = context.measureText(text).width;
+
+    canvas.width = Math.ceil(textWidth) + 20;
+    canvas.height = fontSize * 2;
+
+    context.font = `${fontSize}px Arial`;
+    context.fillStyle = 'white';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText(text, canvas.width / 2, canvas.height / 2);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    const material = new THREE.SpriteMaterial({ map: texture, transparent: true });
+    const sprite = new THREE.Sprite(material);
+
+    sprite.scale.set(150, 100, 1);
+
+    return sprite;
+  }
+
+  const textoTerra = createTextSprite('Terra', 100);
+  scene.add(textoTerra);
+
+  const distanciaTerra = 2000;
+  const azimuteTerra = THREE.MathUtils.degToRad(45);
+  const elevacaoTerra = THREE.MathUtils.degToRad(46);
+
+  textoTerra.position.set(
+  distanciaTerra * Math.cos(elevacaoTerra) * Math.cos(azimuteTerra),
+  distanciaTerra * Math.sin(elevacaoTerra),
+  distanciaTerra * Math.cos(elevacaoTerra) * Math.sin(azimuteTerra)
+);
