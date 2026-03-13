@@ -8,11 +8,11 @@ const quantidadeParticulas2 = 10000;
 // Definir parâmetros do cone
 const raioBaseInicial = 0.015;
 const alturaCone = 2000;
-const raioBaseFinal = 30;
+const raioBaseFinal = 40;
 
 const raioBaseInicial2 = 0.015;
 const alturaCone2 = 2000;
-const raioBaseFinal2 = 30;
+const raioBaseFinal2 = 40;
 
 // Comprimento visual de cada traço do jato (mantido igual ao código original)
 const comprimentoSegmento = 10;
@@ -37,8 +37,26 @@ function calcularRaioCone(alturaAtual, alturaMaxima, raioInicial, raioFinal) {
   return raioInicial + alturaNormalizada * (raioFinal - raioInicial);
 }
 
-function preencherSegmentoNoCone(array, indexBase, alturaAtual, theta, alturaMaxima, raioInicial, raioFinal, direcao) {
-  const raio = calcularRaioCone(alturaAtual, alturaMaxima, raioInicial, raioFinal);
+function preencherSegmentoNoCone(
+  array,
+  indexBase,
+  alturaAtual,
+  theta,
+  alturaMaxima,
+  raioInicial,
+  raioFinal,
+  direcao,
+  raioNormalizado = 1
+) {
+  const raioMaximo = calcularRaioCone(
+    alturaAtual,
+    alturaMaxima,
+    raioInicial,
+    raioFinal
+  );
+
+  // sqrt(random) preserva distribuição homogênea em área dentro da seção circular
+  const raio = raioMaximo * raioNormalizado;
   const x = raio * Math.cos(theta);
   const z = raio * Math.sin(theta);
   const yInicio = direcao > 0 ? alturaAtual : -alturaAtual;
@@ -57,10 +75,12 @@ function preencherSegmentoNoCone(array, indexBase, alturaAtual, theta, alturaMax
 for (let i = 0; i < quantidadeParticulas; i++) {
   const altura = Math.random() * alturaCone;
   const theta = Math.random() * Math.PI * 2;
+  const raioNormalizado = Math.sqrt(Math.random());
 
   particleData.push({
     altura,
     theta,
+    raioNormalizado,
     velocidade: velocidadeJato * (0.65 + Math.random() * 0.7),
   });
 
@@ -72,7 +92,8 @@ for (let i = 0; i < quantidadeParticulas; i++) {
     alturaCone,
     raioBaseInicial,
     raioBaseFinal,
-    1
+    1,
+    raioNormalizado
   );
 }
 
@@ -80,10 +101,12 @@ for (let i = 0; i < quantidadeParticulas; i++) {
 for (let i = 0; i < quantidadeParticulas2; i++) {
   const altura = Math.random() * alturaCone2;
   const theta = Math.random() * Math.PI * 2;
+  const raioNormalizado = Math.sqrt(Math.random());
 
   particleData2.push({
     altura,
     theta,
+    raioNormalizado,
     velocidade: velocidadeJato * (0.65 + Math.random() * 0.7),
   });
 
@@ -95,7 +118,8 @@ for (let i = 0; i < quantidadeParticulas2; i++) {
     alturaCone2,
     raioBaseInicial2,
     raioBaseFinal2,
-    -1
+    -1,
+    raioNormalizado
   );
 }
 
@@ -142,7 +166,8 @@ function atualizarJatoDeParticulas(deltaTime) {
       alturaCone,
       raioBaseInicial,
       raioBaseFinal,
-      1
+      1,
+      p.raioNormalizado
     );
   }
 
@@ -162,7 +187,8 @@ function atualizarJatoDeParticulas(deltaTime) {
       alturaCone2,
       raioBaseInicial2,
       raioBaseFinal2,
-      -1
+      -1,
+      p.raioNormalizado
     );
   }
 
